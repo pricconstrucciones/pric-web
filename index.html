@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PRIC Construcciones — Soluciones Urbanísticas Modulares · Vaca Muerta</title>
-<meta name="description" content="PRIC Construcciones · Córdoba, Argentina. Desarrollamos campamentos modulares llave en mano para petróleo, gas, minería, energía e infraestructura. Operamos en todo el territorio nacional con foco en proyectos de Vaca Muerta." />
+<meta name="description" content="PRIC Construcciones · Córdoba, Argentina. Desarrollamos urbanizaciones modulares y transportables llave en mano para petróleo, gas, minería, energía e infraestructura. Operamos en todo el territorio nacional con foco en proyectos de Vaca Muerta." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -110,7 +110,7 @@
   }
   .hero-content{
     position:relative; z-index:2; text-align:center; padding:0 24px;
-    max-width:1100px;
+    max-width:1180px;
   }
   .hero-meta{
     display:inline-flex; align-items:center; gap:10px;
@@ -136,10 +136,11 @@
   .hero h1{
     font-family:'Space Grotesk',sans-serif;
     font-weight:500;
-    font-size:clamp(32px, 4.8vw, 64px);
-    line-height:1.04; letter-spacing:-.02em;
+    font-size:clamp(28px, 3.8vw, 52px);
+    line-height:1.06; letter-spacing:-.02em;
     color:#fff;
-    margin-bottom:18px;
+    margin-bottom:16px;
+    max-width:1100px; margin-left:auto; margin-right:auto;
   }
   .hero h1 .accent{color:var(--orange); font-weight:600}
   .hero h1 .line{display:block; overflow:hidden}
@@ -150,11 +151,36 @@
   @keyframes lineUp{to{transform:translateY(0); opacity:1}}
 
   .hero p.sub{
-    max-width:740px; margin:0 auto;
-    color:var(--ink-2);
-    font-size:clamp(14px,1.15vw,17px); line-height:1.7;
+    max-width:680px; margin:0 auto;
+    color:var(--ink-1);
+    font-size:clamp(14.5px,1.15vw,17px); line-height:1.55;
     opacity:0; transform:translateY(10px);
     animation: fadeUp 1s var(--easing) 1s forwards;
+  }
+
+  /* Hero benefits — 3 highlighted concepts under subtitle */
+  .hero-benefits{
+    display:inline-flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:8px 28px; margin-top:22px;
+    opacity:0; transform:translateY(10px);
+    animation: fadeUp 1s var(--easing) 1.05s forwards;
+  }
+  .hero-benefits .b{
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:clamp(12.5px, .98vw, 14px);
+    letter-spacing:.02em; font-weight:500;
+    color:rgba(255,255,255,.92);
+    padding:7px 0;
+  }
+  .hero-benefits .b svg{color:var(--orange); flex-shrink:0}
+  .hero-benefits .sep{
+    width:4px; height:4px; border-radius:50%;
+    background:rgba(255,255,255,.25);
+  }
+  @media (max-width:640px){
+    .hero-benefits{flex-direction:column; gap:6px; margin-top:18px}
+    .hero-benefits .sep{display:none}
+    .hero-benefits .b{font-size:13px}
   }
   .hero-cta{
     margin-top:30px; display:inline-flex; align-items:center; gap:14px;
@@ -182,22 +208,7 @@
   }
   .btn-ghost:hover{border-color:#fff}
 
-  .hero-badges{
-    position:absolute; left:0; right:0; bottom:0; z-index:3;
-    display:flex; justify-content:space-between; align-items:center; gap:24px;
-    padding:16px 44px;
-    border-top:1px solid rgba(255,255,255,.08);
-    background:#0a0c0f;
-    font-size:14px; letter-spacing:.06em; color:rgba(255,255,255,.94); font-weight:500;
-    opacity:0; animation: fadeUp 1s var(--easing) 1.4s forwards;
-    will-change:opacity, transform;
-  }
-  /* Soft dark fade above badges so transition from hero looks intentional */
-  .hero-badges::before{
-    content:''; position:absolute; left:0; right:0;
-    bottom:100%; height:110px; pointer-events:none;
-    background:linear-gradient(180deg, rgba(10,12,15,0) 0%, rgba(10,12,15,.92) 100%);
-  }
+  /* hero-badges removido: los beneficios ahora viven en .benefits-strip debajo del hero */
   .hero-badges .left, .hero-badges .right{display:flex; align-items:center; gap:22px}
   .hero-badges .sep{width:1px; height:18px; background:rgba(255,255,255,.18)}
   .hero-badges .dot-accent{
@@ -205,18 +216,93 @@
     background:var(--orange); box-shadow:0 0 10px rgba(255,106,26,.55);
     margin-right:10px; vertical-align:middle;
   }
-  @media (max-width:900px){
-    .hero-badges{flex-direction:column; gap:10px; padding:14px 22px; font-size:12.5px; text-align:center}
-    .hero-badges .left, .hero-badges .right{flex-wrap:wrap; justify-content:center; gap:14px}
-    .hero-badges::before{height:80px}
-  }
-  @media (max-width:560px){
-    .hero-badges{padding:12px 18px; font-size:11.5px}
-    .hero-badges .left, .hero-badges .right{gap:10px}
-    .hero-badges .sep{display:none}
-  }
 
   @keyframes fadeUp{to{opacity:1; transform:translateY(0)}}
+
+  /* ==== BENEFITS STRIP — 4 cards horizontales debajo del Hero ==== */
+  .benefits-strip{
+    position:relative; overflow:hidden;
+    background:#0d1117;
+    border-top:1px solid rgba(255,255,255,.04);
+  }
+  /* Transición suave desde la imagen del hero a la sección oscura */
+  .benefits-strip::before{
+    content:''; position:absolute; left:0; right:0; top:-1px;
+    height:80px; pointer-events:none; z-index:1;
+    background:linear-gradient(180deg, rgba(10,12,15,.85) 0%, rgba(13,17,23,0) 100%);
+  }
+  .benefits-inner{
+    position:relative; z-index:2;
+    max-width:var(--container); margin:0 auto;
+    padding:90px 32px;
+  }
+  .benefits-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;
+  }
+  .benefit-card{
+    position:relative;
+    padding:36px 30px;
+    background:rgba(255,255,255,.015);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:14px;
+    display:flex; flex-direction:column; gap:14px;
+    transition: background .35s var(--easing), border-color .35s var(--easing), transform .4s var(--easing);
+  }
+  .benefit-card::before{
+    content:''; position:absolute; left:0; top:0; height:2px; width:0;
+    background:var(--orange);
+    transition: width .55s var(--easing);
+  }
+  .benefit-card:hover{
+    background:rgba(255,255,255,.03);
+    border-color:rgba(255,106,26,.28);
+    transform:translateY(-4px);
+  }
+  .benefit-card:hover::before{width:70%}
+  .benefit-card .bc-ic{
+    width:52px; height:52px; border-radius:12px;
+    background:linear-gradient(135deg, rgba(255,106,26,.18), rgba(255,106,26,.04));
+    border:1px solid rgba(255,106,26,.28);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--orange-2);
+    margin-bottom:10px;
+    transition: background .35s, transform .35s var(--easing);
+  }
+  .benefit-card:hover .bc-ic{
+    background:linear-gradient(135deg, rgba(255,106,26,.28), rgba(255,106,26,.08));
+    transform:scale(1.04);
+  }
+  .benefit-card h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(17px, 1.4vw, 20px); font-weight:600;
+    color:#ffffff; letter-spacing:-.01em; line-height:1.2;
+  }
+  .benefit-card p{
+    font-size:clamp(13.5px, 1.05vw, 15px);
+    color:var(--ink-2); line-height:1.55;
+  }
+
+  /* Responsive */
+  @media (max-width:1024px){
+    .benefits-grid{grid-template-columns:repeat(2, 1fr); gap:18px}
+    .benefits-inner{padding:80px 28px}
+  }
+  @media (max-width:640px){
+    .benefits-inner{padding:60px 0 60px}
+    .benefits-grid{
+      display:flex; grid-template-columns:none;
+      gap:14px; overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding:0 20px 12px;
+      -webkit-overflow-scrolling:touch;
+    }
+    .benefits-grid::-webkit-scrollbar{display:none}
+    .benefit-card{
+      flex:0 0 78%; min-width:240px;
+      scroll-snap-align:start;
+      padding:28px 24px;
+    }
+  }
 
   /* ==== SECTION HEADERS ==== */
   .section{position:relative; padding:170px 24px 130px; overflow:hidden}
@@ -1212,7 +1298,7 @@
     <a href="#proceso">Proceso</a>
     <a href="#contacto">Contacto</a>
   </div>
-  <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20recibir%20una%20propuesta%20para%20un%20campamento%20modular." target="_blank" rel="noopener" class="nav-cta">
+  <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20recibir%20una%20propuesta%20para%20una%20urbanizaci%C3%B3n%20modular." target="_blank" rel="noopener" class="nav-cta">
     <svg class="wa-ico" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.3-.7.1-1-.5-2-1.2-2.8-2.1-.7-.8-1.3-1.6-1.7-2.4-.1-.2-.1-.4.1-.6l.9-1c.2-.2.2-.5.1-.7l-1-2.2c-.2-.3-.5-.5-.9-.4l-1.8.4c-.4.1-.6.4-.6.8 0 4.5 4.6 9.1 9.1 9.1.4 0 .7-.2.8-.6l.4-1.8c.1-.4-.1-.7-.4-.9zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
     <span class="nav-cta-label">Cotizar por WhatsApp</span>
   </a>
@@ -1228,13 +1314,14 @@
     <div class="hero-meta"><span class="dot"></span> Vaca Muerta · Neuquén · Argentina</div>
     <img src="./imagenes/Logo%20Pric%20transparente.png" alt="PRIC Construcciones" class="hero-logo" id="heroLogo"/>
     <h1>
-      <span class="line"><span>SOLUCIONES URBANÍSTICAS</span></span>
-      <span class="line"><span>MODULARES PARA</span></span>
-      <span class="line"><span><span class="accent">OPERACIONES</span> ENERGÉTICAS</span></span>
+      <span class="line"><span>URBANIZACIONES</span></span>
+      <span class="line"><span><span class="accent">MODULARES</span> Y <span class="accent">TRANSPORTABLES</span></span></span>
+      <span class="line"><span>PARA OPERACIONES ENERGÉTICAS</span></span>
     </h1>
     <p class="sub">
-      Desarrollamos infraestructura integral para alojamientos temporales y permanentes
-      de personal operativo en petróleo, gas, minería y grandes proyectos industriales.
+      Urbanizaciones llave en mano para petróleo, gas, minería y grandes proyectos
+      industriales. Diseñadas para <strong style="color:#fff; font-weight:600">instalarse,
+      trasladarse y reutilizarse</strong>.
     </p>
     <div class="hero-cta">
       <a href="#soluciones" class="btn-primary">
@@ -1243,23 +1330,50 @@
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
-      <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20recibir%20una%20propuesta%20para%20un%20campamento%20modular." target="_blank" rel="noopener" class="btn-ghost">
+      <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20recibir%20una%20propuesta%20para%20una%20urbanizaci%C3%B3n%20modular." target="_blank" rel="noopener" class="btn-ghost">
         <svg class="wa-ico" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.3-.7.1-1-.5-2-1.2-2.8-2.1-.7-.8-1.3-1.6-1.7-2.4-.1-.2-.1-.4.1-.6l.9-1c.2-.2.2-.5.1-.7l-1-2.2c-.2-.3-.5-.5-.9-.4l-1.8.4c-.4.1-.6.4-.6.8 0 4.5 4.6 9.1 9.1 9.1.4 0 .7-.2.8-.6l.4-1.8c.1-.4-.1-.7-.4-.9zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
         WhatsApp
       </a>
     </div>
   </div>
 
-  <div class="hero-badges">
-    <div class="left">
-      <span><span class="dot-accent"></span>EPC · Infraestructura integral</span>
-      <span class="sep"></span>
-      <span>Llave en mano</span>
-    </div>
-    <div class="right">
-      <span>Desde 5 hasta +500 personas</span>
-      <span class="sep"></span>
-      <span>Con el respaldo de PRIC Construcciones</span>
+</section>
+
+<!-- ============ BENEFICIOS · 4 CARDS HORIZONTALES ============ -->
+<section class="benefits-strip">
+  <div class="benefits-inner">
+    <div class="benefits-grid">
+      <article class="benefit-card reveal">
+        <div class="bc-ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6.6 6.6a1.4 1.4 0 0 0 2 2l6.6-6.6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5z"/></svg>
+        </div>
+        <h4>Llave en mano</h4>
+        <p>Desde la ingeniería hasta la puesta en marcha de la urbanización.</p>
+      </article>
+
+      <article class="benefit-card reveal delay-1">
+        <div class="bc-ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="13" height="10" rx="1"/><path d="M14 10h4l3 3v4h-7M6 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+        </div>
+        <h4>Infraestructura transportable</h4>
+        <p>Diseñada para desmontarse, trasladarse y volver a operar rápidamente.</p>
+      </article>
+
+      <article class="benefit-card reveal delay-2">
+        <div class="bc-ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
+        </div>
+        <h4>Escalable</h4>
+        <p>Desde 5 módulos hasta complejos de más de 100 módulos.</p>
+      </article>
+
+      <article class="benefit-card reveal delay-3">
+        <div class="bc-ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5M21 12a9 9 0 0 1-9 9M21 12V7h-5"/></svg>
+        </div>
+        <h4>Reutilizable</h4>
+        <p>Preparada para múltiples proyectos y ciclos operativos.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -1270,8 +1384,8 @@
 
     <div class="sol-head">
       <div class="reveal">
-        <div class="eyebrow"><span class="ln"></span> Soluciones integrales PRIC</div>
-        <h2 class="h-display">CAMPAMENTOS<br/>MODULARES<br/>LLAVE EN MANO</h2>
+        <div class="eyebrow"><span class="ln"></span> Urbanizaciones integrales PRIC</div>
+        <h2 class="h-display">URBANIZACIONES<br/>MODULARES<br/>LLAVE EN MANO</h2>
       </div>
       <div class="right reveal delay-1">
         <p class="lead">
@@ -1286,7 +1400,7 @@
     <!-- VISUAL SHOWCASE -->
     <div class="visual-showcase reveal">
       <div class="vs-frame">
-        <img src="./imagenes/imagen%201.png" alt="Campamento modular en Vaca Muerta" />
+        <img src="./imagenes/imagen%201.png" alt="Urbanización modular PRIC en Vaca Muerta" />
         <div class="vs-tags">
           <span class="vs-tag accent">INFRAESTRUCTURA INTEGRAL</span>
           <span class="vs-tag">URBANIZACIÓN</span>
@@ -1376,10 +1490,11 @@
         <h2 class="h-display">SISTEMAS<br/>MODULARES<br/>ESCALABLES</h2>
       </div>
       <p class="lead">
-        Cada proyecto es diferente. Por eso desarrollamos campamentos modulares que pueden
+        Cada proyecto es diferente. Por eso diseñamos urbanizaciones modulares que pueden
         comenzar con unas pocas unidades y crecer progresivamente hasta convertirse en
         complejos habitacionales completos para cientos de trabajadores. Nuestra arquitectura
-        modular permite ampliar la capacidad sin interrumpir la operación.
+        permite ampliar la capacidad sin interrumpir la operación, y reubicar la infraestructura
+        cuando finaliza una etapa.
       </p>
     </div>
 
@@ -1445,7 +1560,7 @@
         </div>
         <div class="pq-body">
           <h3>100 Módulos</h3>
-          <p class="desc">Campamentos completos para grandes operaciones petroleras, gasíferas, mineras o proyectos de infraestructura de larga duración.</p>
+          <p class="desc">Urbanizaciones completas para grandes operaciones petroleras, gasíferas, mineras o proyectos de infraestructura de larga duración.</p>
           <ul class="pq-list">
             <li>Módulos habitacionales · Oficinas</li>
             <li>SUM · Comedor industrial</li>
@@ -1532,7 +1647,7 @@
       <h2 class="h-display">DIFERENCIALES<br/>OPERATIVOS</h2>
       <p class="lead">
         Combinamos ingeniería, construcción industrializada y experiencia regional
-        para entregar campamentos operativos al más alto estándar internacional.
+        para entregar urbanizaciones operativas al más alto estándar internacional.
       </p>
     </div>
 
@@ -1606,7 +1721,7 @@
     <div class="proc-grid">
       <div class="proc-img reveal">
         <img src="./imagenes/imagen%203.png" alt="Comedor y áreas comunes PRIC"/>
-        <div class="badge"><span class="pulse"></span> Campamento operativo · 24/7</div>
+        <div class="badge"><span class="pulse"></span> Urbanización operativa · 24/7</div>
       </div>
 
       <ol class="steps reveal delay-1">
@@ -1658,14 +1773,14 @@
   <div class="cta-overlay"></div>
 
   <div class="cta-content reveal">
-    <div class="eyebrow"><span class="ln"></span> Su próximo campamento operativo</div>
-    <h2>DESARROLLEMOS<br/>SU PRÓXIMO<br/><span style="color:var(--orange)">CAMPAMENTO OPERATIVO</span></h2>
+    <div class="eyebrow"><span class="ln"></span> Su próxima urbanización operativa</div>
+    <h2>DESARROLLEMOS<br/>SU PRÓXIMA<br/><span style="color:var(--orange)">URBANIZACIÓN OPERATIVA</span></h2>
     <p class="sub">
       Desde 50 hasta más de 500 personas. Urbanización completa, infraestructura
       y alojamiento en una única solución, entregada por un único interlocutor.
     </p>
     <div class="cta-actions">
-      <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20recibir%20una%20propuesta%20para%20un%20campamento%20modular%20en%20Vaca%20Muerta." target="_blank" rel="noopener" class="btn-primary">
+      <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20recibir%20una%20propuesta%20para%20una%20urbanizaci%C3%B3n%20modular%20en%20Vaca%20Muerta." target="_blank" rel="noopener" class="btn-primary">
         <svg class="wa-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.3-.7.1-1-.5-2-1.2-2.8-2.1-.7-.8-1.3-1.6-1.7-2.4-.1-.2-.1-.4.1-.6l.9-1c.2-.2.2-.5.1-.7l-1-2.2c-.2-.3-.5-.5-.9-.4l-1.8.4c-.4.1-.6.4-.6.8 0 4.5 4.6 9.1 9.1 9.1.4 0 .7-.2.8-.6l.4-1.8c.1-.4-.1-.7-.4-.9zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
         Cotizar por WhatsApp
         <span class="arr">
@@ -1693,7 +1808,7 @@
           <div style="font-size:10px; letter-spacing:.32em; color:var(--ink-3); text-transform:uppercase">Construcciones</div>
         </div>
       </div>
-      <p>Desarrollamos campamentos modulares completos, llave en mano, para petróleo, gas, minería, energía e infraestructura. Sede en Córdoba — operamos en todo el territorio argentino, con foco comercial en proyectos de Vaca Muerta.</p>
+      <p>Desarrollamos urbanizaciones modulares y transportables, llave en mano, para petróleo, gas, minería, energía e infraestructura. Sede en Córdoba — operamos en todo el territorio argentino, con foco comercial en proyectos de Vaca Muerta.</p>
     </div>
 
     <div class="foot-col">
@@ -1767,13 +1882,6 @@
     if(heroContent){
       heroContent.style.opacity = 1 - progress * 1.1;
       heroContent.style.transform = `translateY(${progress * 40}px)`;
-    }
-    const heroBadges = document.querySelector('.hero-badges');
-    if(heroBadges){
-      // Fade out badges faster than content so button never blurs through
-      const badgeProgress = Math.min(1, progress * 2.2);
-      heroBadges.style.opacity = 1 - badgeProgress;
-      heroBadges.style.transform = `translateY(${badgeProgress * 30}px)`;
     }
   }, {passive:true});
 
@@ -1884,7 +1992,7 @@
       pkgCode: 'CONFIGURACIÓN · 03',
       title: 'Sistema modular de<br/><span class="accent">100 Módulos</span>',
       shortTitle: 'Configuración 100 Módulos',
-      desc: 'Campamentos completos para grandes operaciones petroleras, gasíferas, mineras o proyectos de infraestructura de larga duración. Complejo habitacional integral con todos los servicios.',
+      desc: 'Urbanizaciones completas para grandes operaciones petroleras, gasíferas, mineras o proyectos de infraestructura de larga duración. Complejo habitacional integral con todos los servicios.',
       side: [
         ['Módulos', '100 unidades'],
         ['Capacidad aprox.', 'Hasta 600 personas'],
@@ -2167,9 +2275,9 @@
       <section class="m-cta">
         <div class="mh-tag" style="justify-content:center; display:inline-flex"><span class="ln"></span> Configuración personalizada</div>
         <h3>¿Necesita una<br/>configuración diferente?</h3>
-        <p>Diseñamos campamentos modulares completamente personalizados para su operación, dotación, ubicación geográfica y estándares QHSE específicos.</p>
+        <p>Diseñamos urbanizaciones modulares completamente personalizadas para su operación, dotación, ubicación geográfica y estándares QHSE específicos.</p>
         <div class="actions">
-          <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20una%20propuesta%20personalizada%20para%20un%20campamento%20modular." target="_blank" rel="noopener" class="btn-primary">
+          <a href="https://wa.me/5493513228452?text=Hola%20PRIC%2C%20quisiera%20una%20propuesta%20personalizada%20para%20una%20urbanizaci%C3%B3n%20modular." target="_blank" rel="noopener" class="btn-primary">
             <svg class="wa-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.3-.7.1-1-.5-2-1.2-2.8-2.1-.7-.8-1.3-1.6-1.7-2.4-.1-.2-.1-.4.1-.6l.9-1c.2-.2.2-.5.1-.7l-1-2.2c-.2-.3-.5-.5-.9-.4l-1.8.4c-.4.1-.6.4-.6.8 0 4.5 4.6 9.1 9.1 9.1.4 0 .7-.2.8-.6l.4-1.8c.1-.4-.1-.7-.4-.9zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
             Cotizar por WhatsApp
             <span class="arr">
