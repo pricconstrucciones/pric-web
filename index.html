@@ -456,10 +456,13 @@
   @media (max-width:760px){ .respaldo{padding:90px 0;} }
   .respaldo-grid{display:grid; grid-template-columns:.85fr 1fr .85fr; gap:clamp(20px,4vw,50px); align-items:center;}
   @media (max-width:980px){.respaldo-grid{grid-template-columns:1fr; gap:40px;}}
+  /* min-width:0 evita que el número no-partible fuerce overflow de la columna del grid en anchos intermedios (~900-980px) */
+  .respaldo-grid > div:first-child{min-width:0;}
   .respaldo-num{
     font-family:var(--font-display); font-weight:700; letter-spacing:-.03em;
     font-size:clamp(120px,15vw,230px); line-height:.8; color:var(--carbon);
-    margin-left:clamp(-12px,-2vw,-20px);
+    margin-left:clamp(-20px,-2vw,-12px);
+    max-width:100%; overflow-wrap:anywhere;
   }
   .respaldo-num .u{display:block; font-family:var(--font-label); font-size:14px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--copper); margin-top:14px;}
   .respaldo-text p{font-size:16.5px; line-height:1.7; color:#3c3f3a; margin-bottom:14px; max-width:44ch;}
@@ -532,7 +535,7 @@
   input:focus, select:focus, textarea:focus{outline:none; border-color:var(--copper);}
   input.invalid, select.invalid{border-color:#d9695a;}
   textarea{resize:vertical; min-height:90px; padding-top:12px;}
-  select{appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%237B7D78'/></svg>"); background-repeat:no-repeat; background-position:right 4px center;}
+  select{-webkit-appearance:none; -moz-appearance:none; appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%237B7D78'/></svg>"); background-repeat:no-repeat; background-position:right 4px center;}
   select option{color:#111;}
   .cf-err{font-size:11.5px; color:#e08a7d; min-height:14px;}
   .cf-submit-row{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
@@ -555,6 +558,16 @@
     border-top:1px solid var(--line-on-dark); padding-top:24px;
     font-family:var(--font-label); font-size:11.5px; letter-spacing:.04em; color:rgba(239,234,226,.35);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ============ FIXES RESPONSIVE ============
+     Los ítems de un CSS Grid no se achican por debajo del tamaño de su
+     contenido por defecto (min-width:auto), lo que puede forzar overflow
+     horizontal oculto (por el overflow-x:hidden del body) en anchos
+     intermedios. Se neutraliza sin alterar el diseño visual. */
+  .quien-grid > *, .vert-grid > *, .respaldo-grid > *, .caso-row > *,
+  .contacto-grid > *, .cf-row > *, .foot-grid > *{
+    min-width:0;
   }
 
   /* ============ BACK TO TOP ============ */
