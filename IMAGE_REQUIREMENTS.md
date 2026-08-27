@@ -18,11 +18,11 @@ consistencia de producto, no solo nombres de archivo.
 
 | # | Hallazgo | Tipo | Prioridad |
 |---|----------|------|-----------|
-| IMG-01 | Vertical **Corporativo** sin imagen (placeholder activo) | Falta | Alta |
+| IMG-01 | Vertical **Corporativo** — **resuelto 2026-08-27**, se reubicó ahí la foto de equipo que antes estaba en IMG-05 | Resuelto | — |
 | IMG-02 | `vertical-civil.png` referenciada en ruta rota (imagen existe, está mal ubicada) | Bug de ruta | Alta |
 | IMG-03 | `caso-mineria-san-juan.png` referenciada en ruta rota (ídem) | Bug de ruta | Alta |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
-| IMG-05 | Bloque "Quiénes somos" — **resuelto 2026-08-27**, foto de equipo agregada | Resuelto | — |
+| IMG-05 | Bloque "Quiénes somos" — vuelve a estar sin imagen (ver nota abajo) | Falta | Media |
 | IMG-06 | Carrusel de 11 clientes — **resuelto 2026-08-27**, los 11 logos se encontraron y se incorporaron | Resuelto | — |
 | IMG-07 | Card "Turismo y hospitality" de Posibles Proyectos — **resuelto 2026-08-27**, imagen reemplazada por una nueva generada a medida | Resuelto | — |
 | IMG-08 | Assets sin usar en `imagenes/` (11 archivos) — varios de altísima calidad, hoy desperdiciados | Oportunidad / limpieza | Baja–Media |
@@ -36,40 +36,21 @@ sin necesidad de encargar fotografía nueva.
 
 ---
 
-## IMG-01
+## IMG-01 — RESUELTO (2026-08-27)
 
 **Sección:** Vertical Corporativo (dentro de "Nuestras verticales")
 **Uso:** Fondo de card — panel 03/03 "CORPORATIVO"
-**Imagen actual:** Falta. El HTML tiene un placeholder explícito activo:
-`<div class="ph"><span>Imagen real pendiente</span></div>` (el propio código
-ya marca este hueco).
-**Imagen propuesta:** Dos caminos posibles:
-1. **Reusar un asset ya existente y sin usar** (`imagenes/300 personas.png` o
-   `imagenes/imagen 3.png`) — ambas son fotografía aérea/interior real de
-   altísima calidad de un campamento modular a gran escala, con foco en
-   escala/capacidad e instalaciones comunes (comedor, oficinas), lo cual
-   comunica muy bien "trayectoria, capacidad técnica" sin necesidad de
-   fotografía nueva.
-2. Si PRIC prefiere algo más institucional (marca, no proyecto): foto de
-   equipo/oficina central de PRIC Construcciones.
-**Arquitectura / producto:** Si se usa la opción 1: complejo modular de
-decenas de unidades tipo contenedor blanco, edificio central de usos
-comunes, en entorno industrial/desértico, escala grande (+50 unidades).
-**Encuadre:** Aérea / dron, vista general del conjunto (ya cumplido por las
-opciones propuestas).
-**Relación de aspecto:** El panel no tiene `aspect-ratio` fijo — el
-`.media-frame` cubre absolutamente un contenedor de `min-height:560px`
-(3 columnas ≈420px de ancho en desktop, ancho completo apilado en mobile).
-Subir en una relación cercana a **4:5 o 3:4** para que el `object-fit:cover`
-no recorte mal ni en desktop ni en mobile.
-**Resolución recomendada:** mínimo 1600×2000px (o el archivo original si es
-mayor).
-**Tratamiento visual:** Ya coincide con el resto del sitio: fotografía real,
-tonos cálidos de atardecer/dusk, paisaje árido, misma familia visual que
-`vertical-empresas.png` y `respaldo-pric-construcciones.png`.
-**Texto alternativo propuesto:** "Campamento modular PRIC HOUSE de gran
-escala, vista aérea, mostrando la capacidad técnica del sistema."
-**Prioridad:** Alta (es el único hueco visual explícito y visible del sitio).
+**Actualización:** se reubicó acá la foto que originalmente se había puesto
+en el bloque "Quiénes somos" (ver IMG-05) — tres personas caminando entre
+unidades modulares blancas al atardecer, cordillera de fondo. El usuario
+pidió moverla porque encajaba mejor con el argumento de Corporativo
+("capacidad técnica y estructura corporativa") que con "Quiénes somos".
+Reemplaza el placeholder `<div class="ph">Imagen real pendiente</div>` que
+tenía el panel. Archivo: `imagenes/corporativo-equipo.jpg` (renombrado desde
+`quienes-somos-equipo.jpg` para reflejar su nuevo destino).
+**Texto alternativo aplicado:** "Equipo de PRIC HOUSE recorriendo un
+campamento modular, capacidad operativa del sistema."
+**Prioridad:** Resuelta.
 
 ---
 
@@ -154,25 +135,28 @@ decorativo, sin `<img>`/`alt`).
 
 ---
 
-## IMG-05 — RESUELTO (2026-08-27)
+## IMG-05
 
 **Sección:** Clientes / Validación — bloque "Quiénes somos"
-**Uso:** Foto de apoyo del bloque (antes solo eyebrow + título + párrafo)
-**Actualización:** el usuario proveyó una foto generada a medida (3 fotos en
-total, ver también IMG-07) — tres operarios caminando entre unidades
-modulares blancas al atardecer, cordillera de fondo. Dimensiones originales
-1122×1402px (relación 4:5 exacta, coincide con la clase `.media-frame--4-5`
-que ya usa el sitio). Se agregó como `imagenes/quienes-somos-equipo.jpg`,
-en un contenedor nuevo `.quienes-media` (max-width 320px, centrado) entre
-el párrafo y el sub-bloque "Experiencia", sin alterar el resto del layout
-de la sección.
-**Optimización aplicada:** el archivo original (PNG, 2.1MB) se redujo a
-800×1000px y se reconvirtió a JPEG calidad 85 → 134KB, sin pérdida visible
-(es una fotografía, no un logo con áreas de color plano — JPEG comprime
-mucho mejor que PNG para este tipo de contenido).
-**Texto alternativo aplicado:** "Equipo de PRIC HOUSE caminando entre
-unidades modulares al atardecer".
-**Prioridad:** Resuelta.
+**Uso:** Foto de apoyo del bloque (eyebrow + título + párrafo)
+**Historial:** el 2026-08-27 se había agregado acá una foto (tres operarios
+caminando entre unidades modulares blancas, atardecer) que el usuario
+proveyó generada a medida. Más tarde, el mismo día, se decidió mover esa
+foto al panel Corporativo en su lugar (ver IMG-01) porque encajaba mejor
+con ese argumento. El contenedor `.quienes-media` que se había creado para
+alojarla se quitó del CSS. El bloque "Quiénes somos" volvió a ser solo
+texto (eyebrow + título + párrafo), como estaba antes de esa foto.
+**Imagen propuesta:** Sigue siendo válida la recomendación original — una
+foto de equipo/personas trabajando (no solo edificios). Candidatos ya
+existentes sin usar en el repo: `imagenes/imagen 3.png` (interior nocturno
+con equipo comiendo/reunido) o `imagenes/ChatGPT Image 14 ago 2026,
+11_53_02 a.m. (2).png` (dos operarios caminando junto a unidades
+modulares). También puede generarse una nueva con el mismo prompt usado
+para la foto de IMG-01/IMG-07 (ver sección "Prompts de generación").
+**Relación de aspecto:** 4:5 o 1:1, para un layout centrado como el de
+esta sección.
+**Prioridad:** Media — es una mejora, no un hueco bloqueante (la sección
+funciona bien solo con texto, como confirma su estado actual).
 
 ---
 
