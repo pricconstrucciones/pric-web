@@ -1,9 +1,10 @@
 # Inventario de imágenes — PRIC HOUSE
 
-Auditoría visual de `index.html` realizada el 2026-08-27. Incluye únicamente
-detección y recomendaciones — **no se agregó ni se referenció ninguna imagen
-nueva en el HTML**. Los cambios de código de esta actualización (email,
-WhatsApp, sección "Posibles proyectos") no dependen de nada de lo listado acá.
+Auditoría visual de `index.html`, iniciada el 2026-08-27 como detección y
+recomendaciones únicamente. Desde entonces se fueron resolviendo huecos a
+medida que aparecieron assets reales (carrusel de logos, foto de "Quiénes
+somos", card de Turismo) — cada sección de abajo indica si sigue pendiente
+o ya se resolvió, y cuándo.
 
 ## Metodología
 
@@ -21,9 +22,9 @@ consistencia de producto, no solo nombres de archivo.
 | IMG-02 | `vertical-civil.png` referenciada en ruta rota (imagen existe, está mal ubicada) | Bug de ruta | Alta |
 | IMG-03 | `caso-mineria-san-juan.png` referenciada en ruta rota (ídem) | Bug de ruta | Alta |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
-| IMG-05 | Bloque "Quiénes somos" (sección Validación) sin imagen de apoyo | Mejora | Media |
+| IMG-05 | Bloque "Quiénes somos" — **resuelto 2026-08-27**, foto de equipo agregada | Resuelto | — |
 | IMG-06 | Carrusel de 11 clientes — **resuelto 2026-08-27**, los 11 logos se encontraron y se incorporaron | Resuelto | — |
-| IMG-07 | Card "Turismo y hospitality" de Posibles Proyectos: a confirmar línea de producto | A confirmar | Media |
+| IMG-07 | Card "Turismo y hospitality" de Posibles Proyectos — **resuelto 2026-08-27**, imagen reemplazada por una nueva generada a medida | Resuelto | — |
 | IMG-08 | Assets sin usar en `imagenes/` (11 archivos) — varios de altísima calidad, hoy desperdiciados | Oportunidad / limpieza | Baja–Media |
 
 **El hallazgo más importante no es una imagen que falta, sino imágenes que ya
@@ -153,32 +154,25 @@ decorativo, sin `<img>`/`alt`).
 
 ---
 
-## IMG-05
+## IMG-05 — RESUELTO (2026-08-27)
 
-**Sección:** Clientes / Validación — bloque nuevo "Quiénes somos" (agregado
-en la actualización anterior)
-**Uso:** Actualmente es solo texto (eyebrow + título + párrafo), sin imagen
-de apoyo, a diferencia de casi todas las demás secciones del sitio.
-**Imagen actual:** No existe ninguna en este bloque específico (nunca la
-tuvo — es contenido nuevo).
-**Imagen propuesta:** Una foto de equipo/personas trabajando (no solo
-edificios), para reforzar el mensaje "20 años de experiencia, puestos al
-servicio de soluciones reales". Candidato ya existente sin usar:
-`imagenes/imagen 3.png` (interior nocturno con equipo comiendo/reunido) o
-`imagenes/ChatGPT Image 14 ago 2026, 11_53_02 a.m. (2).png` (dos operarios
-caminando junto a unidades modulares).
-**Arquitectura / producto:** Personas + unidades modulares en un mismo
-encuadre (para transmitir "equipo", no solo "producto").
-**Encuadre:** Vista a nivel humano, con personas visibles (distinto al resto
-del sitio, que es mayormente aéreo/arquitectónico puro).
-**Relación de aspecto:** 4:5 o 1:1, para funcionar bien en un layout
-centrado como el de esta sección.
-**Resolución recomendada:** 1600×2000px o similar.
-**Tratamiento visual:** Mismos tonos cálidos/dusk del resto del sitio.
-**Texto alternativo propuesto:** "Equipo PRIC HOUSE trabajando junto a
-unidades modulares en obra."
-**Prioridad:** Media — es una mejora, no un hueco preexistente (la sección
-es nueva y nunca tuvo imagen prevista en el diseño original).
+**Sección:** Clientes / Validación — bloque "Quiénes somos"
+**Uso:** Foto de apoyo del bloque (antes solo eyebrow + título + párrafo)
+**Actualización:** el usuario proveyó una foto generada a medida (3 fotos en
+total, ver también IMG-07) — tres operarios caminando entre unidades
+modulares blancas al atardecer, cordillera de fondo. Dimensiones originales
+1122×1402px (relación 4:5 exacta, coincide con la clase `.media-frame--4-5`
+que ya usa el sitio). Se agregó como `imagenes/quienes-somos-equipo.jpg`,
+en un contenedor nuevo `.quienes-media` (max-width 320px, centrado) entre
+el párrafo y el sub-bloque "Experiencia", sin alterar el resto del layout
+de la sección.
+**Optimización aplicada:** el archivo original (PNG, 2.1MB) se redujo a
+800×1000px y se reconvirtió a JPEG calidad 85 → 134KB, sin pérdida visible
+(es una fotografía, no un logo con áreas de color plano — JPEG comprime
+mucho mejor que PNG para este tipo de contenido).
+**Texto alternativo aplicado:** "Equipo de PRIC HOUSE caminando entre
+unidades modulares al atardecer".
+**Prioridad:** Resuelta.
 
 ---
 
@@ -247,33 +241,30 @@ pantalla.
 
 ---
 
-## IMG-07 — atención especial (pedida en el punto 7 del pedido)
+## IMG-07 — RESUELTO (2026-08-27)
 
 **Sección:** Posibles Proyectos — card 03, "Turismo y hospitality"
 **Uso:** Foto de la card
-**Imagen actual:** Existe (`caso-turismo-cordoba.png`) y carga correctamente
-(no es un bug de ruta). Al revisarla junto al resto de las fotos del sitio
-encontré algo que vale la pena que el equipo confirme: **el sitio parece
-mostrar dos líneas de producto visualmente distintas** —
-1. Una línea "industrial": unidades contenedor blancas/metálicas (usada en
-   `vertical-empresas.png`, `caso-vaca-muerta.png`, `caso-mineria-san-juan.png`,
-   y en los assets sin usar de IMG-08).
-2. Una línea "residencial": revestimiento en madera oscura, marco negro,
-   estética tipo tiny-house/glamping (usada en `vertical-civil.png` y en
-   `caso-turismo-cordoba.png`).
+**Actualización:** el usuario proveyó una foto nueva generada a medida
+(cluster de cabañas con revestimiento de madera oscura y marco negro,
+integradas a un entorno de lomas verdes con árboles, luz de atardecer) que
+reemplazó a `caso-turismo-cordoba.png` en el mismo archivo/ruta (no hizo
+falta tocar el HTML). Dimensiones originales 1672×941px — 16:9 exacto,
+coincide con `.media-frame--16-9` que ya usaba esta card. El `alt` existente
+("Complejo turístico de viviendas modulares PRIC HOUSE integrado al paisaje
+serrano de Córdoba") se revisó y sigue siendo preciso para la nueva imagen,
+no se modificó.
 
-Si ambas son líneas de producto reales de PRIC HOUSE (residencial vs.
-industrial), esto es completamente coherente y no hay que tocar nada — de
-hecho refuerza bien la idea de "un mismo sistema, distintas aplicaciones".
-Si en cambio la línea de madera **no** es un producto PRIC HOUSE real
-(por ejemplo, si es una imagen de stock/referencia), conviene reemplazarla
-antes de publicar, porque el copy nuevo de esta card ya no dice "caso real"
-pero sigue implicando que es el sistema PRIC HOUSE aplicado a turismo.
-**Imagen propuesta (si hace falta reemplazo):** La misma línea de
-contenedores blancos que el resto del sitio, en una configuración/entorno
-de tipo turístico (cabañas agrupadas, parque, zona de estar exterior).
-**Prioridad:** Media — es una pregunta de contenido/verificación, no un bug
-técnico.
+**Sobre la pregunta abierta que dejé antes** (¿la línea de madera es un
+producto PRIC HOUSE real o no?): al recibir una imagen nueva generada
+específicamente en esa misma línea de revestimiento de madera (en vez de
+la línea de contenedores blancos que yo había sugerido en el prompt de
+IMG-07 original), interpreto que **la línea residencial en madera es la
+dirección de diseño confirmada** para Civil/Turismo, y la línea de
+contenedores blancos queda para Empresas/Corporativo/Posibles Proyectos
+industrial. Vale la pena que el equipo lo confirme explícitamente, pero ya
+no lo trato como bloqueante.
+**Prioridad:** Resuelta.
 
 ---
 
@@ -308,8 +299,99 @@ repo, no bloquea nada).
 
 ---
 
+## Prompts de generación (2026-08-27)
+
+> **Actualización posterior (mismo día):** IMG-07 e IMG-05 ya se resolvieron
+> con imágenes generadas a medida que el usuario proveyó directamente (ver
+> sus secciones arriba). Los prompts de abajo quedan como referencia del
+> criterio usado y por si hace falta variantes adicionales. IMG-01 sigue
+> pendiente (puede cubrirse con un asset existente o con el prompt de acá).
+
+Antes de generar nada: **IMG-02, IMG-03 e IMG-04 no necesitan imagen nueva**
+— son archivos que ya existen pero están mal ubicados (raíz del repo en vez
+de `imagenes/`); ahí lo que corresponde es mover el archivo, no generar.
+**IMG-01** e **IMG-05** ya tienen candidatos reales sin usar en el repo
+(ver sección IMG-08) que podrían cubrir el hueco sin generar nada. Los
+prompts de acá abajo son para cuando se prefiera un asset nuevo y a medida
+en vez de reutilizar uno existente, y para **IMG-07**, que es el único caso
+donde no hay ningún asset real disponible en el repo.
+
+Estilo base común, extraído de las fotos reales que ya están en `imagenes/`
+(`50/100/300 personas.png`, `imagen 1/2/3.png`, `vertical-empresas.png`,
+`respaldo-pric-construcciones.png`): fotografía aérea/de drone real (no
+render 3D, no ilustración), luz dorada de atardecer/dusk con cielo en
+degradé naranja a azul, unidades modulares blancas/gris claro con marco de
+puertas y ventanas oscuro, dispuestas en filas ordenadas, paisaje árido con
+montañas o mesetas de fondo, caminos de tierra, cercos perimetrales,
+camionetas estacionadas, postes de luz. Tono editorial/arquitectónico,
+premium, minimalista. Sin texto, sin logos, sin marcas de agua.
+
+### Prompt — IMG-07 (Posibles Proyectos, card "Turismo y hospitality")
+
+Prioridad alta: es la única imagen genuinamente faltante del sitio (ninguna
+imagen actual muestra el sistema real de PRIC HOUSE en un uso turístico).
+
+```
+Aerial drone photograph, golden-hour lighting, of a small boutique
+glamping/lodging complex made of white modular container units with dark
+window and door trim, arranged in a loose cluster (not a rigid grid) among
+the green rolling hills and sparse native trees of the Sierras de Córdoba,
+Argentina. Each unit has a covered wood deck or terrace facing the view.
+Gravel paths connect the units, with simple landscaping (native grasses,
+stone accents). A small shared common area with outdoor seating is
+visible. Warm late-afternoon sunlight, long soft shadows, blue-to-orange
+gradient sky. Photographed from a 3/4 elevated drone angle, wide shot
+showing the units integrated into the landscape. Professional real-estate
+/architectural photography style, sharp focus, high dynamic range,
+realistic — not a 3D render, not an illustration. 16:9 aspect ratio.
+No people in close-up, no text, no logos, no watermark.
+```
+Relación de aspecto: 16:9. Resolución: mínimo 1920×1080px.
+
+### Prompt — IMG-01 (panel Corporativo) — opcional, alternativa a reusar asset existente
+
+```
+Photograph of the central administrative building of a large-scale modular
+camp complex, at dusk/blue hour with warm interior lighting glowing
+through large glass windows. The building is constructed from white
+modular container units combined into a larger structure with a dark
+metal gable roof, glass double-door entrance, and exterior wall-mounted
+lighting. In the background, rows of smaller white modular container
+units (housing/offices) recede into the arid landscape under a darkening
+sky with warm sunset colors on the horizon. A few pickup trucks are
+parked nearby. Vertical 4:5 composition, three-quarter elevated angle.
+Professional architectural photography, realistic, sharp, high dynamic
+range, premium and orderly feel. No people in close-up, no text, no
+logos, no watermark.
+```
+Relación de aspecto: 4:5 o 3:4. Resolución: mínimo 1600×2000px.
+
+### Prompt — IMG-05 (bloque "Quiénes somos") — opcional, alternativa a reusar asset existente
+
+```
+Photograph at human eye level, golden-hour lighting, showing two or three
+people in casual workwear (no visible logos or branding) walking or
+conversing along a gravel path between rows of white modular container
+units, in an arid landscape with distant mountains. Warm low sunlight
+casting long shadows, some units have illuminated windows. Composition is
+candid and natural, not posed for the camera — people mid-stride or in
+conversation, seen from a moderate distance, faces not the focus. Square
+or 4:5 vertical crop. Professional editorial/architectural photography
+style, realistic, warm and premium tone, matching real estate/corporate
+photography. No text, no logos, no watermark, no sharp close-up faces.
+```
+Relación de aspecto: 1:1 o 4:5. Resolución: mínimo 1600×1600px.
+
+---
+
 ## No incluido en este inventario
 
+- **`imagenes/reserva-turismo-cordoba-alt.png`**: tercera foto que el
+  usuario adjuntó junto con las de IMG-05/IMG-07 (mismo cluster de cabañas
+  de madera, pero con una pareja caminando en primer plano). No se usó en
+  ningún lado todavía — queda guardada como variante de reserva por si se
+  quiere reemplazar la card de Turismo por una versión con personas, o
+  usarla en otra sección más adelante.
 - **Logo y variantes** (`Logo Pric...`): fuera de alcance explícito de esta
   auditoría (branding).
 - **Imágenes ya usadas y correctas**: `logo-pric-house.png`,
