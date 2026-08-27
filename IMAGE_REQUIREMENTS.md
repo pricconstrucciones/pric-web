@@ -20,7 +20,7 @@ consistencia de producto, no solo nombres de archivo.
 |---|----------|------|-----------|
 | IMG-01 | Vertical **Corporativo** — **resuelto 2026-08-27**, se reubicó ahí la foto de equipo que antes estaba en IMG-05 | Resuelto | — |
 | IMG-02 | Vertical **Civil** — **resuelto 2026-08-27**, foto nueva + bug de ruta corregido de paso | Resuelto | — |
-| IMG-03 | `caso-mineria-san-juan.png` referenciada en ruta rota (ídem) | Bug de ruta | Alta |
+| IMG-03 | Card "Sector minero" — **resuelto 2026-08-27**, foto nueva + bug de ruta corregido de paso | Resuelto | — |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
 | IMG-05 | Bloque "Quiénes somos" — vuelve a estar sin imagen (ver nota abajo) | Falta | Media |
 | IMG-06 | Carrusel de 11 clientes — **resuelto 2026-08-27**, los 11 logos se encontraron y se incorporaron | Resuelto | — |
@@ -73,25 +73,25 @@ particular"), que sigue siendo preciso para la nueva imagen.
 
 ---
 
-## IMG-03
+## IMG-03 — RESUELTO (2026-08-27)
 
 **Sección:** Posibles Proyectos — card 02, "Sector minero"
-**Uso:** Foto de la card (antes "Base modular... entorno minero de San Juan")
-**Imagen actual:** Mismo problema que IMG-02: `./imagenes/caso-mineria-san-juan.png`
-no existe en `imagenes/`; el archivo real está en la raíz del repo
-(`./caso-mineria-san-juan.png`). Confirmé visualmente: es una foto real y
-coherente (contenedores blancos en entorno de montaña árida), consistente
-con el resto de la línea "industrial" del sitio.
-**Imagen propuesta:** Igual que IMG-02 — mover/copiar el archivo existente,
-no hace falta fotografía nueva.
-**Arquitectura / producto:** Conjunto de ~10 unidades modulares blancas,
-entorno de cordillera/montaña árida.
-**Encuadre:** Aérea/dron, vista general (ya cumplido).
-**Relación de aspecto:** 16:9 (`media-frame--16-9`, ya usado en esta card).
-**Resolución recomendada:** La del archivo actual (ya es de alta resolución).
-**Tratamiento visual:** Correcto, sin cambios.
-**Texto alternativo:** El `alt` actual es preciso, sin cambios necesarios.
-**Prioridad:** Alta — mismo motivo que IMG-02, bug visible hoy.
+**Uso:** Foto de la card ("Bases modulares para operaciones mineras en altura")
+**Actualización:** el usuario proveyó una foto nueva generada a medida
+(conjunto de unidades modulares blancas en un campamento minero de
+montaña, camioneta en primer plano, cordillera de fondo) que reemplazó a
+`caso-mineria-san-juan.png`. Guardada directamente en la ruta correcta
+(`imagenes/caso-mineria-san-juan.png`), lo que de paso corrigió el bug de
+ruta que ya estaba anotado (el archivo vivía suelto en la raíz del repo).
+Se eliminó el archivo huérfano de la raíz. Dimensiones 1672×941px — 16:9
+exacto, coincide con `.media-frame--16-9` que ya usaba esta card. Se
+mantuvo el PNG (2.6MB) sin recomprimir, en línea con el resto de las fotos
+de esta misma grilla de cards (`caso-vaca-muerta.png`, `caso-turismo-cordoba.png`),
+que pesan similar.
+**Texto alternativo:** se mantuvo el `alt` existente ("Base modular PRIC
+HOUSE en entorno minero de montaña, con vehículos y cordillera de fondo"),
+que sigue siendo preciso.
+**Prioridad:** Resuelta.
 
 ---
 
