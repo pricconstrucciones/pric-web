@@ -22,7 +22,7 @@ consistencia de producto, no solo nombres de archivo.
 | IMG-03 | `caso-mineria-san-juan.png` referenciada en ruta rota (ídem) | Bug de ruta | Alta |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
 | IMG-05 | Bloque "Quiénes somos" (sección Validación) sin imagen de apoyo | Mejora | Media |
-| IMG-06 | Logos de clientes son texto plano, no isotipos reales | Falta (ya autoseñalada en el código) | Media |
+| IMG-06 | Carrusel de 11 clientes — **resuelto 2026-08-27**, los 11 logos se encontraron y se incorporaron | Resuelto | — |
 | IMG-07 | Card "Turismo y hospitality" de Posibles Proyectos: a confirmar línea de producto | A confirmar | Media |
 | IMG-08 | Assets sin usar en `imagenes/` (11 archivos) — varios de altísima calidad, hoy desperdiciados | Oportunidad / limpieza | Baja–Media |
 
@@ -182,30 +182,68 @@ es nueva y nunca tuvo imagen prevista en el diseño original).
 
 ---
 
-## IMG-06
+## IMG-06 — RESUELTO (2026-08-27)
 
-**Sección:** Clientes / Validación — fila de logos (`clientes-row`)
-**Uso:** Logos de clientes/referencias corporativas
-**Imagen actual:** Son texto plano (`<span class="cliente-item">Aeropuertos
-Argentina 2000</span>`, `Sullair`), no imágenes. El propio código ya trae un
-comentario pendiente: `<!-- Agregar más logos reales (SVG monocromático)
-cuando estén disponibles -->` — este hallazgo ya estaba autoseñalado.
-**Imagen propuesta:** Isotipos/logos reales en SVG monocromático (siguiendo
-el tratamiento `filter:grayscale(1)` que ya tiene el CSS para este bloque),
-de Aeropuertos Argentina 2000, Sullair, y cualquier otro cliente que PRIC
-quiera sumar.
-**Arquitectura / producto:** No aplica (son logos de terceros).
-**Encuadre:** No aplica.
-**Relación de aspecto:** Libre — el contenedor es `height:88px` con
-`align-items:center`, cualquier logo horizontal funciona.
-**Resolución recomendada:** SVG vectorial (preferido) o PNG con fondo
-transparente a 2x (~300px de alto).
-**Tratamiento visual:** Monocromático, coherente con el `filter:grayscale(1)`
-ya aplicado por CSS.
-**Texto alternativo propuesto:** `alt="Logo Aeropuertos Argentina 2000"`,
-`alt="Logo Sullair"`, etc.
-**Prioridad:** Media — requiere que PRIC consiga los archivos de logo reales
-de sus clientes (no es algo que se pueda resolver solo con fotografía propia).
+**Sección:** Clientes / Validación — carrusel de logos (`.marquee` /
+`.cliente-item`)
+**Uso:** Logotipos de clientes/referencias corporativas, en loop continuo
+**Actualización:** el 2026-08-27 se encontraron los 11 logos reales en
+`C:\Users\Win11\Desktop\clientes\` y se incorporaron al carrusel. Ya no
+falta ninguno.
+
+**Hallazgo importante:** el cliente que la lista original nombraba
+"Andreani" en realidad corresponde al archivo `ChatGPT Image ... (7).png`,
+cuyo logo dice **"Andrea Nahás"** — un nombre distinto (no es la empresa de
+logística). Se usó el nombre que figura en el archivo. Vale la pena que
+PRIC confirme cuál es el nombre comercial correcto antes de publicar.
+
+**Estado final — 11 clientes, todos con logo real:**
+
+| Cliente | Archivo | Formato original | Fondo |
+|---|---|---|---|
+| Aeropuertos Argentina | `imagenes/logo-aeropuertos-argentina.jpg` | JPG, ya venía en gris/mono | Blanco sólido |
+| Assist Card | `imagenes/logo-assist-card.png` | PNG (ChatGPT Image), recortado y redimensionado | Gris claro sólido (~#F3F3F3) |
+| CNH Industrial | `imagenes/logo-cnh-industrial.png` | ídem | ídem |
+| Yenny | `imagenes/logo-yenny.png` | ídem | ídem |
+| ShopGallery | `imagenes/logo-shopgallery.png` | ídem | ídem |
+| Sullair | `imagenes/logo-sullair.png` | ídem | ídem |
+| Andrea Nahás | `imagenes/logo-andrea-nahas.png` | ídem (antes nombrado "Andreani" en el pedido) | ídem |
+| Dufry | `imagenes/logo-dufry.png` | ídem | ídem |
+| Farmacias Red | `imagenes/logo-farmacias-red.png` | ídem | ídem |
+| EANA | `imagenes/logo-eana.png` | ídem | ídem |
+| Tostado Café Club | `imagenes/logo-tostado-cafe-club.png` | ídem | ídem |
+
+**Cómo se resolvió el problema del fondo:** los 10 archivos "ChatGPT Image"
+son PNG sin canal alfa (RGB sólido, fondo gris clarito ~#F3F3F3) y el JPG de
+Aeropuertos tiene fondo blanco — ninguno es transparente. En vez de editar
+los píxeles del logo (riesgo de halos/artefactos al recortar el fondo a
+mano), cada `.cliente-item` ahora es una placa clara (`background:#F3F3F3`,
+mismo criterio que el componente `.logo-plate` que ya usa el header para el
+isotipo de PRIC HOUSE), y el logo se apoya arriba sin deformarse
+(`object-fit:contain`). El color de la placa se sacó por muestreo directo
+de los píxeles de fondo de los propios archivos, así que el borde no se nota.
+**No se redibujó ni reinterpretó ningún logo** — el contenido gráfico de
+cada archivo quedó intacto; solo se recortó el margen en blanco sobrante
+alrededor (con .NET/`System.Drawing`, no a mano) y se redimensionó
+proporcionalmente a 240px de alto.
+
+**Pendiente de mejora (no bloqueante):** los archivos siguen pesando entre
+77KB y 485KB cada uno — bastante para logos simples, porque no había
+ImageMagick/`sharp` disponibles en este entorno para optimizar la
+compresión (solo se pudo recortar y redimensionar con las herramientas de
+.NET ya instaladas en Windows). Con una herramienta de compresión PNG
+dedicada (`pngquant`, `oxipng`, TinyPNG, etc.) estos mismos archivos
+deberían bajar a ~5-20KB cada uno sin pérdida visible. También sería ideal
+reemplazarlos por versiones SVG vectoriales originales de cada marca si
+PRIC las tiene, para nitidez perfecta a cualquier tamaño/densidad de
+pantalla.
+**Texto alternativo aplicado:** `alt="Logo Aeropuertos Argentina"`,
+`alt="Logo Assist Card"`, `alt="Logo CNH Industrial"`, `alt="Logo Yenny"`,
+`alt="Logo ShopGallery"`, `alt="Logo Sullair"`, `alt="Logo Andrea Nahás"`,
+`alt="Logo Dufry"`, `alt="Logo Farmacias Red"`, `alt="Logo EANA"`,
+`alt="Logo Tostado Café Club"` (solo en el set accesible; la copia
+`aria-hidden="true"` que sostiene el loop visual usa `alt=""` a propósito).
+**Prioridad:** Resuelta — queda como mejora opcional la compresión/vectores.
 
 ---
 

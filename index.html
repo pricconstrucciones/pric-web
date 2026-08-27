@@ -240,6 +240,9 @@
     .hero-attrs{
       animation:none !important; opacity:1 !important; transform:translate(-50%, 50%) !important;
     }
+    .marquee{overflow-x:auto; -webkit-mask-image:none; mask-image:none;}
+    .marquee-track{animation:none !important;}
+    .marquee-track [aria-hidden="true"]{display:none;}
   }
 
   /* ============ NAV ============ */
@@ -489,14 +492,39 @@
   /* ============ CLIENTES — oscuro, sobrio ============ */
   .clientes{background:var(--graphite); padding:110px 0; text-align:center;}
   .clientes .lead{margin:0 auto 46px; color:rgba(239,234,226,.6);}
-  .clientes-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:2px; background:var(--line-on-dark); border:1px solid var(--line-on-dark);}
-  .cliente-item{
-    flex:1 1 220px; min-width:220px; background:var(--graphite);
-    display:flex; align-items:center; justify-content:center; height:88px;
-    font-family:var(--font-display); font-size:16px; font-weight:500; letter-spacing:.01em;
-    color:rgba(239,234,226,.42); filter:grayscale(1); transition:color .3s var(--ease), filter .3s var(--ease), opacity .3s;
+
+  /* Marquee — carrusel continuo, CSS puro (sin JS ni librerías) */
+  .marquee{
+    position:relative; overflow:hidden;
+    border-top:1px solid var(--line-on-dark); border-bottom:1px solid var(--line-on-dark);
+    padding:32px 0;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
-  .cliente-item:hover{color:#fff; filter:grayscale(0);}
+  .marquee-track{
+    display:flex; align-items:center; width:max-content;
+    gap:clamp(28px,4vw,56px);
+    animation:marquee-scroll 50s linear infinite;
+  }
+  .clientes:hover .marquee-track{animation-play-state:paused;}
+  @keyframes marquee-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* Los logos vienen en PNG/JPG con fondo propio (sin canal alfa) — se montan
+     sobre una placa clara, mismo lenguaje visual que .logo-plate del header,
+     en vez de recortar/editar los archivos originales. #F3F3F3 iguala el
+     fondo real de los assets para que no se note el borde de la placa. */
+  .cliente-item{
+    flex:0 0 auto; display:flex; align-items:center; justify-content:center;
+    background:#F3F3F3; border-radius:8px; padding:14px 22px;
+    box-shadow:0 6px 16px rgba(0,0,0,.22);
+    transition:box-shadow .3s var(--ease), transform .3s var(--ease);
+  }
+  .cliente-item:hover{box-shadow:0 10px 22px rgba(0,0,0,.3); transform:translateY(-2px);}
+  .cliente-item img{
+    height:30px; width:auto; display:block; object-fit:contain;
+    filter:grayscale(1); transition:filter .3s var(--ease);
+  }
+  .cliente-item:hover img{filter:grayscale(0);}
   .clientes-note{margin:36px auto 0; max-width:560px; font-size:12.5px; color:rgba(239,234,226,.4); line-height:1.6;}
 
   /* ============ CTA — oscuro ============ */
@@ -878,11 +906,33 @@
 
     <p class="eyebrow" style="justify-content:center;"><span class="technical-line"></span>Validación</p>
     <p class="lead">Experiencia construida junto a empresas que exigen resultados.</p>
-    <div class="clientes-row">
-      <!-- Clientes y experiencia de PRIC Construcciones, mencionados en el Manual de Comunicación -->
-      <span class="cliente-item">Aeropuertos Argentina 2000</span>
-      <span class="cliente-item">Sullair</span>
-      <!-- Agregar más logos reales (SVG monocromático) cuando estén disponibles -->
+    <div class="marquee" aria-label="Clientes y referencias de PRIC Construcciones">
+      <div class="marquee-track">
+        <!-- Set real (accesible) -->
+        <span class="cliente-item"><img src="./imagenes/logo-aeropuertos-argentina.jpg" alt="Logo Aeropuertos Argentina" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-assist-card.png" alt="Logo Assist Card" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-cnh-industrial.png" alt="Logo CNH Industrial" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-yenny.png" alt="Logo Yenny" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-shopgallery.png" alt="Logo ShopGallery" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-sullair.png" alt="Logo Sullair" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-andrea-nahas.png" alt="Logo Andrea Nahás" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-dufry.png" alt="Logo Dufry" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-farmacias-red.png" alt="Logo Farmacias Red" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-eana.png" alt="Logo EANA" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-tostado-cafe-club.png" alt="Logo Tostado Café Club" loading="lazy" decoding="async" /></span>
+        <!-- Set duplicado, oculto para lectores de pantalla: sólo sostiene el loop visual infinito -->
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-aeropuertos-argentina.jpg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-assist-card.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-cnh-industrial.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-yenny.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-shopgallery.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-sullair.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-andrea-nahas.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-dufry.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-farmacias-red.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-eana.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-tostado-cafe-club.png" alt="" loading="lazy" decoding="async" /></span>
+      </div>
     </div>
     <p class="clientes-note">Forman parte de la experiencia y trayectoria corporativa de PRIC Construcciones que respalda a PRIC HOUSE.</p>
   </div>
