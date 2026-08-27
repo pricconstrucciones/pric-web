@@ -19,7 +19,7 @@ consistencia de producto, no solo nombres de archivo.
 | # | Hallazgo | Tipo | Prioridad |
 |---|----------|------|-----------|
 | IMG-01 | Vertical **Corporativo** — **resuelto 2026-08-27**, se reubicó ahí la foto de equipo que antes estaba en IMG-05 | Resuelto | — |
-| IMG-02 | `vertical-civil.png` referenciada en ruta rota (imagen existe, está mal ubicada) | Bug de ruta | Alta |
+| IMG-02 | Vertical **Civil** — **resuelto 2026-08-27**, foto nueva + bug de ruta corregido de paso | Resuelto | — |
 | IMG-03 | `caso-mineria-san-juan.png` referenciada en ruta rota (ídem) | Bug de ruta | Alta |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
 | IMG-05 | Bloque "Quiénes somos" — vuelve a estar sin imagen (ver nota abajo) | Falta | Media |
@@ -54,33 +54,22 @@ campamento modular, capacidad operativa del sistema."
 
 ---
 
-## IMG-02
+## IMG-02 — RESUELTO (2026-08-27)
 
 **Sección:** Vertical Civil (dentro de "Nuestras verticales")
 **Uso:** Fondo de card — panel 01/03 "CIVIL"
-**Imagen actual:** **Existe pero está mal referenciada.** El HTML apunta a
-`./imagenes/vertical-civil.png`, que no existe en esa carpeta — el archivo
-real está suelto en la raíz del repo (`./vertical-civil.png`). Resultado:
-ícono de imagen rota en producción. Confirmé visualmente el archivo de la
-raíz: es una foto real y correcta (unidad modular revestida en madera,
-estilo residencial/tiny-house, coherente con "Civil").
-**Imagen propuesta:** No hace falta una imagen nueva — mover/copiar el
-archivo existente de la raíz a `imagenes/vertical-civil.png` (o corregir la
-ruta en el `<img>`) resuelve el problema por completo.
-**Arquitectura / producto:** Unidad modular individual, revestimiento símil
-madera, entorno residencial/jardín.
-**Encuadre:** Fotografía arquitectónica exterior, vista 3/4, cámara a nivel
-humano (ya cumplido por el archivo existente).
-**Relación de aspecto:** Igual que IMG-01 (sin `aspect-ratio` fijo, cubre el
-panel; el archivo actual funciona bien en 4:5/3:4).
-**Resolución recomendada:** La del archivo actual es adecuada.
-**Tratamiento visual:** Ya correcto — no requiere cambios, solo la ruta.
-**Texto alternativo:** El `alt` actual ("Vivienda modular PRIC HOUSE con
-revestimiento símil madera instalada en un terreno particular") es preciso
-y no necesita cambios.
-**Prioridad:** Alta — es un bug visible en el sitio en vivo hoy mismo, no
-una decisión de contenido. No lo corregí en este pase porque no fue pedido
-explícitamente; avisen si quieren que lo resuelva.
+**Actualización:** el usuario proveyó una foto nueva generada a medida
+(misma línea residencial en madera, unidad individual en un jardín con
+deck y living exterior). De paso quedó resuelto el bug de ruta original:
+se guardó directamente como `imagenes/vertical-civil.jpg` (la ruta que el
+HTML ya esperaba) y se eliminó el archivo huérfano que estaba suelto en la
+raíz del repo (`./vertical-civil.png`), que ya no hacía falta.
+**Optimización aplicada:** el original (PNG, 2.6MB, 1672×941px) se
+reconvirtió a JPEG calidad 88 → 405KB, sin pérdida visible.
+**Texto alternativo:** se mantuvo el `alt` existente ("Vivienda modular
+PRIC HOUSE con revestimiento símil madera instalada en un terreno
+particular"), que sigue siendo preciso para la nueva imagen.
+**Prioridad:** Resuelta.
 
 ---
 
