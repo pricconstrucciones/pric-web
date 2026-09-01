@@ -23,7 +23,7 @@ consistencia de producto, no solo nombres de archivo.
 | IMG-03 | Card "Sector minero" — **resuelto 2026-08-27**, foto nueva + bug de ruta corregido de paso | Resuelto | — |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
 | IMG-05 | Bloque "Quiénes somos" — vuelve a estar sin imagen (ver nota abajo) | Falta | Media |
-| IMG-06 | Carrusel de 11 clientes — **resuelto 2026-08-27**, los 11 logos se encontraron y se incorporaron | Resuelto | — |
+| IMG-06 | Carrusel de 11 clientes — resuelto, sin tarjetas, tamaños equilibrados, **5 de 11 en color real** (actualizado 2026-09-01) | Resuelto | — |
 | IMG-07 | Card "Turismo y hospitality" de Posibles Proyectos — **resuelto 2026-08-27**, imagen reemplazada por una nueva generada a medida | Resuelto | — |
 | IMG-08 | Assets sin usar en `imagenes/` (11 archivos) — varios de altísima calidad, hoy desperdiciados | Oportunidad / limpieza | Baja–Media |
 
@@ -204,13 +204,68 @@ que el *área* renderizada de cada uno sea comparable — ver tabla arriba.
 contenido gráfico de cada archivo es el mismo desde que se recibió.
 
 **Pendiente de mejora (no bloqueante):** sigue sin haber compresión PNG
-dedicada disponible en este entorno (`pngquant`/`oxipng`); los archivos ya
-son razonablemente livianos (77–490KB) pero podrían bajar más. También
-seguiría siendo ideal reemplazarlos por SVG vectoriales originales de cada
-marca si PRIC los consigue.
+dedicada disponible en este entorno (`pngquant`/`oxipng`) para los 6 logos
+que siguen en PNG monocromático. También seguiría siendo ideal reemplazarlos
+por SVG vectoriales originales si PRIC los consigue.
 **Texto alternativo aplicado:** sin cambios (ver tabla de `alt` de la
 versión anterior de esta sección — se mantienen los mismos 11).
-**Prioridad:** Resuelta.
+
+**Actualización 2026-09-01 — tamaños más grandes + color real en 5 de 11:**
+
+1. **Tamaños:** se escalaron todas las alturas individuales ~1.6x (ver
+   tabla actualizada abajo). De paso se encontró y corrigió un bug: el
+   recorte de transparencia dejaba un residuo de alfa muy bajo (2-7%) en
+   el fondo de varios archivos, invisible a tamaño chico pero visible como
+   un recuadro fantasma al agrandarlos. Se corrigió el muestreo de color
+   de fondo (antes tomaba 1 solo píxel de esquina; ahora usa la mediana de
+   ~320 píxeles del borde) y se reprocesaron los 11 desde las fuentes
+   limpias — verificado que no queda ningún rastro.
+
+2. **Color real:** se investigó si convenía reemplazar los logos generados
+   por IA (monocromáticos desde el origen — no eran fotos a color
+   desaturadas, así que el `filter:grayscale(0)` en `:hover` no tenía
+   nada que revelar) por assets oficiales de cada marca. Se encontraron y
+   verificaron **5 de 11** en fuentes confiables:
+   - **Sullair** (verde `#007b40`), **Dufry** (rojo `#e00014`),
+     **Aeropuertos Argentina** (azul `#002C9F`) y **CNH Industrial**
+     (bordó `#a32428`): SVG oficiales de Wikimedia Commons, verificados
+     por color de relleno y usados directamente como `.svg` (mejor que
+     PNG: nitidez perfecta a cualquier tamaño/densidad de pantalla).
+   - **EANA** (azul `#1269b0`/celeste `#37bbed`): PNG con transparencia
+     real tomado directo del sitio oficial `eana.com.ar`.
+   - Los otros 6 (Assist Card, Yenny, ShopGallery, Farmacias Red, Tostado
+     Café Club, Andrea Nahás) no aparecieron con una fuente oficial
+     confiable en la búsqueda — quedan igual que antes (PNG monocromático,
+     sin color real detrás del hover).
+   - El logo de Aeropuertos Argentina real tiene una composición horizontal
+     muy distinta a la versión generada por IA (que era casi cuadrada), así
+     que su altura individual se recalculó (86px → 54px) para mantener el
+     mismo criterio de área visual equivalente.
+   - **Nota de verificación:** no había forma de renderizar SVG a imagen en
+     este entorno (sin Inkscape/rsvg/Cairo disponibles) para una
+     comprobación visual final de los 4 SVG — se verificó por otra vía:
+     código fuente de cada archivo (colores de relleno coinciden con los
+     colores de marca reales conocidos) y la fuente (Wikimedia Commons,
+     confiable). EANA sí se pudo verificar visualmente (PNG).
+
+**Estado final de tamaños (2026-09-01):**
+
+| Cliente | Archivo | Altura |
+|---|---|---|
+| Aeropuertos Argentina | `imagenes/logo-aeropuertos-argentina.svg` | 54px |
+| Tostado Café Club | `imagenes/logo-tostado-cafe-club.png` | 74px |
+| Farmacias Red | `imagenes/logo-farmacias-red.png` | 69px |
+| CNH Industrial | `imagenes/logo-cnh-industrial.svg` | 67px |
+| Yenny | `imagenes/logo-yenny.png` | 54px |
+| Andrea Nahás | `imagenes/logo-andrea-nahas.png` | 48px |
+| Assist Card | `imagenes/logo-assist-card.png` | 46px |
+| ShopGallery | `imagenes/logo-shopgallery.png` | 40px |
+| Dufry | `imagenes/logo-dufry.svg` | 40px |
+| Sullair | `imagenes/logo-sullair.svg` | 34px |
+| EANA | `imagenes/logo-eana.png` | 29px |
+
+**Prioridad:** Resuelta — los 6 logos sin color real quedan como mejora
+opcional si PRIC consigue sus marcas oficiales (ver lista arriba).
 
 ---
 
