@@ -166,51 +166,51 @@ PRIC confirme cuál es el nombre comercial correcto antes de publicar.
 
 **Estado final — 11 clientes, todos con logo real:**
 
-| Cliente | Archivo | Formato original | Fondo |
-|---|---|---|---|
-| Aeropuertos Argentina | `imagenes/logo-aeropuertos-argentina.jpg` | JPG, ya venía en gris/mono | Blanco sólido |
-| Assist Card | `imagenes/logo-assist-card.png` | PNG (ChatGPT Image), recortado y redimensionado | Gris claro sólido (~#F3F3F3) |
-| CNH Industrial | `imagenes/logo-cnh-industrial.png` | ídem | ídem |
-| Yenny | `imagenes/logo-yenny.png` | ídem | ídem |
-| ShopGallery | `imagenes/logo-shopgallery.png` | ídem | ídem |
-| Sullair | `imagenes/logo-sullair.png` | ídem | ídem |
-| Andrea Nahás | `imagenes/logo-andrea-nahas.png` | ídem (antes nombrado "Andreani" en el pedido) | ídem |
-| Dufry | `imagenes/logo-dufry.png` | ídem | ídem |
-| Farmacias Red | `imagenes/logo-farmacias-red.png` | ídem | ídem |
-| EANA | `imagenes/logo-eana.png` | ídem | ídem |
-| Tostado Café Club | `imagenes/logo-tostado-cafe-club.png` | ídem | ídem |
+| Cliente | Archivo | Altura individual asignada |
+|---|---|---|
+| Aeropuertos Argentina | `imagenes/logo-aeropuertos-argentina.png` | 54px |
+| Tostado Café Club | `imagenes/logo-tostado-cafe-club.png` | 46px |
+| Farmacias Red | `imagenes/logo-farmacias-red.png` | 43px |
+| CNH Industrial | `imagenes/logo-cnh-industrial.png` | 42px |
+| Yenny | `imagenes/logo-yenny.png` | 34px |
+| Andrea Nahás | `imagenes/logo-andrea-nahas.png` | 30px |
+| Assist Card | `imagenes/logo-assist-card.png` | 29px |
+| ShopGallery | `imagenes/logo-shopgallery.png` | 25px |
+| Dufry | `imagenes/logo-dufry.png` | 25px |
+| Sullair | `imagenes/logo-sullair.png` | 21px |
+| EANA | `imagenes/logo-eana.png` | 18px |
 
-**Cómo se resolvió el problema del fondo:** los 10 archivos "ChatGPT Image"
-son PNG sin canal alfa (RGB sólido, fondo gris clarito ~#F3F3F3) y el JPG de
-Aeropuertos tiene fondo blanco — ninguno es transparente. En vez de editar
-los píxeles del logo (riesgo de halos/artefactos al recortar el fondo a
-mano), cada `.cliente-item` ahora es una placa clara (`background:#F3F3F3`,
-mismo criterio que el componente `.logo-plate` que ya usa el header para el
-isotipo de PRIC HOUSE), y el logo se apoya arriba sin deformarse
-(`object-fit:contain`). El color de la placa se sacó por muestreo directo
-de los píxeles de fondo de los propios archivos, así que el borde no se nota.
-**No se redibujó ni reinterpretó ningún logo** — el contenido gráfico de
-cada archivo quedó intacto; solo se recortó el margen en blanco sobrante
-alrededor (con .NET/`System.Drawing`, no a mano) y se redimensionó
-proporcionalmente a 240px de alto.
+**Actualización 2026-09-01 — se quitó la placa clara:** el usuario pidió
+sacar el formato de tarjeta y que los logos floten directo sobre el fondo
+oscuro. Como los 11 archivos tenían fondo sólido "horneado" (sin canal
+alfa — ni el JPG de Aeropuertos ni los 10 PNG de "ChatGPT Image"), esta vez
+sí hizo falta quitarles el fondo de verdad, no solo taparlo. Se implementó
+con un script propio (`.NET`/`System.Drawing`, sin librerías nuevas): por
+cada archivo, se muestrea el color de fondo real desde sus propias
+esquinas y se aplica un umbral de distancia de color con degradé suave
+(no un corte binario), para que el borde de cada letra quede
+antialiaseado en vez de dentado. Se verificó visualmente cada logo
+compuesto sobre el `#1A1D1F` real del sitio antes de aplicarlo — sin halos,
+sin recortes en detalles finos (el `®` de Farmacias Red y Sullair, la
+línea divisoria de EANA, el ícono de Tostado). El JPG de Aeropuertos se
+reconvirtió a PNG con alfa (ya no existe como `.jpg`).
 
-**Pendiente de mejora (no bloqueante):** los archivos siguen pesando entre
-77KB y 485KB cada uno — bastante para logos simples, porque no había
-ImageMagick/`sharp` disponibles en este entorno para optimizar la
-compresión (solo se pudo recortar y redimensionar con las herramientas de
-.NET ya instaladas en Windows). Con una herramienta de compresión PNG
-dedicada (`pngquant`, `oxipng`, TinyPNG, etc.) estos mismos archivos
-deberían bajar a ~5-20KB cada uno sin pérdida visible. También sería ideal
-reemplazarlos por versiones SVG vectoriales originales de cada marca si
-PRIC las tiene, para nitidez perfecta a cualquier tamaño/densidad de
-pantalla.
-**Texto alternativo aplicado:** `alt="Logo Aeropuertos Argentina"`,
-`alt="Logo Assist Card"`, `alt="Logo CNH Industrial"`, `alt="Logo Yenny"`,
-`alt="Logo ShopGallery"`, `alt="Logo Sullair"`, `alt="Logo Andrea Nahás"`,
-`alt="Logo Dufry"`, `alt="Logo Farmacias Red"`, `alt="Logo EANA"`,
-`alt="Logo Tostado Café Club"` (solo en el set accesible; la copia
-`aria-hidden="true"` que sostiene el loop visual usa `alt=""` a propósito).
-**Prioridad:** Resuelta — queda como mejora opcional la compresión/vectores.
+**Tamaños individuales por logo:** en vez de una altura uniforme (que
+hacía que EANA se viera enorme y Aeropuertos/Tostado casi invisibles, por
+lo distintas que son sus proporciones), cada logo tiene su propia altura
+en CSS (selector por atributo `img[src$="archivo.png"]`), calculada para
+que el *área* renderizada de cada uno sea comparable — ver tabla arriba.
+**No se redibujó ni reinterpretó ningún logo** en ningún momento — el
+contenido gráfico de cada archivo es el mismo desde que se recibió.
+
+**Pendiente de mejora (no bloqueante):** sigue sin haber compresión PNG
+dedicada disponible en este entorno (`pngquant`/`oxipng`); los archivos ya
+son razonablemente livianos (77–490KB) pero podrían bajar más. También
+seguiría siendo ideal reemplazarlos por SVG vectoriales originales de cada
+marca si PRIC los consigue.
+**Texto alternativo aplicado:** sin cambios (ver tabla de `alt` de la
+versión anterior de esta sección — se mantienen los mismos 11).
+**Prioridad:** Resuelta.
 
 ---
 
