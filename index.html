@@ -30,10 +30,10 @@
   "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+54-9-351-322-8452",
+    "telephone": "+54-9-351-214-2900",
     "contactType": "sales",
     "availableLanguage": ["Spanish"],
-    "email": "info@pricconstrucciones.com"
+    "email": "info@prichouse.com"
   }
 }
 </script>
@@ -240,6 +240,9 @@
     .hero-attrs{
       animation:none !important; opacity:1 !important; transform:translate(-50%, 50%) !important;
     }
+    .marquee{overflow-x:auto; -webkit-mask-image:none; mask-image:none;}
+    .marquee-track{animation:none !important;}
+    .marquee-track [aria-hidden="true"]{display:none;}
   }
 
   /* ============ NAV ============ */
@@ -456,10 +459,13 @@
   @media (max-width:760px){ .respaldo{padding:90px 0;} }
   .respaldo-grid{display:grid; grid-template-columns:.85fr 1fr .85fr; gap:clamp(20px,4vw,50px); align-items:center;}
   @media (max-width:980px){.respaldo-grid{grid-template-columns:1fr; gap:40px;}}
+  /* min-width:0 evita que el número no-partible fuerce overflow de la columna del grid en anchos intermedios (~900-980px) */
+  .respaldo-grid > div:first-child{min-width:0;}
   .respaldo-num{
     font-family:var(--font-display); font-weight:700; letter-spacing:-.03em;
-    font-size:clamp(120px,15vw,230px); line-height:.8; color:var(--carbon);
-    margin-left:clamp(-12px,-2vw,-20px);
+    font-size:clamp(120px,12vw,230px); line-height:.8; color:var(--carbon);
+    margin-left:clamp(-20px,-2vw,-12px);
+    white-space:nowrap;
   }
   .respaldo-num .u{display:block; font-family:var(--font-label); font-size:14px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--copper); margin-top:14px;}
   .respaldo-text p{font-size:16.5px; line-height:1.7; color:#3c3f3a; margin-bottom:14px; max-width:44ch;}
@@ -486,14 +492,51 @@
   /* ============ CLIENTES — oscuro, sobrio ============ */
   .clientes{background:var(--graphite); padding:110px 0; text-align:center;}
   .clientes .lead{margin:0 auto 46px; color:rgba(239,234,226,.6);}
-  .clientes-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:2px; background:var(--line-on-dark); border:1px solid var(--line-on-dark);}
-  .cliente-item{
-    flex:1 1 220px; min-width:220px; background:var(--graphite);
-    display:flex; align-items:center; justify-content:center; height:88px;
-    font-family:var(--font-display); font-size:16px; font-weight:500; letter-spacing:.01em;
-    color:rgba(239,234,226,.42); filter:grayscale(1); transition:color .3s var(--ease), filter .3s var(--ease), opacity .3s;
+
+  /* Marquee — carrusel continuo, CSS puro (sin JS ni librerías) */
+  .marquee{
+    position:relative; overflow:hidden;
+    border-top:1px solid var(--line-on-dark); border-bottom:1px solid var(--line-on-dark);
+    padding:32px 0;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
-  .cliente-item:hover{color:#fff; filter:grayscale(0);}
+  .marquee-track{
+    display:flex; align-items:center; width:max-content;
+    gap:clamp(48px,6vw,88px);
+    animation:marquee-scroll 50s linear infinite;
+  }
+  /* La pausa NO usa :hover de CSS — se controla por JS con pointerenter/pointerleave
+     por logo individual (ver <script>), para que el track siga andando sobre el
+     fondo/espacios vacíos y sólo se detenga con el cursor encima de un logo. */
+  @keyframes marquee-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* Los logos, ya sin fondo (transparencia real, recortada de los archivos
+     originales), flotan directo sobre el fondo oscuro de la sección — sin
+     tarjeta, borde ni sombra. Cada uno tiene una altura propia (no un ancho
+     uniforme) para compensar que sus proporciones originales son muy distintas
+     entre sí y así lograr un peso visual parejo en la tira. */
+  .cliente-item{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; }
+  .cliente-item img{
+    width:auto; display:block; object-fit:contain;
+    filter:grayscale(1); transition:filter .3s var(--ease);
+    height:30px; /* fallback por si se agrega un logo sin regla específica */
+  }
+  .cliente-item:hover img{filter:grayscale(0);}
+
+  /* Alturas individuales — compensan la proporción de cada archivo para que
+     el peso visual (ancho renderizado) quede parejo entre todos los logos. */
+  .cliente-item img[src$="logo-tostado-cafe-club.png"]{height:74px;}
+  .cliente-item img[src$="logo-farmacias-red.png"]{height:68px;}
+  .cliente-item img[src$="logo-cnh-industrial.svg"]{height:67px;}
+  .cliente-item img[src$="logo-yenny.png"]{height:54px;}
+  .cliente-item img[src$="logo-andrea-nahas.png"]{height:47px;}
+  .cliente-item img[src$="logo-assist-card.png"]{height:46px;}
+  .cliente-item img[src$="logo-shopgallery.png"]{height:39px;}
+  .cliente-item img[src$="logo-dufry.svg"]{height:40px;}
+  .cliente-item img[src$="logo-sullair.svg"]{height:34px;}
+  .cliente-item img[src$="logo-aeropuertos-argentina.svg"]{height:31px;}
+  .cliente-item img[src$="logo-eana.png"]{height:29px;}
   .clientes-note{margin:36px auto 0; max-width:560px; font-size:12.5px; color:rgba(239,234,226,.4); line-height:1.6;}
 
   /* ============ CTA — oscuro ============ */
@@ -532,7 +575,7 @@
   input:focus, select:focus, textarea:focus{outline:none; border-color:var(--copper);}
   input.invalid, select.invalid{border-color:#d9695a;}
   textarea{resize:vertical; min-height:90px; padding-top:12px;}
-  select{appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%237B7D78'/></svg>"); background-repeat:no-repeat; background-position:right 4px center;}
+  select{-webkit-appearance:none; -moz-appearance:none; appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%237B7D78'/></svg>"); background-repeat:no-repeat; background-position:right 4px center;}
   select option{color:#111;}
   .cf-err{font-size:11.5px; color:#e08a7d; min-height:14px;}
   .cf-submit-row{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
@@ -555,6 +598,16 @@
     border-top:1px solid var(--line-on-dark); padding-top:24px;
     font-family:var(--font-label); font-size:11.5px; letter-spacing:.04em; color:rgba(239,234,226,.35);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ============ FIXES RESPONSIVE ============
+     Los ítems de un CSS Grid no se achican por debajo del tamaño de su
+     contenido por defecto (min-width:auto), lo que puede forzar overflow
+     horizontal oculto (por el overflow-x:hidden del body) en anchos
+     intermedios. Se neutraliza sin alterar el diseño visual. */
+  .quien-grid > *, .vert-grid > *, .respaldo-grid > *, .caso-row > *,
+  .contacto-grid > *, .cf-row > *, .foot-grid > *{
+    min-width:0;
   }
 
   /* ============ BACK TO TOP ============ */
@@ -614,8 +667,8 @@
       <a href="#contacto" class="btn-primary btn-block" data-mclose>Hablemos <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
     <div class="mm-foot">
-      <a href="https://wa.me/5493513228452" target="_blank" rel="noopener">WhatsApp: +54 9 351 322 8452</a>
-      <a href="mailto:info@pricconstrucciones.com">info@pricconstrucciones.com</a>
+      <a href="https://wa.me/5493512142900" target="_blank" rel="noopener">WhatsApp: +54 9 351 2142900</a>
+      <a href="mailto:info@prichouse.com">info@prichouse.com</a>
       <span style="color:rgba(255,255,255,.4); font-size:11px; letter-spacing:.1em; text-transform:uppercase;">Córdoba, Argentina — operamos en todo el país</span>
     </div>
   </aside>
@@ -632,16 +685,15 @@
   </div>
 
   <div class="hero-content">
-    <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Arquitectura modular</span>
+    <span class="hero-meta"><span class="dot"></span> Casas modulares transportables a toda la Argentina</span>
     <h1>
-      <span class="ln"><span>Arquitectura <span class="accent">modular</span></span></span>
-      <span class="ln"><span>para personas, empresas</span></span>
-      <span class="ln"><span>y proyectos.</span></span>
+      <span class="ln"><span>Soluciones <span class="accent">modulares</span></span></span>
+      <span class="ln"><span>transportables para</span></span>
+      <span class="ln"><span>vivir, trabajar o alquilar.</span></span>
     </h1>
     <p class="sub">
-      Desarrollamos soluciones modulares transportables y coordinamos cada
-      etapa, desde la definición hasta la instalación, con el respaldo de
-      PRIC Construcciones.
+      Para tu próximo proyecto, personal o empresarial, tenemos una opción
+      que se ajusta a lo que necesitás.
     </p>
     <div class="hero-cta">
       <a href="#soluciones" class="btn-primary">
@@ -656,7 +708,7 @@
     <div class="hero-attr"><div class="n">01</div><div class="t">Arquitectura modular</div></div>
     <div class="hero-attr"><div class="n">02</div><div class="t">Traslado</div></div>
     <div class="hero-attr"><div class="n">03</div><div class="t">Instalación</div></div>
-    <div class="hero-attr"><div class="n">04</div><div class="t">+20 años de respaldo</div></div>
+    <div class="hero-attr"><div class="n">04</div><div class="t">Personal y empresarial</div></div>
   </div>
 </section>
 
@@ -668,15 +720,15 @@
         <span class="eyebrow"><span class="technical-line"></span>PRIC HOUSE</span>
         <h2 class="display-title">Una solución integral detrás de cada proyecto.</h2>
         <p style="margin-top:20px;">
-          PRIC HOUSE nace respaldada por la experiencia de PRIC Construcciones
-          y desarrolla soluciones modulares transportables. En el segmento
-          residencial, selecciona, traslada e instala la vivienda en el
-          terreno del cliente.
+          Seleccionamos, trasladamos e instalamos unidades modulares listas
+          para vivir, trabajar o generar renta. Vos elegís dónde, nosotros
+          coordinamos todo lo demás.
         </p>
         <p class="small">
           La marca absorbe la complejidad de planificación y logística para
-          darle al cliente mayor claridad durante todo el proceso. PRIC HOUSE
-          no simplemente entrega un módulo: se ocupa de resolver la solución.
+          darle al cliente mayor claridad durante todo el proceso.
+          PRIC&nbsp;HOUSE no simplemente entrega un módulo, también se ocupa
+          de resolver la solución.
         </p>
 
         <div class="quien-attrs">
@@ -692,8 +744,8 @@
           <img src="./imagenes/quienes-somos-pric-house.png" alt="Módulo PRIC HOUSE siendo montado con grúa sobre su base durante la instalación en obra" loading="lazy" decoding="async" />
         </div>
         <div class="quien-badge">
-          <span class="num">+20</span>
-          <span class="txt">años de trayectoria de PRIC Construcciones</span>
+          <span class="num">4</span>
+          <span class="txt">etapas coordinadas por PRIC HOUSE</span>
         </div>
       </div>
     </div>
@@ -711,9 +763,11 @@
 
   <div class="vert-grid reveal delay-1">
     <!-- CIVIL -->
-    <a href="/civil/" class="vertical-panel">
+    <!-- TEMPORAL: CTA redirigido a WhatsApp en vez de /civil/ (ver data-wa-link).
+         Para volver a la landing interna, quitar data-wa-link y data-wa-message. -->
+    <a href="/civil/" class="vertical-panel" data-wa-link data-wa-message="Hola, me gustaría saber más sobre sus casas modulares para uso civil.">
       <div class="media-frame hoverable">
-        <img src="./imagenes/vertical-civil.png" alt="Vivienda modular PRIC HOUSE con revestimiento símil madera instalada en un terreno particular" loading="lazy" decoding="async" />
+        <img src="./imagenes/vertical-civil.jpg" alt="Vivienda modular PRIC HOUSE con revestimiento símil madera instalada en un terreno particular" loading="lazy" decoding="async" />
       </div>
       <div class="vp-overlay"></div>
       <div class="vp-content">
@@ -729,7 +783,9 @@
     </a>
 
     <!-- EMPRESAS -->
-    <a href="/empresas/" class="vertical-panel">
+    <!-- TEMPORAL: CTA redirigido a WhatsApp en vez de /empresas/ (ver data-wa-link).
+         Para volver a la landing interna, quitar data-wa-link y data-wa-message. -->
+    <a href="/empresas/" class="vertical-panel" data-wa-link data-wa-message="Hola, me gustaría saber más sobre sus unidades modulares para uso empresarial.">
       <div class="media-frame hoverable">
         <img src="./imagenes/vertical-empresas.png" alt="Infraestructura modular PRIC HOUSE para empresas, integrada a una operación industrial" loading="lazy" decoding="async" />
       </div>
@@ -747,10 +803,11 @@
     </a>
 
     <!-- CORPORATIVO -->
-    <a href="/corporativo/" class="vertical-panel">
+    <!-- TEMPORAL: CTA redirigido a WhatsApp en vez de /corporativo/ (ver data-wa-link).
+         Para volver a la landing interna, quitar data-wa-link y data-wa-message. -->
+    <a href="/corporativo/" class="vertical-panel" data-wa-link data-wa-message="Hola, me gustaría saber más sobre posibles urbanizaciones modulares de gran escala.">
       <div class="media-frame hoverable">
-        <!-- Reemplazar por imagen real: obra institucional / equipo / proyecto corporativo -->
-        <div class="ph"><span>Imagen real pendiente</span></div>
+        <img src="./imagenes/corporativo-equipo.jpg" alt="Equipo de PRIC HOUSE recorriendo un campamento modular, capacidad operativa del sistema" loading="lazy" decoding="async" />
       </div>
       <div class="vp-overlay"></div>
       <div class="vp-content">
@@ -758,8 +815,8 @@
         <div class="vp-bottom">
           <span class="vp-line"></span>
           <h3 class="vp-title">CORPORATIVO</h3>
-          <p class="vp-desc">Conocé la trayectoria, capacidad técnica, proyectos y experiencia que respaldan cada solución PRIC HOUSE.</p>
-          <p class="vp-extra">Más de 20 años construyendo para clientes exigentes.</p>
+          <p class="vp-desc">Conocé la capacidad técnica y la estructura corporativa que están detrás de cada solución PRIC HOUSE.</p>
+          <p class="vp-extra">Un mismo equipo, un mismo estándar en cada proyecto.</p>
           <span class="vp-link">Conocer PRIC <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </div>
@@ -778,13 +835,13 @@
         <span class="eyebrow"><span class="technical-line"></span>El respaldo</span>
         <h2 class="display-title" style="font-size:clamp(24px,3vw,36px); margin-bottom:20px;">La confianza no empieza con una promesa. Empieza con experiencia.</h2>
         <p>
-          PRIC HOUSE está respaldada por PRIC Construcciones, con más de 20
-          años ejecutando proyectos y trabajando con clientes corporativos
-          exigentes.
+          PRIC HOUSE está respaldada por PRIC&nbsp;Construcciones, que
+          ejecuta proyectos para clientes corporativos de alto estándar en
+          todo el país.
         </p>
         <p>
-          Esa misma trayectoria reduce la incertidumbre del cliente: del otro
-          lado hay una empresa que ya demostró que cumple.
+          Esa misma trayectoria reduce la incertidumbre del cliente. Del
+          otro lado hay una empresa que ya demostró que cumple.
         </p>
       </div>
       <div class="respaldo-media reveal delay-2">
@@ -796,13 +853,15 @@
   </div>
 </section>
 
-<!-- ============ CASOS DE ÉXITO ============ -->
+<!-- ============ POSIBLES PROYECTOS ============ -->
+<!-- Conceptual: aplicaciones posibles del sistema modular, no obras ejecutadas -->
 <section class="casos" id="experiencia">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="technical-line"></span>Experiencia</span>
-      <h2 class="display-title">Resultados que respaldan lo que hacemos.</h2>
+      <span class="eyebrow"><span class="technical-line"></span>Posibles proyectos</span>
+      <h2 class="display-title">Un mismo sistema modular. Distintas formas de aplicarlo.</h2>
     </div>
+    <p class="lead reveal">Algunas posibilidades de aplicación del sistema modular PRIC HOUSE, según el uso, la escala y el entorno de cada proyecto.</p>
 
     <div class="caso-row reveal">
       <div class="caso-media">
@@ -811,10 +870,10 @@
         </div>
       </div>
       <div class="caso-body">
-        <div class="project-meta"><span>01 / Caso</span><span>[Ubicación]</span><span>[Tipología]</span></div>
-        <h3>[CASO REAL — COMPLETAR]</h3>
-        <p>[Descripción breve del proyecto — completar con datos verificados de PRIC HOUSE.]</p>
-        <a href="#contacto" class="btn-secondary">Ver proyecto</a>
+        <div class="project-meta"><span>01 / Aplicación posible</span><span>Sector energético</span></div>
+        <h3>Bases y campamentos modulares para el sector energético</h3>
+        <p>Una posible configuración del sistema PRIC HOUSE aplicada a campamentos y bases operativas: unidades que se trasladan, se instalan y se adaptan según cada etapa del proyecto.</p>
+        <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
       </div>
     </div>
 
@@ -825,10 +884,10 @@
         </div>
       </div>
       <div class="caso-body">
-        <div class="project-meta"><span>02 / Caso</span><span>[Ubicación]</span><span>[Tipología]</span></div>
-        <h3>[CASO REAL — COMPLETAR]</h3>
-        <p>[Descripción breve del proyecto — completar con datos verificados de PRIC HOUSE.]</p>
-        <a href="#contacto" class="btn-secondary">Ver proyecto</a>
+        <div class="project-meta"><span>02 / Aplicación posible</span><span>Sector minero</span></div>
+        <h3>Bases modulares para operaciones mineras en altura</h3>
+        <p>Otra posible aplicación del mismo sistema, pensada para campamentos y bases en entornos de montaña donde el traslado y la instalación son determinantes.</p>
+        <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
       </div>
     </div>
 
@@ -839,10 +898,10 @@
         </div>
       </div>
       <div class="caso-body">
-        <div class="project-meta"><span>03 / Caso</span><span>[Ubicación]</span><span>[Tipología]</span></div>
-        <h3>[CASO REAL — COMPLETAR]</h3>
-        <p>[Descripción breve del proyecto — completar con datos verificados de PRIC HOUSE.]</p>
-        <a href="#contacto" class="btn-secondary">Ver proyecto</a>
+        <div class="project-meta"><span>03 / Aplicación posible</span><span>Turismo y hospitality</span></div>
+        <h3>Complejos modulares para proyectos turísticos</h3>
+        <p>Una configuración posible del sistema PRIC HOUSE para desarrollos turísticos, integrando arquitectura modular al paisaje sin resignar diseño ni confort.</p>
+        <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
       </div>
     </div>
 
@@ -857,15 +916,43 @@
 <!-- ============ CLIENTES ============ -->
 <section class="clientes">
   <div class="wrap">
-    <p class="eyebrow" style="justify-content:center;"><span class="technical-line"></span>Validación</p>
-    <p class="lead">Experiencia construida junto a empresas que exigen resultados.</p>
-    <div class="clientes-row">
-      <!-- Clientes y experiencia de PRIC Construcciones, mencionados en el Manual de Comunicación -->
-      <span class="cliente-item">Aeropuertos Argentina 2000</span>
-      <span class="cliente-item">Sullair</span>
-      <!-- Agregar más logos reales (SVG monocromático) cuando estén disponibles -->
+    <div class="section-head center reveal on-dark">
+      <span class="eyebrow"><span class="technical-line"></span>Quiénes somos</span>
+      <h2 class="display-title">Experiencia puesta al servicio de soluciones reales.</h2>
     </div>
-    <p class="clientes-note">Forman parte de la experiencia y trayectoria corporativa de PRIC Construcciones que respalda a PRIC HOUSE.</p>
+    <p class="lead reveal delay-1">Nuestro equipo reúne experiencia en proyectos de distintas escalas y para clientes de alto estándar. Todo ese conocimiento hoy lo aplicamos a soluciones modulares pensadas para necesidades concretas, combinando arquitectura, planificación, logística e instalación.</p>
+
+    <p class="eyebrow" style="justify-content:center;"><span class="technical-line"></span>Experiencia</p>
+    <p class="lead">Trayectoria construida junto a clientes exigentes.</p>
+    <div class="marquee" aria-label="Clientes y referencias de PRIC Construcciones">
+      <div class="marquee-track">
+        <!-- Set real (accesible) -->
+        <span class="cliente-item"><img src="./imagenes/logo-aeropuertos-argentina.svg" alt="Logo Aeropuertos Argentina" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-assist-card.png" alt="Logo Assist Card" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-cnh-industrial.svg" alt="Logo CNH Industrial" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-yenny.png" alt="Logo Yenny" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-shopgallery.png" alt="Logo ShopGallery" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-sullair.svg" alt="Logo Sullair" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-andrea-nahas.png" alt="Logo Andrea Nahás" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-dufry.svg" alt="Logo Dufry" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-farmacias-red.png" alt="Logo Farmacias Red" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-eana.png" alt="Logo EANA" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="./imagenes/logo-tostado-cafe-club.png" alt="Logo Tostado Café Club" loading="lazy" decoding="async" /></span>
+        <!-- Set duplicado, oculto para lectores de pantalla: sólo sostiene el loop visual infinito -->
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-aeropuertos-argentina.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-assist-card.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-cnh-industrial.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-yenny.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-shopgallery.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-sullair.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-andrea-nahas.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-dufry.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-farmacias-red.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-eana.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-tostado-cafe-club.png" alt="" loading="lazy" decoding="async" /></span>
+      </div>
+    </div>
+    <p class="clientes-note">Parte de la cartera de clientes de PRIC Construcciones, la empresa detrás de PRIC HOUSE.</p>
   </div>
 </section>
 
@@ -896,8 +983,8 @@
         <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">Contanos qué necesitás.</h2>
         <p>Completá estos datos y continuemos la conversación por WhatsApp.</p>
         <div class="contacto-alt">
-          <a href="https://wa.me/5493513228452" target="_blank" rel="noopener">WhatsApp: +54 9 351 322 8452</a>
-          <a href="mailto:info@pricconstrucciones.com">info@pricconstrucciones.com</a>
+          <a href="https://wa.me/5493512142900" target="_blank" rel="noopener">WhatsApp: +54 9 351 2142900</a>
+          <a href="mailto:info@prichouse.com">info@prichouse.com</a>
           <span style="color:rgba(239,234,226,.4);">Córdoba, Argentina — operamos en todo el país</span>
         </div>
       </div>
@@ -977,11 +1064,10 @@
       <div class="foot-col">
         <h6>Contacto</h6>
         <ul>
-          <li><a href="https://wa.me/5493513228452" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="mailto:info@pricconstrucciones.com">info@pricconstrucciones.com</a></li>
-          <!-- Reemplazar por URLs reales cuando estén disponibles -->
-          <li><a href="#" rel="noopener">Instagram</a></li>
-          <li><a href="#" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://wa.me/5493512142900" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:info@prichouse.com">info@prichouse.com</a></li>
+          <li><a href="https://www.instagram.com/pric.house/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/prichouse" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
     </div>
@@ -999,7 +1085,7 @@
 
 <script>
   // TODO: REEMPLAZAR SI CAMBIA EL NÚMERO OFICIAL DE PRIC HOUSE
-  const WHATSAPP_NUMBER = "5493513228452";
+  const WHATSAPP_NUMBER = "5493512142900";
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const fy = document.getElementById('footYear');
@@ -1169,6 +1255,19 @@
     });
     menu.addEventListener('click', (e) => { if(e.target.closest('[data-mclose]')) closeMenu(); });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && menu.classList.contains('open')) closeMenu(); });
+  })();
+
+  /* Carrusel de clientes — pausa sólo con el cursor encima de un logo puntual
+     (no con :hover en el contenedor, para que el track siga andando sobre
+     el fondo y los espacios vacíos entre logos). */
+  (function(){
+    const track = document.querySelector('.marquee-track');
+    if(!track) return;
+    const items = track.querySelectorAll('.cliente-item');
+    items.forEach(item => {
+      item.addEventListener('pointerenter', () => { track.style.animationPlayState = 'paused'; });
+      item.addEventListener('pointerleave', () => { track.style.animationPlayState = 'running'; });
+    });
   })();
 
   /* WhatsApp — enlaces genéricos */
