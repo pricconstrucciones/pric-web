@@ -23,7 +23,7 @@ consistencia de producto, no solo nombres de archivo.
 | IMG-03 | Card "Sector minero" — **resuelto 2026-08-27**, foto nueva + bug de ruta corregido de paso | Resuelto | — |
 | IMG-04 | `imagen-hero-2.png` referenciada en ruta rota (degrada bien, pero falta 1 de 6 fotos del hero) | Bug de ruta | Media |
 | IMG-05 | Bloque "Quiénes somos" — vuelve a estar sin imagen (ver nota abajo) | Falta | Media |
-| IMG-06 | Carrusel de 11 clientes — resuelto, sin tarjetas, tamaños equilibrados, **5 de 11 en color real** (actualizado 2026-09-01) | Resuelto | — |
+| IMG-06 | Carrusel de 11 clientes — resuelto, sin tarjetas, **10 de 11 en color real** (actualizado 2026-09-01); falta Tostado (archivo enviado vacío) | Resuelto | — |
 | IMG-07 | Card "Turismo y hospitality" de Posibles Proyectos — **resuelto 2026-08-27**, imagen reemplazada por una nueva generada a medida | Resuelto | — |
 | IMG-08 | Assets sin usar en `imagenes/` (11 archivos) — varios de altísima calidad, hoy desperdiciados | Oportunidad / limpieza | Baja–Media |
 
@@ -252,20 +252,57 @@ versión anterior de esta sección — se mantienen los mismos 11).
 
 | Cliente | Archivo | Altura |
 |---|---|---|
-| Aeropuertos Argentina | `imagenes/logo-aeropuertos-argentina.svg` | 54px |
+| Aeropuertos Argentina | `imagenes/logo-aeropuertos-argentina.svg` | 31px |
 | Tostado Café Club | `imagenes/logo-tostado-cafe-club.png` | 74px |
-| Farmacias Red | `imagenes/logo-farmacias-red.png` | 69px |
+| Farmacias Red | `imagenes/logo-farmacias-red.png` | 68px |
 | CNH Industrial | `imagenes/logo-cnh-industrial.svg` | 67px |
 | Yenny | `imagenes/logo-yenny.png` | 54px |
-| Andrea Nahás | `imagenes/logo-andrea-nahas.png` | 48px |
+| Andrea Nahás | `imagenes/logo-andrea-nahas.png` | 47px |
 | Assist Card | `imagenes/logo-assist-card.png` | 46px |
-| ShopGallery | `imagenes/logo-shopgallery.png` | 40px |
+| ShopGallery | `imagenes/logo-shopgallery.png` | 39px |
 | Dufry | `imagenes/logo-dufry.svg` | 40px |
 | Sullair | `imagenes/logo-sullair.svg` | 34px |
 | EANA | `imagenes/logo-eana.png` | 29px |
 
-**Prioridad:** Resuelta — los 6 logos sin color real quedan como mejora
-opcional si PRIC consigue sus marcas oficiales (ver lista arriba).
+**Actualización 2026-09-01 (segunda pasada) — color real en 10 de 11:**
+
+El usuario subió una carpeta `Logos con color` a `Desktop\clientes\` con
+6 archivos nuevos. Resultado:
+
+- **Andrea Nahás, Farmacias Red, ShopGallery, Yenny, Assist Card**: 5
+  logos reales a color, procesados igual que antes (quitando fondo con
+  muestreo robusto donde hacía falta, recortados al contenido). Se suman
+  a los 5 que ya estaban resueltos → **10 de 11 clientes con color real**,
+  solo falta Tostado Café Club.
+- **Tostado Café Club**: el archivo `logo tostado.png` de esa carpeta
+  está **vacío/en blanco** (130×150px, blanco sólido de punta a punta,
+  verificado a nivel de píxeles) — no se pudo usar. Sigue en la versión
+  monocromática generada por IA de la primera pasada. **Falta que PRIC
+  reenvíe este archivo.**
+- **Farmacias Red — discrepancia de nombre:** el logo nuevo dice
+  "**Red Persce S.A.**"; la versión anterior (que yo había transcripto
+  de una imagen borrosa) decía "RedFarvec S.A.". Son nombres distintos
+  para lo que aparenta ser la misma razón social — **vale la pena que
+  PRIC confirme cuál es el correcto** antes de publicar (no afecta el
+  `alt` visible, que solo dice "Logo Farmacias Red", pero sí el archivo
+  gráfico en sí).
+
+**Aeropuertos Argentina — rebranding confirmado (abril 2024):** el
+usuario avisó que esta marca rebrandeó. Investigué y confirmé: la empresa
+pasó de llamarse "Aeropuertos Argentina 2000" a "Aeropuertos Argentina"
+(sin el "2000"), con logo e identidad nuevos — nuevo ícono (mapa
+geométrico de Argentina en vez de óvalo+ala) y nueva paleta (gris plomo +
+verde petróleo). Tanto el SVG de Wikimedia Commons que había usado en la
+primera pasada como el JPG que estaba en la carpeta del usuario mostraban
+**el diseño viejo, desactualizado**. Encontré y usé el SVG oficial actual
+directo del sitio `aeropuertosargentina.com` (color gris plomo `#696D71`,
+coincide con la paleta del rebranding descripta en la prensa). El `alt`
+existente ("Logo Aeropuertos Argentina") ya no tenía el "2000", así que
+no necesitó cambios.
+
+**Prioridad:** Resuelta — solo falta Tostado Café Club (archivo vacío,
+pendiente de que PRIC lo reenvíe) y confirmar el nombre legal de
+Farmacias Red.
 
 ---
 
