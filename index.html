@@ -383,12 +383,16 @@
     opacity:0; transform:translate(-50%, 70%); animation:attrsIn .9s var(--ease) 1.15s forwards;
   }
   @keyframes attrsIn{ to{opacity:1; transform:translate(-50%, 50%);} }
-  .hero-attr{padding:26px 22px; border-right:1px solid var(--line-on-light); text-align:left;}
+  .hero-attr{padding:26px 22px; border-right:1px solid var(--line-on-light); text-align:left; min-width:0;}
   .hero-attr:last-child{border-right:0;}
   .hero-attr .n{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.14em; color:var(--copper); margin-bottom:8px;}
   .hero-attr .t{font-family:var(--font-display); font-size:15px; font-weight:600; color:var(--carbon); line-height:1.2;}
   @media (max-width:760px){
-    .hero-attrs{position:static; transform:none; width:100%; grid-template-columns:repeat(2,1fr); margin-top:56px; box-shadow:none; border:1px solid var(--line-on-light);}
+    /* La animación attrsIn (translate(-50%,50%)) está pensada para el
+       centrado absoluto de desktop; en mobile, con position:static, ese
+       mismo transform corría la tarjeta fuera de pantalla. Se anula la
+       animación y se deja visible directamente. */
+    .hero-attrs{position:static; transform:none; animation:none; opacity:1; width:100%; grid-template-columns:repeat(2,1fr); margin-top:56px; box-shadow:none; border:1px solid var(--line-on-light);}
     .hero-attr:nth-child(2){border-right:0;}
     .hero-attr:nth-child(-n+2){border-bottom:1px solid var(--line-on-light);}
     .hero{padding-bottom:70px;}
