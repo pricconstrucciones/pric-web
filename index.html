@@ -535,8 +535,28 @@
   .cliente-item img[src$="logo-shopgallery.png"]{height:39px;}
   .cliente-item img[src$="logo-dufry.svg"]{height:40px;}
   .cliente-item img[src$="logo-sullair.svg"]{height:34px;}
-  .cliente-item img[src$="logo-aeropuertos-argentina.svg"]{height:31px;}
+  .cliente-item img[src$="logo-aeropuertos-argentina.svg"]{height:39px;} /* +~26% (era 31px), para que tenga peso visual real frente al resto */
   .cliente-item img[src$="logo-eana.png"]{height:29px;}
+
+  /* Tostado y Aeropuertos: en vez de revelar su color real (son grises por
+     diseño / por el rebranding), el hover los lleva a blanco puro. Se usa la
+     misma lista de funciones de filter en ambos estados (grayscale, brightness,
+     invert) para que la transición interpole con suavidad en vez de saltar. */
+  .cliente-item img[src$="logo-tostado-cafe-club.png"],
+  .cliente-item img[src$="logo-aeropuertos-argentina.svg"]{
+    filter:grayscale(1) brightness(1) invert(0);
+  }
+  .cliente-item:hover img[src$="logo-tostado-cafe-club.png"],
+  .cliente-item:hover img[src$="logo-aeropuertos-argentina.svg"]{
+    filter:grayscale(1) brightness(0) invert(1);
+  }
+
+  /* CNH Industrial: su color real (rojo oscuro + casi negro) queda demasiado
+     oscuro tras el grayscale general. Se aclara solo su estado de reposo;
+     el hover sigue revelando el color real del archivo, igual que el resto. */
+  .cliente-item img[src$="logo-cnh-industrial.svg"]{ filter:grayscale(1) brightness(2.4); }
+  .cliente-item:hover img[src$="logo-cnh-industrial.svg"]{ filter:grayscale(0) brightness(1); }
+
   .clientes-note{margin:36px auto 0; max-width:560px; font-size:12.5px; color:rgba(239,234,226,.4); line-height:1.6;}
 
   /* ============ CTA — oscuro ============ */
