@@ -360,6 +360,80 @@
   .on-dark .project-meta{color:rgba(239,234,226,.55);}
   .project-meta span:first-child{color:var(--copper);}
 
+  /* ============ MODELOS ============ */
+  .modelos{background:var(--carbon); padding:130px 0;}
+  @media (max-width:760px){ .modelos{padding:90px 0;} }
+  .modelos .section-head{margin-bottom:40px;}
+
+  /* Selector de superficie (tabs) */
+  .models-toolbar{display:flex; align-items:center; justify-content:space-between; gap:16px 24px; flex-wrap:wrap; margin-bottom:28px;}
+  .models-switch{display:inline-flex; padding:4px; border:1px solid var(--line-on-dark-2); border-radius:var(--r-pill);}
+  .models-switch button{
+    min-height:40px; padding:0 22px; border-radius:var(--r-pill);
+    font-family:var(--font-label); font-size:12.5px; font-weight:600; letter-spacing:.14em;
+    color:rgba(239,234,226,.55); border:1px solid transparent;
+    transition:color .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease);
+  }
+  .models-switch button:hover{color:#fff;}
+  .models-switch button[aria-selected="true"]{color:#fff; background:rgba(201,107,55,.14); border-color:rgba(201,107,55,.55);}
+  .models-note{font-family:var(--font-label); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,234,226,.4);}
+
+  /* Grilla: 4 en fila → 2×2 → carrusel horizontal en mobile */
+  .models-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .models-grid[hidden]{display:none;}
+  @media (max-width:1240px){ .models-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){
+    .models-grid{
+      display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      margin:0 calc(-1 * var(--gutter)); padding:0 var(--gutter) 6px; scroll-padding:0 var(--gutter);
+      scrollbar-width:none;
+    }
+    .models-grid::-webkit-scrollbar{display:none;}
+    .models-grid > .model-card{flex:0 0 84%; scroll-snap-align:start;}
+  }
+
+  .model-card{
+    background:var(--carbon); display:flex; flex-direction:column;
+    border:1px solid var(--line-on-dark); border-radius:var(--r-editorial); overflow:hidden;
+    transition:border-color .35s var(--ease), transform .35s var(--ease);
+  }
+  .model-card:hover{border-color:rgba(201,107,55,.55); transform:translateY(-3px);}
+  .model-card .media-frame{aspect-ratio:4/3; border-radius:0;}
+  .model-card:hover .media-frame img{transform:scale(1.025);}
+  .model-body{padding:22px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .model-tags{display:flex; flex-wrap:wrap; gap:6px; min-height:22px;}
+  .model-tag{
+    display:inline-flex; align-items:center; height:22px; padding:0 8px; border-radius:var(--r-pill); white-space:nowrap;
+    border:1px solid var(--line-on-dark-2);
+    font-family:var(--font-label); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+    color:rgba(239,234,226,.62);
+  }
+  .model-tag--deluxe{border-color:rgba(201,107,55,.6); color:var(--copper);}
+  .model-body h3{font-family:var(--font-display); font-size:19px; font-weight:600; color:#fff; margin-top:4px;}
+  .model-body .m2{font-family:var(--font-label); font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--copper);}
+  .model-body p{font-size:13.5px; line-height:1.6; color:rgba(239,234,226,.6);}
+  .model-price{margin-top:auto; padding-top:18px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:2px;}
+  .model-body > p{margin-bottom:10px;}
+  .model-price .total{font-family:var(--font-display); font-size:26px; font-weight:600; letter-spacing:-.02em; color:#fff; line-height:1.15;}
+  .model-price .per{font-size:12.5px; color:rgba(239,234,226,.45);}
+  .model-body .btn-secondary{align-self:flex-start; margin-top:6px; padding:10px 0; color:#fff;}
+  .model-body .btn-secondary .arr, .models-custom .btn-secondary .arr{display:inline-flex; color:var(--copper); transition:transform .3s var(--ease);}
+  .model-body .btn-secondary:hover .arr, .models-custom .btn-secondary:hover .arr{transform:translateX(3px);}
+
+  /* Proyecto a medida */
+  .models-custom{
+    margin-top:16px; padding:34px clamp(22px,3vw,40px);
+    border:1px solid var(--line-on-dark); border-radius:var(--r-editorial);
+    display:flex; align-items:center; justify-content:space-between; gap:20px 48px; flex-wrap:wrap;
+    transition:border-color .35s var(--ease);
+  }
+  .models-custom:hover{border-color:rgba(201,107,55,.55);}
+  .models-custom .eyebrow{margin-bottom:10px; flex-wrap:wrap; row-gap:8px;}
+  @media (max-width:640px){ .models-custom{padding:28px 22px;} .models-custom .eyebrow{letter-spacing:.16em;} }
+  .models-custom h3{font-family:var(--font-display); font-size:22px; font-weight:600; color:#fff; margin-bottom:8px;}
+  .models-custom p{font-size:14px; line-height:1.65; color:rgba(239,234,226,.6); max-width:58ch;}
+  .models-custom .btn-secondary{color:#fff; flex-shrink:0;}
+
   /* ============ PROCESO ============ */
   .proceso{background:var(--stone); padding:150px 0;}
   @media (max-width:760px){ .proceso{padding:90px 0;} }
@@ -535,7 +609,7 @@
   }
 
   /* ============ FIXES RESPONSIVE (grid min-width:auto) ============ */
-  .intro-grid > *, .intro-points > *, .app > *, .amedida-grid > *, .timeline > *, .respaldo-grid > *,
+  .intro-grid > *, .intro-points > *, .app > *, .models-grid > *, .family-intro > *, .amedida-grid > *, .timeline > *, .respaldo-grid > *,
   .contacto-grid > *, .cf-row > *, .foot-grid > *{ min-width:0; }
 
   /* ============ INTRODUCCIÓN ============ */
@@ -611,8 +685,51 @@
   .app-body .btn-secondary .arr, .respaldo-link .arr{display:inline-flex; color:var(--copper); transition:transform .3s var(--ease);}
   .app-body .btn-secondary:hover .arr, .respaldo-link:hover .arr{transform:translateX(3px);}
 
+  .app-products{margin-top:26px; display:flex; flex-direction:column; gap:8px;}
+  .app-product{
+    display:grid; grid-template-columns:1fr auto; column-gap:14px; align-items:center;
+    padding:14px 16px; border:1px solid var(--line-on-dark); border-radius:var(--r-editorial);
+    transition:border-color .3s var(--ease), background .3s var(--ease);
+  }
+  .app-product b{font-family:var(--font-display); font-size:14.5px; font-weight:600; color:#fff;}
+  .app-product span:not(.arr){grid-column:1; font-size:12.5px; line-height:1.5; color:rgba(239,234,226,.55); margin-top:3px;}
+  .app-product .arr{grid-column:2; grid-row:1 / span 2; display:inline-flex; color:var(--copper); transition:transform .3s var(--ease);}
+  .app-product:hover{border-color:rgba(201,107,55,.55); background:rgba(201,107,55,.05);}
+  .app-product:hover .arr{transform:translateX(3px);}
+
+  /* ============ CONFIGURACIONES (cards y selector de superficie de /civil/) ============ */
+  .modelos.configuraciones{background:var(--graphite); padding:150px 0; border-top:1px solid var(--line-on-dark);}
+  @media (max-width:760px){ .modelos.configuraciones{padding:90px 0;} }
+  /* Tier + galería siempre en una línea para que títulos y precios queden alineados */
+  .configuraciones .model-tags{flex-wrap:nowrap; gap:5px;}
+  .configuraciones .model-tag{padding:0 7px; letter-spacing:.07em; font-size:9.5px;}
+  @media (max-width:380px){ .configuraciones .model-tags{flex-wrap:wrap;} }
+  .family-switch{display:flex; flex-wrap:wrap; gap:0 36px; border-bottom:1px solid var(--line-on-dark-2); margin-bottom:40px;}
+  .family-switch button{
+    display:inline-flex; align-items:baseline; gap:10px; min-height:48px; padding:14px 0; margin-bottom:-1px;
+    font-family:var(--font-display); font-size:clamp(16px,1.6vw,20px); font-weight:500; text-align:left;
+    color:rgba(239,234,226,.5); border-bottom:2px solid transparent;
+    transition:color .3s var(--ease), border-color .3s var(--ease);
+  }
+  .family-switch button .n{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.14em; color:rgba(239,234,226,.35); transition:color .3s var(--ease);}
+  .family-switch button:hover{color:#fff;}
+  .family-switch button[aria-selected="true"]{color:#fff; border-bottom-color:var(--copper);}
+  .family-switch button[aria-selected="true"] .n{color:var(--copper);}
+  @media (max-width:560px){ .family-switch{gap:0 22px;} .family-switch button{font-size:15.5px; padding:12px 0;} }
+  .family-intro{display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,72px); align-items:start; margin-bottom:44px;}
+  @media (max-width:900px){ .family-intro{grid-template-columns:1fr; gap:24px;} }
+  .family-intro h3{font-size:clamp(21px,2.2vw,27px); margin-bottom:12px; max-width:24ch;}
+  .family-intro p{font-size:15px; line-height:1.7; max-width:50ch;}
+  .family-uses ul{display:flex; flex-wrap:wrap; gap:8px;}
+  .family-uses li{
+    padding:6px 12px; border:1px solid var(--line-on-dark-2); border-radius:var(--r-pill);
+    font-size:12.5px; color:rgba(239,234,226,.75); line-height:1.4;
+  }
+  .family-uses p{margin-top:14px; font-size:12.5px; line-height:1.55; color:rgba(239,234,226,.45) !important;}
+  .config-combine{margin-top:36px; max-width:70ch; font-size:14px; line-height:1.65; color:rgba(239,234,226,.55) !important; padding-left:16px; border-left:2px solid var(--copper);}
+
   /* ============ A MEDIDA ============ */
-  .amedida{background:var(--graphite); padding:130px 0; border-top:1px solid var(--line-on-dark);}
+  .amedida{background:var(--carbon); padding:130px 0; border-top:1px solid var(--line-on-dark);}
   @media (max-width:760px){ .amedida{padding:90px 0;} }
   .amedida-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center;}
   @media (max-width:900px){ .amedida-grid{grid-template-columns:1fr; gap:44px;} }
@@ -621,12 +738,12 @@
   @media (max-width:340px){ .amedida-parts{grid-template-columns:1fr;} }
   @media (max-width:560px){ .amedida-parts li{min-height:96px; padding:20px 16px; font-size:14.5px;} }
   .amedida-parts li{
-    background:var(--graphite); padding:26px 22px; min-height:112px;
+    background:var(--carbon); padding:26px 22px; min-height:112px;
     display:flex; flex-direction:column; justify-content:space-between; gap:18px;
     font-family:var(--font-display); font-size:16px; font-weight:500; color:#fff; line-height:1.3;
     transition:background .35s var(--ease);
   }
-  .amedida-parts li:hover{background:#1f2325;}
+  .amedida-parts li:hover{background:var(--graphite);}
   .amedida-parts .n{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.14em; color:var(--copper);}
 
   /* ============ CÓMO TRABAJAMOS (timeline de Civil sobre fondo claro) ============ */
@@ -654,6 +771,7 @@
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#aplicaciones">Aplicaciones</a>
+    <a href="#configuraciones">Configuraciones</a>
     <a href="#como-trabajamos">Cómo trabajamos</a>
     <a href="#respaldo">Respaldo</a>
     <a href="#contacto">Contacto</a>
@@ -679,6 +797,7 @@
     <nav class="mm-links" aria-label="Navegación móvil">
       <a href="/" data-mclose>PRIC HOUSE</a>
       <a href="#aplicaciones" data-mclose>Aplicaciones</a>
+      <a href="#configuraciones" data-mclose>Configuraciones</a>
       <a href="#como-trabajamos" data-mclose>Cómo trabajamos</a>
       <a href="#respaldo" data-mclose>Respaldo</a>
       <a href="#contacto" data-mclose>Contacto</a>
@@ -780,6 +899,37 @@
     <noscript>
       <p class="lead">Industria, energía y minería · Complejos deportivos · Turismo &amp; hospitality. Escribinos a <a href="https://wa.me/5493512142900">WhatsApp</a> para conocer cada aplicación.</p>
     </noscript>
+  </div>
+</section>
+
+<!-- ============ CONFIGURACIONES ============ -->
+<!-- Familias, modelos y precios se generan desde PRODUCT_FAMILIES (ver <script>):
+     para sumar una tipología (sanitarios, oficinas, gastronomía…) alcanza con
+     agregar una familia a ese array. -->
+<section class="modelos configuraciones on-dark" id="configuraciones">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="technical-line"></span>Configuraciones</span>
+      <h2 class="display-title" style="font-size:clamp(28px,3.6vw,46px); margin-bottom:18px;">Elegimos la tipología según lo que tu proyecto necesita resolver.</h2>
+      <p class="lead">Viviendas, espacios comunes y configuraciones complementarias que pueden combinarse dentro de un mismo proyecto.</p>
+    </div>
+
+    <div class="reveal delay-1">
+      <div class="family-switch" role="tablist" aria-label="Tipología" id="familyTabs"></div>
+
+      <div class="family-panel" id="familyPanel" role="tabpanel">
+        <div class="family-intro" id="familyIntro" aria-live="polite"></div>
+
+        <div class="models-toolbar">
+          <div class="models-switch" role="tablist" aria-label="Superficie" id="surfaceTabs"></div>
+          <span class="models-note">Valores expresados en USD</span>
+        </div>
+
+        <div class="models-grid" id="modelsGrid"></div>
+      </div>
+
+      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SM como recepción en un complejo turístico, o unidades habitacionales, oficinas y espacios comunes en una operación industrial.</p>
+    </div>
   </div>
 </section>
 
@@ -1087,6 +1237,10 @@
         items: ['5 unidades', '10 unidades', '20 unidades', 'A medida'],
         note: 'Orientativas: cada solución se configura según la cantidad de personas, la ubicación y la etapa del proyecto.'
       },
+      products: [
+        { family: 'housing', uses: ['Alojamiento de personal', 'Dormitorios'] },
+        { family: 'multipurpose', uses: ['Oficinas', 'Comedor / SUM', 'Salas de reunión', 'Espacios operativos'] }
+      ],
       cta: 'Explorar solución industrial',
       href: null,
       waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto de industria, energía o minería.',
@@ -1102,6 +1256,9 @@
       highlight: 'Que la infraestructura de apoyo no retrase la apertura de las canchas ni del complejo.',
       usesLabel: 'Usos posibles',
       uses: ['Recepción', 'Administración', 'Vestuarios', 'Sanitarios', 'Bar o cafetería', 'Espacio gastronómico', 'Oficina', 'Depósito', 'SUM / espacio social'],
+      products: [
+        { family: 'multipurpose', uses: ['Recepción', 'Club house', 'Cafetería', 'Administración', 'SUM'] }
+      ],
       cta: 'Explorar proyectos deportivos',
       href: null,
       waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un complejo deportivo.',
@@ -1121,10 +1278,95 @@
         title: 'Bodegas y enoturismo',
         text: 'Unidades habitacionales integradas a viñedos, fincas o bodegas, con posibilidad de adaptar estética y terminaciones a la identidad del proyecto.'
       },
+      products: [
+        { family: 'housing', uses: ['Unidades de alojamiento', 'Cabañas', 'Renta temporaria'] },
+        { family: 'multipurpose', uses: ['Recepción', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía'] }
+      ],
       cta: 'Explorar proyectos turísticos',
       href: null,
       waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico.',
       image: { src: '/imagenes/caso-turismo-cordoba.png', alt: 'Complejo turístico de unidades modulares PRIC HOUSE integrado al paisaje serrano de Córdoba' }
+    }
+  ];
+
+
+  /* ==========================================================================
+     PRODUCT_FAMILIES — tipologías del sistema modular con sus modelos y precios
+     comerciales finales (USD). Fuente única de la sección "Configuraciones".
+     Para sumar una tipología (sanitarios, oficinas, gastronomía…): agregar un
+     objeto con la misma forma. Cada modelo puede tener su propia `image`;
+     si no la tiene, usa la de la familia.
+       tier:    'standard' | 'deluxe'
+       gallery: true si incluye galería y cubierta exterior
+     ========================================================================== */
+  const TIERS = { standard: 'Standard', deluxe: 'Deluxe' };
+  const PRODUCT_FAMILIES = [
+    {
+      id: 'housing',
+      label: 'Viviendas Modulares',
+      cardPrefix: 'Vivienda',
+      waName: 'la Vivienda Modular',
+      waPublished: 'publicada',
+      intro: {
+        eyebrow: 'Viviendas Modulares',
+        title: 'Unidades habitacionales para alojar equipos, huéspedes o residentes.',
+        desc: 'Viviendas modulares en 37 y 74 m², con versiones Standard y Deluxe y la opción de sumar galería y cubierta exterior. Se agrupan y amplían según la escala del proyecto.',
+        uses: ['Alojamiento de personal', 'Unidades turísticas', 'Cabañas', 'Renta temporaria', 'Desarrollos inmobiliarios']
+      },
+      // TODO: reemplazar por render/foto específica de viviendas en contexto empresarial
+      image: { src: '/imagenes/vertical-civil.jpg', alt: 'Vivienda modular PRIC HOUSE con revestimiento símil madera' },
+      models: [
+        { surface: 37, tier: 'standard', gallery: false, price: 25100, pricePerM2: 678, tagline: 'Unidad compacta',
+          description: 'Unidad habitacional compacta y eficiente, pensada para alojamiento de personal, unidades turísticas o renta.' },
+        { surface: 37, tier: 'deluxe', gallery: false, price: 27600, pricePerM2: 746, tagline: '2 dormitorios',
+          description: 'Unidad expandible con dos dormitorios, área social integrada, cocina en L y baño completo, con una selección superior de terminaciones.' },
+        { surface: 37, tier: 'standard', gallery: true, price: 28900, pricePerM2: 781, tagline: 'Expansión exterior',
+          description: 'La unidad Standard con galería y cubierta exterior, sumando un espacio semicubierto de uso cotidiano.' },
+        { surface: 37, tier: 'deluxe', gallery: true, price: 31500, pricePerM2: 851, tagline: 'Expansión exterior',
+          description: 'La configuración Deluxe con galería y cubierta exterior: mayor nivel de terminación y un espacio semicubierto integrado.' },
+        { surface: 74, tier: 'standard', gallery: false, price: 45800, pricePerM2: 619, tagline: 'Mayor amplitud',
+          description: 'Mayor superficie habitacional para equipos, familias o huéspedes, con la eficiencia constructiva del sistema PRIC HOUSE.' },
+        { surface: 74, tier: 'deluxe', gallery: false, price: 49700, pricePerM2: 672, tagline: 'Mayor amplitud y equipamiento',
+          description: 'Una unidad de mayor escala con una selección superior de terminaciones y equipamiento.' },
+        { surface: 74, tier: 'standard', gallery: true, price: 51300, pricePerM2: 693, tagline: 'Expansión exterior',
+          description: 'Gran superficie complementada con galería y cubierta exterior, generando espacios de encuentro al aire libre.' },
+        { surface: 74, tier: 'deluxe', gallery: true, price: 55300, pricePerM2: 747, tagline: 'Configuración superior',
+          description: 'La propuesta habitacional más completa: mayor superficie, terminaciones Deluxe y galería con cubierta.' }
+      ]
+    },
+    {
+      id: 'multipurpose',
+      label: 'Salones de Espacios Múltiples',
+      cardPrefix: 'SM',
+      waName: 'el Salón de Espacios Múltiples',
+      waPublished: 'publicado',
+      intro: {
+        eyebrow: 'Salones de Espacios Múltiples',
+        title: 'Espacios modulares preparados para adaptarse a cada proyecto.',
+        desc: 'Una configuración versátil para desarrollar espacios de uso común, comercial, operativo o social. Su distribución puede adaptarse al destino y a las necesidades de cada proyecto.',
+        uses: ['Recepción', 'Oficinas', 'Salas de reunión', 'SUM', 'Espacios comunes', 'Cafetería', 'Gastronomía', 'Club house', 'Áreas sociales', 'Espacios comerciales', 'Apoyo para complejos deportivos', 'Apoyo para desarrollos turísticos'],
+        usesNote: 'Usos de referencia: el equipamiento y la distribución interior se definen según cada proyecto.'
+      },
+      // TODO: reemplazar por render/foto específica de Salones de Espacios Múltiples
+      image: { src: '/imagenes/vertical-empresas.png', alt: 'Salón de Espacios Múltiples PRIC HOUSE instalado junto a una nave industrial' },
+      models: [
+        { surface: 37, tier: 'standard', gallery: false, price: 22900, pricePerM2: 619, tagline: 'Espacio versátil',
+          description: 'Espacio modular versátil para áreas comunes, comerciales u operativas, adaptable según las necesidades del proyecto.' },
+        { surface: 37, tier: 'deluxe', gallery: false, price: 24900, pricePerM2: 673, tagline: 'Terminación superior',
+          description: 'Una configuración de mayor nivel de terminación para proyectos donde el diseño y la presencia del espacio tienen un papel central.' },
+        { surface: 37, tier: 'standard', gallery: true, price: 26600, pricePerM2: 719, tagline: 'Expansión exterior',
+          description: 'El espacio versátil del SM Standard con galería y cubierta exterior, para extender el uso hacia un área semicubierta.' },
+        { surface: 37, tier: 'deluxe', gallery: true, price: 28700, pricePerM2: 776, tagline: 'Expansión exterior',
+          description: 'Terminación Deluxe con galería y cubierta exterior, para espacios que también se proyectan hacia afuera.' },
+        { surface: 74, tier: 'standard', gallery: false, price: 42300, pricePerM2: 572, tagline: 'Mayor superficie',
+          description: 'Mayor superficie libre para usos comunes, comerciales u operativos que requieren más capacidad.' },
+        { surface: 74, tier: 'deluxe', gallery: false, price: 45300, pricePerM2: 612, tagline: 'Mayor superficie y terminación',
+          description: 'Un espacio amplio con terminaciones de mayor nivel, pensado para recepciones, áreas sociales o espacios de marca.' },
+        { surface: 74, tier: 'standard', gallery: true, price: 47900, pricePerM2: 647, tagline: 'Expansión exterior',
+          description: 'Gran superficie complementada con galería y cubierta, integrando el interior con un área semicubierta.' },
+        { surface: 74, tier: 'deluxe', gallery: true, price: 50800, pricePerM2: 686, tagline: 'Configuración superior',
+          description: 'La configuración SM más completa: mayor superficie, terminaciones Deluxe y galería con cubierta exterior.' }
+      ]
     }
   ];
 
@@ -1147,6 +1389,13 @@
             ${app.scales.note ? `<p>${esc(app.scales.note)}</p>` : ''}
           </div>` : '';
     const highlight = app.highlight ? `<p class="app-highlight">${esc(app.highlight)}</p>` : '';
+    const products = (app.products || []).map(pr => {
+      const fam = PRODUCT_FAMILIES.find(f => f.id === pr.family);
+      if(!fam) return '';
+      return `<a class="app-product" href="#configuraciones" data-family="${esc(fam.id)}"><b>${esc(fam.label)}</b><span>${pr.uses.map(esc).join(' · ')}</span>${ARROW}</a>`;
+    }).join('');
+    const productsBlock = products ? `
+          <div class="app-products"><span class="app-label">Configuraciones PRIC HOUSE</span>${products}</div>` : '';
     const subcase = app.subcase ? `
           <div class="app-subcase"><span class="app-label">${esc(app.subcase.title)}</span><p>${esc(app.subcase.text)}</p></div>` : '';
     return `
@@ -1161,7 +1410,7 @@
             <span class="app-label">${esc(app.usesLabel)}</span>
             <ul>${app.uses.map(u => `<li>${esc(u)}</li>`).join('')}</ul>
           </div>
-          ${scales}${subcase}
+          ${scales}${subcase}${productsBlock}
           ${cta}
         </div>
       </article>`;
@@ -1191,6 +1440,84 @@
       });
     }
   })();
+
+
+  /* Configuraciones — selector Tipología → Superficie → Versión */
+  const fmtUSD = (n) => 'USD ' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  const modelName = (m) => `${m.surface} m² ${TIERS[m.tier]}${m.gallery ? ' con galería y cubierta' : ''}`;
+
+  const configState = { family: PRODUCT_FAMILIES[0].id, surface: null };
+
+  function renderModelCard(fam, m){
+    const img = m.image || fam.image;
+    const tags = [`<span class="model-tag${m.tier === 'deluxe' ? ' model-tag--deluxe' : ''}">${esc(TIERS[m.tier])}</span>`];
+    if(m.gallery) tags.push('<span class="model-tag">+ Galería y cubierta</span>');
+    const msg = `Hola, quiero recibir información sobre ${fam.waName} de ${modelName(m)}, ${fam.waPublished} a ${fmtUSD(m.price)}.`;
+    return `
+      <article class="model-card" data-family="${esc(fam.id)}" data-surface="${m.surface}">
+        <div class="media-frame"><img src="${esc(img.src)}" alt="${esc(img.alt + ' — ' + modelName(m))}" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags">${tags.join('')}</div>
+          <h3>${esc(fam.cardPrefix)} ${m.surface} m²</h3>
+          <span class="m2">${esc(m.tagline)}</span>
+          <p>${esc(m.description)}</p>
+          <div class="model-price"><span class="total">${fmtUSD(m.price)}</span><span class="per">${fmtUSD(m.pricePerM2)} / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="${esc(msg)}">Consultar configuración ${ARROW}</a>
+        </div>
+      </article>`;
+  }
+
+  function renderTabs(container, items, current, onSelect){
+    container.innerHTML = items.map(it =>
+      `<button type="button" role="tab" id="${esc(it.tabId)}" aria-selected="${it.value === current}" tabindex="${it.value === current ? 0 : -1}" data-value="${esc(it.value)}">${it.html}</button>`
+    ).join('');
+    const tabs = Array.from(container.querySelectorAll('[role="tab"]'));
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => onSelect(tab.dataset.value));
+      tab.addEventListener('keydown', (e) => {
+        if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        onSelect(next.dataset.value);
+        container.querySelector(`[data-value="${next.dataset.value}"]`).focus();
+      });
+    });
+  }
+
+  function renderConfig(){
+    const famTabs = document.getElementById('familyTabs');
+    if(!famTabs) return;
+    const fam = PRODUCT_FAMILIES.find(f => f.id === configState.family);
+    const surfaces = [...new Set(fam.models.map(m => m.surface))];
+    if(!surfaces.includes(configState.surface)) configState.surface = surfaces[0];
+
+    renderTabs(famTabs, PRODUCT_FAMILIES.map((f, i) => ({
+      value: f.id, tabId: `family-tab-${f.id}`,
+      html: `<span class="n">${pad(i + 1)}</span>${esc(f.label)}`
+    })), fam.id, (v) => { configState.family = v; renderConfig(); });
+    document.getElementById('familyPanel').setAttribute('aria-labelledby', `family-tab-${fam.id}`);
+
+    const intro = fam.intro;
+    document.getElementById('familyIntro').innerHTML = `
+      <div>
+        <span class="app-label">${esc(intro.eyebrow)}</span>
+        <h3>${esc(intro.title)}</h3>
+        <p>${esc(intro.desc)}</p>
+      </div>
+      <div class="family-uses">
+        <span class="app-label">Usos posibles</span>
+        <ul>${intro.uses.map(u => `<li>${esc(u)}</li>`).join('')}</ul>
+        ${intro.usesNote ? `<p>${esc(intro.usesNote)}</p>` : ''}
+      </div>`;
+
+    const surfTabs = document.getElementById('surfaceTabs');
+    renderTabs(surfTabs, surfaces.map(sf => ({ value: String(sf), tabId: `surface-tab-${sf}`, html: `${sf} m²` })),
+      String(configState.surface), (v) => { configState.surface = Number(v); renderConfig(); });
+    surfTabs.setAttribute('aria-label', `Superficie — ${fam.label}`);
+
+    const grid = document.getElementById('modelsGrid');
+    grid.innerHTML = fam.models.filter(m => m.surface === configState.surface).map(m => renderModelCard(fam, m)).join('');
+    bindWaLinks(grid);
+  }
 
   const fy = document.getElementById('footYear');
   if(fy) fy.textContent = new Date().getFullYear();
@@ -1271,11 +1598,23 @@
   function buildWaUrl(message){
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message || '')}`;
   }
-  document.querySelectorAll('[data-wa-link]').forEach(a => {
-    const msg = a.getAttribute('data-wa-message') || 'Hola PRIC HOUSE, quiero más información.';
-    a.setAttribute('href', buildWaUrl(msg));
-    a.setAttribute('target', '_blank');
-    a.setAttribute('rel', 'noopener');
+  function bindWaLinks(root){
+    root.querySelectorAll('[data-wa-link]').forEach(a => {
+      const msg = a.getAttribute('data-wa-message') || 'Hola PRIC HOUSE, quiero más información.';
+      a.setAttribute('href', buildWaUrl(msg));
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
+  }
+  renderConfig();
+  bindWaLinks(document);
+
+  /* Desde una aplicación: abrir la sección Configuraciones en la familia indicada */
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-family][href="#configuraciones"]');
+    if(!link) return;
+    configState.family = link.dataset.family;
+    renderConfig();
   });
 
   /* Formulario Empresas — construye mensaje y abre WhatsApp */
