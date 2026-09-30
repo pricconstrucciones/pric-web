@@ -371,19 +371,76 @@
   /* ============ MODELOS ============ */
   .modelos{background:var(--carbon); padding:130px 0;}
   @media (max-width:760px){ .modelos{padding:90px 0;} }
-  .models-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-on-dark); border:1px solid var(--line-on-dark); margin-top:8px;}
-  @media (max-width:980px){ .models-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .models-grid{grid-template-columns:1fr;} }
-  .model-card{background:var(--carbon); display:flex; flex-direction:column;}
-  .model-card .media-frame{position:relative; aspect-ratio:4/3; border-radius:0;}
-  .model-body{padding:26px 24px; display:flex; flex-direction:column; gap:8px; flex:1;}
-  .model-body h3{font-family:var(--font-display); font-size:18px; font-weight:600; color:#fff;}
-  .model-body .m2{font-family:var(--font-label); font-size:11.5px; font-weight:600; letter-spacing:.1em; color:var(--copper); text-transform:uppercase;}
+  .modelos .section-head{margin-bottom:40px;}
+
+  /* Selector de superficie (tabs) */
+  .models-toolbar{display:flex; align-items:center; justify-content:space-between; gap:16px 24px; flex-wrap:wrap; margin-bottom:28px;}
+  .models-switch{display:inline-flex; padding:4px; border:1px solid var(--line-on-dark-2); border-radius:var(--r-pill);}
+  .models-switch button{
+    min-height:40px; padding:0 22px; border-radius:var(--r-pill);
+    font-family:var(--font-label); font-size:12.5px; font-weight:600; letter-spacing:.14em;
+    color:rgba(239,234,226,.55); border:1px solid transparent;
+    transition:color .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease);
+  }
+  .models-switch button:hover{color:#fff;}
+  .models-switch button[aria-selected="true"]{color:#fff; background:rgba(201,107,55,.14); border-color:rgba(201,107,55,.55);}
+  .models-note{font-family:var(--font-label); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,234,226,.4);}
+
+  /* Grilla: 4 en fila → 2×2 → carrusel horizontal en mobile */
+  .models-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .models-grid[hidden]{display:none;}
+  @media (max-width:1240px){ .models-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){
+    .models-grid{
+      display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      margin:0 calc(-1 * var(--gutter)); padding:0 var(--gutter) 6px; scroll-padding:0 var(--gutter);
+      scrollbar-width:none;
+    }
+    .models-grid::-webkit-scrollbar{display:none;}
+    .models-grid > .model-card{flex:0 0 84%; scroll-snap-align:start;}
+  }
+
+  .model-card{
+    background:var(--carbon); display:flex; flex-direction:column;
+    border:1px solid var(--line-on-dark); border-radius:var(--r-editorial); overflow:hidden;
+    transition:border-color .35s var(--ease), transform .35s var(--ease);
+  }
+  .model-card:hover{border-color:rgba(201,107,55,.55); transform:translateY(-3px);}
+  .model-card .media-frame{aspect-ratio:4/3; border-radius:0;}
+  .model-card:hover .media-frame img{transform:scale(1.025);}
+  .model-body{padding:22px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .model-tags{display:flex; flex-wrap:wrap; gap:6px; min-height:22px;}
+  .model-tag{
+    display:inline-flex; align-items:center; height:22px; padding:0 8px; border-radius:var(--r-pill); white-space:nowrap;
+    border:1px solid var(--line-on-dark-2);
+    font-family:var(--font-label); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+    color:rgba(239,234,226,.62);
+  }
+  .model-tag--deluxe{border-color:rgba(201,107,55,.6); color:var(--copper);}
+  .model-body h3{font-family:var(--font-display); font-size:19px; font-weight:600; color:#fff; margin-top:4px;}
+  .model-body .m2{font-family:var(--font-label); font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--copper);}
   .model-body p{font-size:13.5px; line-height:1.6; color:rgba(239,234,226,.6);}
-  .model-card--custom{align-items:flex-start; justify-content:center; padding:26px 24px;}
-  .model-card--custom h3{font-family:var(--font-display); font-size:18px; font-weight:600; color:#fff; margin-bottom:10px;}
-  .model-card--custom p{font-size:13.5px; line-height:1.65; color:rgba(239,234,226,.6);}
-  .models-cta{margin-top:44px; text-align:center;}
+  .model-price{margin-top:auto; padding-top:18px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:2px;}
+  .model-body > p{margin-bottom:10px;}
+  .model-price .total{font-family:var(--font-display); font-size:26px; font-weight:600; letter-spacing:-.02em; color:#fff; line-height:1.15;}
+  .model-price .per{font-size:12.5px; color:rgba(239,234,226,.45);}
+  .model-body .btn-secondary{align-self:flex-start; margin-top:6px; padding:10px 0; color:#fff;}
+  .model-body .btn-secondary .arr, .models-custom .btn-secondary .arr{display:inline-flex; color:var(--copper); transition:transform .3s var(--ease);}
+  .model-body .btn-secondary:hover .arr, .models-custom .btn-secondary:hover .arr{transform:translateX(3px);}
+
+  /* Proyecto a medida */
+  .models-custom{
+    margin-top:16px; padding:34px clamp(22px,3vw,40px);
+    border:1px solid var(--line-on-dark); border-radius:var(--r-editorial);
+    display:flex; align-items:center; justify-content:space-between; gap:20px 48px; flex-wrap:wrap;
+    transition:border-color .35s var(--ease);
+  }
+  .models-custom:hover{border-color:rgba(201,107,55,.55);}
+  .models-custom .eyebrow{margin-bottom:10px; flex-wrap:wrap; row-gap:8px;}
+  @media (max-width:640px){ .models-custom{padding:28px 22px;} .models-custom .eyebrow{letter-spacing:.16em;} }
+  .models-custom h3{font-family:var(--font-display); font-size:22px; font-weight:600; color:#fff; margin-bottom:8px;}
+  .models-custom p{font-size:14px; line-height:1.65; color:rgba(239,234,226,.6); max-width:58ch;}
+  .models-custom .btn-secondary{color:#fff; flex-shrink:0;}
 
   /* ============ POR QUÉ ============ */
   .porque{background:var(--bone); padding:150px 0;}
@@ -628,40 +685,118 @@
       <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">Modelos pensados para cada familia y cada terreno.</h2>
     </div>
 
-    <!-- Placeholder — completar con los modelos reales de PRIC HOUSE (m², descripción y foto) -->
-    <div class="models-grid reveal delay-1">
-      <article class="model-card">
-        <div class="media-frame"><div class="ph"><div><b>Falta foto real</b><span>Modelo Base</span></div></div></div>
-        <div class="model-body">
-          <h3>Modelo Base</h3>
-          <span class="m2">[Superficie a completar]</span>
-          <p>[Descripción a confirmar — ambientes, distribución tipo, terminaciones estándar.]</p>
+    <!-- Imágenes: hoy todas las variantes reutilizan la foto de la familia (vertical-civil.jpg).
+         Cuando exista el render propio de cada configuración, reemplazar el src de su card. -->
+    <div class="reveal delay-1">
+      <div class="models-toolbar">
+        <div class="models-switch" role="tablist" aria-label="Superficie del modelo">
+          <button type="button" role="tab" id="models-tab-37" aria-controls="models-37" aria-selected="true">37 m²</button>
+          <button type="button" role="tab" id="models-tab-74" aria-controls="models-74" aria-selected="false" tabindex="-1">74 m²</button>
         </div>
-      </article>
-      <article class="model-card">
-        <div class="media-frame"><div class="ph"><div><b>Falta foto real</b><span>Modelo Intermedio</span></div></div></div>
-        <div class="model-body">
-          <h3>Modelo Intermedio</h3>
-          <span class="m2">[Superficie a completar]</span>
-          <p>[Descripción a confirmar — ambientes, distribución tipo, terminaciones estándar.]</p>
-        </div>
-      </article>
-      <article class="model-card">
-        <div class="media-frame"><div class="ph"><div><b>Falta foto real</b><span>Modelo Ampliado</span></div></div></div>
-        <div class="model-body">
-          <h3>Modelo Ampliado</h3>
-          <span class="m2">[Superficie a completar]</span>
-          <p>[Descripción a confirmar — ambientes, distribución tipo, terminaciones estándar.]</p>
-        </div>
-      </article>
-      <article class="model-card model-card--custom">
-        <h3>A medida</h3>
-        <p>Combinamos distribución, terminaciones y superficie según tu terreno y tu proyecto.</p>
-      </article>
-    </div>
+        <span class="models-note">Valores expresados en USD</span>
+      </div>
 
-    <div class="models-cta reveal delay-2">
-      <a href="#" class="btn-secondary on-dark" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero conocer todos los modelos disponibles.">Ver todos los modelos</a>
+      <div class="models-grid" id="models-37" role="tabpanel" aria-labelledby="models-tab-37">
+      <article class="model-card" data-model="37 m² Standard">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 37 m², versión Standard, instalada en un terreno parquizado" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"></div>
+          <h3>37 m² Standard</h3>
+          <span class="m2">37 m² · Vivienda compacta</span>
+          <p>Vivienda modular diseñada para aprovechar al máximo cada metro cuadrado. Una solución funcional y eficiente, ideal como primera vivienda, casa de fin de semana o unidad para renta.</p>
+          <div class="model-price"><span class="total">USD 25.100</span><span class="per">USD 678 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      <article class="model-card" data-model="37 m² Deluxe">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular expandible PRIC HOUSE de 37 m² Deluxe con revestimiento exterior símil madera y carpinterías de aluminio" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span></div>
+          <h3>37 m² Deluxe</h3>
+          <span class="m2">37 m² · 2 dormitorios</span>
+          <p>Vivienda modular expandible con dos dormitorios, área social integrada, cocina en L equipada y baño completo con sector húmedo y seco. Incorpora una selección superior de terminaciones y equipamiento.</p>
+          <div class="model-price"><span class="total">USD 27.600</span><span class="per">USD 746 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      <article class="model-card" data-model="37 m² Standard + Galería y Techo">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 37 m² Standard con galería y cubierta exterior" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"><span class="model-tag">+ Galería y cubierta</span></div>
+          <h3>37 m² Standard</h3>
+          <span class="m2">37 m² + expansión exterior</span>
+          <p>La funcionalidad del modelo Standard incorporando galería y cubierta exterior para ampliar el uso cotidiano de la vivienda y generar una transición entre interior y exterior.</p>
+          <div class="model-price"><span class="total">USD 28.900</span><span class="per">USD 781 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      <article class="model-card" data-model="37 m² Deluxe + Galería y Techo">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 37 m² Deluxe con galería y cubierta exterior" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span><span class="model-tag">+ Galería y cubierta</span></div>
+          <h3>37 m² Deluxe</h3>
+          <span class="m2">37 m² + expansión exterior</span>
+          <p>La configuración Deluxe complementada con galería y cubierta exterior, combinando mayor nivel de terminación con un espacio semicubierto integrado a la vivienda.</p>
+          <div class="model-price"><span class="total">USD 31.500</span><span class="per">USD 851 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      </div>
+      <div class="models-grid" id="models-74" role="tabpanel" aria-labelledby="models-tab-74" hidden>
+      <article class="model-card" data-model="74 m² Standard">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 74 m², versión Standard" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"></div>
+          <h3>74 m² Standard</h3>
+          <span class="m2">74 m² · Mayor amplitud</span>
+          <p>Una propuesta modular de mayor superficie pensada para familias que necesitan más espacio, conservando la eficiencia constructiva y la rapidez de implementación del sistema PRIC HOUSE.</p>
+          <div class="model-price"><span class="total">USD 45.800</span><span class="per">USD 619 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      <article class="model-card" data-model="74 m² Deluxe">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 74 m² Deluxe" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span></div>
+          <h3>74 m² Deluxe</h3>
+          <span class="m2">74 m² · Mayor amplitud y equipamiento</span>
+          <p>Una vivienda modular de mayor escala con una selección superior de terminaciones y equipamiento, diseñada para ofrecer más amplitud y confort.</p>
+          <div class="model-price"><span class="total">USD 49.700</span><span class="per">USD 672 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      <article class="model-card" data-model="74 m² Standard + Galería y Techo">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 74 m² Standard con galería y cubierta exterior" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"><span class="model-tag">+ Galería y cubierta</span></div>
+          <h3>74 m² Standard</h3>
+          <span class="m2">74 m² + expansión exterior</span>
+          <p>Una vivienda de gran superficie complementada con galería y cubierta exterior, generando nuevos espacios de encuentro y una mayor relación con el terreno.</p>
+          <div class="model-price"><span class="total">USD 51.300</span><span class="per">USD 693 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      <article class="model-card" data-model="74 m² Deluxe + Galería y Techo">
+        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE de 74 m² Deluxe con galería y cubierta exterior" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="model-body">
+          <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span><span class="model-tag">+ Galería y cubierta</span></div>
+          <h3>74 m² Deluxe</h3>
+          <span class="m2">74 m² · Configuración superior</span>
+          <p>La propuesta más completa de la línea PRIC HOUSE: mayor superficie, terminaciones Deluxe y expansión exterior mediante galería y cubierta.</p>
+          <div class="model-price"><span class="total">USD 55.300</span><span class="per">USD 747 / m²</span></div>
+          <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </article>
+      </div>
+
+      <div class="models-custom">
+        <div>
+          <span class="eyebrow"><span class="technical-line"></span>¿Necesitás otra configuración?</span>
+          <h3>Proyecto a medida</h3>
+          <p>Podemos adaptar superficie, distribución y terminaciones según las características de tu terreno y las necesidades del proyecto.</p>
+        </div>
+        <a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero diseñar un proyecto a medida para mi terreno.">Diseñar mi proyecto <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1057,6 +1192,37 @@
       });
     });
   })();
+
+  /* Modelos — selector 37 / 74 m² (tabs accesibles) */
+  (function(){
+    const tabs = Array.from(document.querySelectorAll('.models-switch [role="tab"]'));
+    if(!tabs.length) return;
+    function select(tab){
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('keydown', (e) => {
+        if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        select(next); next.focus();
+      });
+    });
+  })();
+
+  /* Modelos — mensaje de WhatsApp armado desde los datos de cada card
+     (se ejecuta antes del loop genérico, que completa href/target) */
+  document.querySelectorAll('[data-model-cta]').forEach(a => {
+    const card = a.closest('.model-card');
+    const price = card.querySelector('.model-price .total').textContent.trim();
+    a.setAttribute('data-wa-link', '');
+    a.setAttribute('data-wa-message', `Hola, quiero recibir más información sobre la PRIC HOUSE de ${card.dataset.model} (${price}).`);
+  });
 
   /* WhatsApp — enlaces genéricos */
   function buildWaUrl(message){
