@@ -3,29 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PRIC HOUSE | Arquitectura modular para personas, empresas y proyectos</title>
-<meta name="description" content="PRIC HOUSE desarrolla soluciones modulares transportables para personas, empresas y proyectos, con el respaldo de más de 20 años de trayectoria de PRIC Construcciones." />
+<title>PRIC HOUSE Empresas | Soluciones modulares para proyectos</title>
+<meta name="description" content="Soluciones modulares para empresas, desarrolladores e inversores. Infraestructura para industria, minería, deporte, turismo y proyectos a medida en Argentina." />
 
 <!-- TODO: completar dominio definitivo al publicar -->
-<!-- <link rel="canonical" href="https://www.pricconstrucciones.com/house/" /> -->
+<!-- <link rel="canonical" href="https://www.pricconstrucciones.com/house/empresas/" /> -->
 
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
-<meta property="og:title" content="PRIC HOUSE | Arquitectura modular para personas, empresas y proyectos" />
-<meta property="og:description" content="Soluciones modulares transportables. Civil, Empresas y Corporativo, con el respaldo de PRIC Construcciones." />
-<!-- TODO: completar URL absoluta de la imagen social al publicar -->
-<!-- <meta property="og:image" content="https://www.pricconstrucciones.com/house/imagenes/og-cover.png" /> -->
+<meta property="og:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
+<meta property="og:description" content="Infraestructura modular para industria, minería, deporte, turismo y proyectos a medida, con el respaldo de PRIC Construcciones." />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="PRIC HOUSE | Arquitectura modular" />
-<meta name="twitter:description" content="Soluciones modulares transportables para personas, empresas y proyectos, con el respaldo de PRIC Construcciones." />
+<meta name="twitter:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
+<meta name="twitter:description" content="Diseñamos, trasladamos e instalamos infraestructura modular para empresas, inversores y desarrolladores en todo el país." />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "PRIC HOUSE",
-  "description": "Soluciones modulares transportables para personas, empresas y proyectos. Línea de negocio de PRIC Construcciones.",
+  "name": "PRIC HOUSE Empresas",
+  "description": "Soluciones modulares para empresas, desarrolladores e inversores: industria, energía, minería, complejos deportivos, turismo y proyectos a medida.",
   "areaServed": "AR",
   "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
   "contactPoint": {
@@ -44,20 +42,20 @@
 
 <style>
   /* ==========================================================================
-     PRIC HOUSE — TERCER ESTILO
-     Arquitectura editorial + ingeniería contemporánea + premium industrial
-     Sistema de diseño propio, derivado (no copiado) de dos exploraciones previas.
+     PRIC HOUSE EMPRESAS — hereda el sistema de diseño de la home y de /civil/
+     (mismas variables, tipografías y componentes) para que las páginas se
+     lean como el mismo sitio. Los componentes propios de esta landing
+     (intro, aplicaciones, a medida) están al final.
      ========================================================================== */
   :root{
-    /* ---- paleta ---- */
-    --carbon:   #111315;   /* hero, footer, secciones de alto contraste */
-    --graphite: #1A1D1F;   /* superficies oscuras secundarias */
-    --bone:     #EFEAE2;   /* fondo principal claro */
-    --stone:    #D8D2C8;   /* superficie secundaria clara */
-    --gray-arch:#7B7D78;   /* texto secundario */
+    --carbon:   #111315;
+    --graphite: #1A1D1F;
+    --bone:     #EFEAE2;
+    --stone:    #D8D2C8;
+    --gray-arch:#7B7D78;
     --white:    #FFFFFF;
-    --copper:   #C96B37;   /* acento distintivo PRIC HOUSE */
-    --copper-2: #A85A2E;   /* copper hover / oscurecido */
+    --copper:   #C96B37;
+    --copper-2: #A85A2E;
 
     --line-on-dark:  rgba(255,255,255,.08);
     --line-on-dark-2:rgba(255,255,255,.16);
@@ -101,7 +99,7 @@
   .on-dark p{color:rgba(239,234,226,.72);}
   p{color:var(--gray-arch);}
 
-  /* ============ SISTEMA DE COMPONENTES ============ */
+  /* ============ SISTEMA DE COMPONENTES (idéntico a la home) ============ */
 
   .eyebrow{
     display:inline-flex; align-items:center; gap:14px;
@@ -119,11 +117,6 @@
   }
   .reveal.in .technical-line::after{transform:scaleX(1);}
 
-  .section-number{
-    font-family:var(--font-label); font-size:12px; font-weight:600;
-    letter-spacing:.16em; color:var(--copper);
-  }
-
   .display-title{font-size:clamp(30px,4.2vw,52px);}
   .lead{font-size:clamp(15px,1.15vw,17.5px); line-height:1.7; max-width:620px; color:var(--gray-arch);}
   .on-dark .lead{color:rgba(239,234,226,.7);}
@@ -133,7 +126,6 @@
   .section-head.center .eyebrow{justify-content:center;}
   .section-head.center .lead{margin-left:auto; margin-right:auto;}
 
-  /* Buttons */
   .btn-primary{
     display:inline-flex; align-items:center; gap:12px;
     padding:16px 28px; background:var(--copper); color:#fff;
@@ -156,7 +148,6 @@
   .on-dark .btn-secondary{border-color:var(--line-on-dark-2);}
   .btn-secondary:hover{border-color:var(--copper); gap:14px;}
 
-  /* Botones secundarios "ghost" — Hero y CTA final (contraste garantizado sobre fotografías y fondos oscuros) */
   .hero .btn-secondary{
     min-height:54px; padding:0 26px; justify-content:center;
     color:#FFFFFF; background:rgba(17,19,21,.48);
@@ -197,7 +188,6 @@
   .btn-whatsapp:hover{background:rgba(37,211,102,.16); border-color:rgba(37,211,102,.6);}
   .btn-block{width:100%; justify-content:center;}
 
-  /* Media frame — fotografía editorial (radio mínimo) */
   .media-frame{position:relative; overflow:hidden; border-radius:var(--r-editorial); background:var(--graphite);}
   .media-frame img{width:100%; height:100%; object-fit:cover; transition:transform 1s var(--ease);}
   .media-frame.hoverable:hover img{transform:scale(1.025);}
@@ -216,15 +206,6 @@
   .ph b{display:block; font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:rgba(239,234,226,.6); margin-bottom:6px;}
   .ph span{font-size:11px; line-height:1.5;}
 
-  .project-meta{
-    display:flex; flex-wrap:wrap; gap:10px 18px;
-    font-family:var(--font-label); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--gray-arch);
-  }
-  .on-dark .project-meta{color:rgba(239,234,226,.55);}
-  .project-meta span:first-child{color:var(--copper);}
-
-  /* ============ REVEAL ============ */
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
   .reveal.in{opacity:1; transform:translateY(0);}
   .reveal.delay-1{transition-delay:.1s;}
@@ -234,15 +215,8 @@
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
     .reveal{opacity:1 !important; transform:none !important; transition:none !important;}
-    .hero-meta, .hero h1 .ln span, .hero p.sub, .hero-cta{
-      animation:none !important; opacity:1 !important; transform:none !important;
-    }
-    .hero-attrs{
-      animation:none !important; opacity:1 !important; transform:translate(-50%, 50%) !important;
-    }
-    .marquee{overflow-x:auto; -webkit-mask-image:none; mask-image:none;}
-    .marquee-track{animation:none !important;}
-    .marquee-track [aria-hidden="true"]{display:none;}
+    .hero-meta, .hero p.sub, .hero-cta{animation:none !important; opacity:1 !important; transform:none !important;}
+    .hero-attrs{animation:none !important; opacity:1 !important; transform:translate(-50%, 50%) !important;}
   }
 
   /* ============ NAV ============ */
@@ -260,7 +234,8 @@
   .nav-brand{display:flex; align-items:center; gap:12px;}
   .logo-plate{background:var(--bone); border-radius:8px; padding:6px 9px; display:inline-flex; line-height:0; box-shadow:0 6px 16px rgba(0,0,0,.3);}
   .logo-plate img{height:22px; width:auto; display:block;}
-  .nav-brand .brand-text{font-family:var(--font-display); font-weight:600; font-size:14.5px; color:#fff; letter-spacing:.01em;}
+  .nav-brand .brand-text{font-family:var(--font-display); font-weight:600; font-size:14.5px; color:#fff; letter-spacing:.01em; display:flex; align-items:baseline; gap:7px;}
+  .nav-brand .brand-text .sub{font-family:var(--font-label); font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--copper);}
   .nav-links{display:flex; align-items:center; gap:30px;}
   .nav-links a{font-family:var(--font-label); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.78); transition:color .2s;}
   .nav-links a:hover{color:#fff;}
@@ -286,7 +261,6 @@
     .nav-burger{display:flex;}
   }
 
-  /* Mobile menu */
   .mobile-menu{position:fixed; inset:0; z-index:200; display:none; opacity:0; transition:opacity .3s var(--ease);}
   .mobile-menu.open{display:block; opacity:1;}
   .mm-backdrop{position:absolute; inset:0; background:rgba(8,9,10,.72); backdrop-filter:blur(8px);}
@@ -319,21 +293,10 @@
   .hero-visual{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--carbon);}
   .hero-bg{
     position:absolute; inset:0; z-index:0;
-    background:
-      radial-gradient(65% 65% at 78% 10%, rgba(201,107,55,.14), transparent 60%),
-      radial-gradient(55% 60% at 6% 96%, rgba(201,107,55,.06), transparent 60%),
-      linear-gradient(180deg, #17191b 0%, #0d0e10 100%);
-  }
-  .hero-bg--photo{
-    background-size:cover; background-position:center; background-repeat:no-repeat;
-    opacity:0; will-change:opacity, transform;
-    transition:opacity 2s ease-in-out;
-    transform:scale(1.02);
-  }
-  .hero-bg--photo.is-visible{opacity:1;}
-  .hero-bg--photo.is-animating{transition:opacity 2s ease-in-out, transform 7s linear;}
-  @media (prefers-reduced-motion:reduce){
-    .hero-bg--photo{transition:opacity 2s ease-in-out !important; transform:none !important;}
+    background-image:url('/imagenes/100%20personas.png');
+    background-size:cover; background-position:center;
+    filter:saturate(1.02);
+    transform:scale(1.03);
   }
   .hero-grid{
     position:absolute; inset:0; z-index:1; opacity:.16;
@@ -343,7 +306,7 @@
   }
   .hero-vignette{
     position:absolute; inset:0; z-index:1;
-    background:radial-gradient(120% 90% at 50% 40%, rgba(17,19,21,0) 0%, rgba(17,19,21,.5) 60%, rgba(17,19,21,.97) 100%);
+    background:radial-gradient(120% 90% at 50% 40%, rgba(17,19,21,.28) 0%, rgba(17,19,21,.62) 60%, rgba(17,19,21,.97) 100%);
   }
   .hero-content{position:relative; z-index:2; width:100%; max-width:980px;}
   .hero-meta{
@@ -354,25 +317,18 @@
     opacity:0; transform:translateY(10px); animation:fadeUp .9s var(--ease) .15s forwards;
   }
   .hero-meta .dot{width:6px; height:6px; border-radius:50%; background:var(--copper); box-shadow:0 0 12px var(--copper);}
-  .hero h1{color:#fff; font-size:clamp(32px,4.6vw,58px); margin-bottom:22px;}
+  .hero h1{color:#fff; font-size:clamp(32px,4.6vw,58px); margin-bottom:22px; opacity:0; transform:translateY(14px); animation:fadeUp .9s var(--ease) .35s forwards;}
   .hero h1 .accent{color:var(--copper);}
-  .hero h1 .ln{display:block; overflow:hidden;}
-  .hero h1 .ln span{display:inline-block; transform:translateY(112%); opacity:0; animation:lineUp 1s var(--ease) forwards;}
-  .hero h1 .ln:nth-child(1) span{animation-delay:.35s;}
-  .hero h1 .ln:nth-child(2) span{animation-delay:.48s;}
-  .hero h1 .ln:nth-child(3) span{animation-delay:.61s;}
-  @keyframes lineUp{ to{transform:translateY(0); opacity:1;} }
   .hero p.sub{
     max-width:600px; margin:0 auto; color:rgba(239,234,226,.78); font-size:clamp(14.5px,1.1vw,17px); line-height:1.62;
-    opacity:0; transform:translateY(10px); animation:fadeUp .9s var(--ease) .82s forwards;
+    opacity:0; transform:translateY(10px); animation:fadeUp .9s var(--ease) .55s forwards;
   }
   .hero-cta{
     margin-top:32px; display:inline-flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:center;
-    opacity:0; transform:translateY(10px); animation:fadeUp .9s var(--ease) .98s forwards;
+    opacity:0; transform:translateY(10px); animation:fadeUp .9s var(--ease) .72s forwards;
   }
   @keyframes fadeUp{ to{opacity:1; transform:translateY(0);} }
 
-  /* Banda de atributos — puente entre hero y la siguiente sección */
   .hero-attrs{
     position:absolute; left:50%; bottom:0; z-index:5;
     width:min(1120px, calc(100% - 40px));
@@ -380,7 +336,7 @@
     border-radius:var(--r-card);
     box-shadow:0 40px 70px -24px rgba(0,0,0,.55);
     display:grid; grid-template-columns:repeat(4,1fr);
-    opacity:0; transform:translate(-50%, 70%); animation:attrsIn .9s var(--ease) 1.15s forwards;
+    opacity:0; transform:translate(-50%, 70%); animation:attrsIn .9s var(--ease) 1s forwards;
   }
   @keyframes attrsIn{ to{opacity:1; transform:translate(-50%, 50%);} }
   .hero-attr{padding:26px 22px; border-right:1px solid var(--line-on-light); text-align:left; min-width:0;}
@@ -388,10 +344,6 @@
   .hero-attr .n{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.14em; color:var(--copper); margin-bottom:8px;}
   .hero-attr .t{font-family:var(--font-display); font-size:15px; font-weight:600; color:var(--carbon); line-height:1.2;}
   @media (max-width:760px){
-    /* La animación attrsIn (translate(-50%,50%)) está pensada para el
-       centrado absoluto de desktop; en mobile, con position:static, ese
-       mismo transform corría la tarjeta fuera de pantalla. Se anula la
-       animación y se deja visible directamente. */
     .hero-attrs{position:static; transform:none; animation:none; opacity:1; width:100%; grid-template-columns:repeat(2,1fr); margin-top:56px; box-shadow:none; border:1px solid var(--line-on-light);}
     .hero-attr:nth-child(2){border-right:0;}
     .hero-attr:nth-child(-n+2){border-bottom:1px solid var(--line-on-light);}
@@ -399,64 +351,24 @@
   }
   @media (min-width:761px){ .hero{ padding-bottom:190px; } }
 
-  /* ============ ¿QUIÉN ES PRIC HOUSE? — claro ============ */
-  .quien{background:var(--bone); padding:190px 0 130px;}
-  @media (max-width:760px){ .quien{padding:90px 0 90px;} }
-  .quien-grid{display:grid; grid-template-columns:1fr .92fr; gap:clamp(40px,6vw,90px); align-items:center;}
-  @media (max-width:900px){.quien-grid{grid-template-columns:1fr; gap:40px;}}
-  .quien-text p{font-size:clamp(16px,1.25vw,18.5px); color:#3c3f3a; line-height:1.65; margin-bottom:16px; max-width:52ch;}
-  .quien-text p.small{font-size:15px; color:var(--gray-arch); max-width:50ch;}
 
-  .quien-attrs{display:flex; flex-direction:column; margin-top:30px;}
-  .quien-attr{display:grid; grid-template-columns:44px 1fr; gap:16px; padding:16px 0; border-top:1px solid var(--line-on-light);}
-  .quien-attr:last-child{border-bottom:1px solid var(--line-on-light);}
-  .quien-attr .n{font-family:var(--font-label); font-size:12px; font-weight:600; color:var(--copper);}
-  .quien-attr .t{font-family:var(--font-display); font-size:15.5px; font-weight:600; color:var(--carbon);}
+  .project-meta{
+    display:flex; flex-wrap:wrap; gap:10px 18px;
+    font-family:var(--font-label); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gray-arch);
+  }
+  .on-dark .project-meta{color:rgba(239,234,226,.55);}
+  .project-meta span:first-child{color:var(--copper);}
 
-  .quien-img{position:relative;}
-  .quien-img .media-frame{min-height:380px;}
-  .quien-badge{
-    position:absolute; left:-1px; bottom:-1px; z-index:2;
-    background:var(--carbon); color:#fff; padding:16px 22px;
-    display:flex; align-items:baseline; gap:10px;
-  }
-  .quien-badge .num{font-family:var(--font-display); font-weight:700; font-size:26px; color:var(--copper);}
-  .quien-badge .txt{font-size:11.5px; letter-spacing:.05em; max-width:150px; line-height:1.35; color:rgba(255,255,255,.75);}
-
-  /* ============ VERTICALES — oscuro ============ */
-  .verticales{background:var(--carbon); padding:130px 0;}
-  @media (max-width:760px){ .verticales{padding:90px 0;} }
-  .vert-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-on-dark); border-top:1px solid var(--line-on-dark); border-bottom:1px solid var(--line-on-dark);}
-  @media (max-width:900px){.vert-grid{grid-template-columns:1fr;}}
-
-  .vertical-panel{position:relative; background:var(--carbon); overflow:hidden; display:block; min-height:560px;}
-  .vertical-panel .media-frame{position:absolute; inset:0; border-radius:0;}
-  .vertical-panel .media-frame img{filter:saturate(.94);}
-  .vp-overlay{
-    position:absolute; inset:0; z-index:1;
-    background:linear-gradient(180deg, rgba(17,19,21,.35) 0%, rgba(17,19,21,.55) 55%, rgba(17,19,21,.94) 100%);
-    transition:background .5s var(--ease);
-  }
-  .vertical-panel:hover .vp-overlay{background:linear-gradient(180deg, rgba(17,19,21,.15) 0%, rgba(17,19,21,.4) 55%, rgba(17,19,21,.9) 100%);}
-  .vp-content{position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; justify-content:space-between; padding:32px;}
-  .vp-num{font-family:var(--font-label); font-size:12px; letter-spacing:.18em; color:rgba(255,255,255,.7);}
-  .vp-bottom{transition:transform .5s var(--ease);}
-  .vertical-panel:hover .vp-bottom{transform:translateY(-6px);}
-  .vp-line{display:block; width:40px; height:2px; background:var(--copper); margin-bottom:16px; transition:width .5s var(--ease);}
-  .vertical-panel:hover .vp-line{width:80px;}
-  .vp-title{font-family:var(--font-display); font-size:clamp(24px,2.4vw,30px); font-weight:600; color:#fff; margin-bottom:10px;}
-  .vp-desc{font-size:14.5px; color:rgba(239,234,226,.72); line-height:1.6; max-width:32ch;}
-  .vp-extra{
-    max-height:0; opacity:0; overflow:hidden; font-size:12.5px; color:rgba(239,234,226,.55);
-    transition:max-height .5s var(--ease), opacity .4s var(--ease), margin .5s var(--ease);
-  }
-  .vertical-panel:hover .vp-extra{max-height:40px; opacity:1; margin-top:8px;}
-  .vp-link{
-    margin-top:18px; display:inline-flex; align-items:center; gap:10px;
-    font-family:var(--font-label); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#fff; font-weight:600;
-  }
-  .vp-link svg{transition:transform .35s var(--ease);}
-  .vertical-panel:hover .vp-link svg{transform:translateX(6px);}
+  /* ============ PROCESO ============ */
+  .proceso{background:var(--stone); padding:150px 0;}
+  @media (max-width:760px){ .proceso{padding:90px 0;} }
+  .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,3vw,36px); margin-top:8px;}
+  @media (max-width:900px){ .timeline{grid-template-columns:1fr 1fr; gap:34px;} }
+  @media (max-width:560px){ .timeline{grid-template-columns:1fr;} }
+  .timeline-step .n{font-family:var(--font-display); font-weight:700; font-size:34px; color:var(--carbon); letter-spacing:-.02em; line-height:1;}
+  .timeline-step h3{font-family:var(--font-display); font-size:16px; font-weight:600; color:var(--carbon); margin:12px 0 8px;}
+  .timeline-step p{font-size:14px; line-height:1.6; color:#3c3f3a; max-width:32ch;}
 
   /* ============ RESPALDO — claro, editorial ============ */
   .respaldo{background:var(--stone); padding:150px 0;}
@@ -475,23 +387,6 @@
   .respaldo-text p{font-size:16.5px; line-height:1.7; color:#3c3f3a; margin-bottom:14px; max-width:44ch;}
   .respaldo-text p:last-child{margin-bottom:0;}
   .respaldo-media .media-frame{aspect-ratio:4/5; min-height:320px;}
-
-  /* ============ CASOS — claro, alternado ============ */
-  .casos{background:var(--white); padding:150px 0;}
-  @media (max-width:760px){ .casos{padding:90px 0;} }
-  .caso-row{display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(30px,5vw,70px); align-items:center; margin-bottom:clamp(60px,8vw,110px);}
-  .caso-row:last-child{margin-bottom:0;}
-  .caso-row.flip{grid-template-columns:.85fr 1.15fr;}
-  .caso-row.flip .caso-media{order:2;}
-  .caso-row.flip .caso-body{order:1;}
-  @media (max-width:860px){
-    .caso-row, .caso-row.flip{grid-template-columns:1fr; gap:28px;}
-    .caso-row.flip .caso-media{order:1;} .caso-row.flip .caso-body{order:2;}
-  }
-  .caso-media .media-frame{aspect-ratio:16/9;}
-  .caso-body .project-meta{margin-bottom:14px;}
-  .caso-body h3{font-size:clamp(22px,2.4vw,30px); margin-bottom:14px;}
-  .caso-body p{font-size:15px; line-height:1.65; max-width:44ch; margin-bottom:20px;}
 
   /* ============ CLIENTES — oscuro, sobrio ============ */
   .clientes{background:var(--graphite); padding:110px 0; text-align:center;}
@@ -563,7 +458,7 @@
 
   .clientes-note{margin:36px auto 0; max-width:560px; font-size:12.5px; color:rgba(239,234,226,.4); line-height:1.6;}
 
-  /* ============ CTA — oscuro ============ */
+  /* ============ CTA + CONTACTO + FOOTER (idénticos a la home) ============ */
   .cta-final{background:var(--carbon); padding:130px 0; text-align:center; position:relative; overflow:hidden;}
   .cta-final::before{
     content:''; position:absolute; inset:0; z-index:0;
@@ -573,7 +468,6 @@
   .cta-final h2{color:#fff; font-size:clamp(28px,3.6vw,44px); max-width:16ch; margin:0 auto 30px;}
   .cta-final .row{display:flex; justify-content:center; gap:24px; flex-wrap:wrap; align-items:center;}
 
-  /* ============ CONTACTO ============ */
   .contacto{background:var(--carbon); padding:130px 0; border-top:1px solid var(--line-on-dark);}
   @media (max-width:760px){ .contacto{padding:90px 0;} }
   .contacto-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(36px,6vw,70px); align-items:start;}
@@ -605,7 +499,6 @@
   .cf-submit-row{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
   .cf-note{font-size:12px; color:rgba(239,234,226,.4); line-height:1.5;}
 
-  /* ============ FOOTER ============ */
   footer{background:#0b0c0d; padding:70px 0 30px;}
   .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:48px; margin-bottom:50px;}
   @media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr; gap:36px;}}
@@ -624,17 +517,6 @@
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
   }
 
-  /* ============ FIXES RESPONSIVE ============
-     Los ítems de un CSS Grid no se achican por debajo del tamaño de su
-     contenido por defecto (min-width:auto), lo que puede forzar overflow
-     horizontal oculto (por el overflow-x:hidden del body) en anchos
-     intermedios. Se neutraliza sin alterar el diseño visual. */
-  .quien-grid > *, .vert-grid > *, .respaldo-grid > *, .caso-row > *,
-  .contacto-grid > *, .cf-row > *, .foot-grid > *{
-    min-width:0;
-  }
-
-  /* ============ BACK TO TOP ============ */
   .back-top{
     position:fixed; right:22px; bottom:22px; z-index:60;
     width:46px; height:46px; border-radius:50%; background:var(--carbon); color:#fff;
@@ -645,25 +527,139 @@
   }
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
+
+  @media (prefers-reduced-motion:reduce){
+    .marquee{overflow-x:auto; -webkit-mask-image:none; mask-image:none;}
+    .marquee-track{animation:none !important;}
+    .marquee-track [aria-hidden="true"]{display:none;}
+  }
+
+  /* ============ FIXES RESPONSIVE (grid min-width:auto) ============ */
+  .intro-grid > *, .intro-points > *, .app > *, .amedida-grid > *, .timeline > *, .respaldo-grid > *,
+  .contacto-grid > *, .cf-row > *, .foot-grid > *{ min-width:0; }
+
+  /* ============ INTRODUCCIÓN ============ */
+  .intro{background:var(--bone); padding:150px 0 130px;}
+  @media (max-width:760px){ .intro{padding:90px 0;} }
+  .intro-grid{display:grid; grid-template-columns:1.05fr .8fr; gap:clamp(40px,6vw,90px); align-items:center;}
+  @media (max-width:900px){ .intro-grid{grid-template-columns:1fr; gap:44px;} }
+  .intro-points{display:grid; grid-template-columns:repeat(2,1fr); column-gap:clamp(20px,3vw,36px); margin-top:40px;}
+  @media (max-width:560px){ .intro-points{grid-template-columns:1fr;} }
+  .intro-point{padding:20px 0; border-top:1px solid var(--line-on-light);}
+  .intro-point .n{font-family:var(--font-label); font-size:12px; font-weight:600; color:var(--copper); margin-bottom:8px;}
+  .intro-point h3{font-family:var(--font-display); font-size:16.5px; font-weight:600; color:var(--carbon); margin-bottom:6px;}
+  .intro-point p{font-size:14px; line-height:1.6; max-width:36ch;}
+  .intro-media .media-frame{min-height:380px;}
+
+  /* ============ APLICACIONES ============ */
+  .aplicaciones{background:var(--carbon); padding:150px 0;}
+  @media (max-width:760px){ .aplicaciones{padding:90px 0;} }
+  .app-list{display:flex; flex-direction:column; gap:clamp(80px,10vw,140px);}
+  .app{display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(32px,5vw,76px); align-items:stretch; scroll-margin-top:96px;}
+  .app.flip{grid-template-columns:.8fr 1.2fr;}
+  .app.flip .app-media{order:2;}
+  @media (max-width:900px){
+    .app, .app.flip{grid-template-columns:1fr; gap:32px;}
+    .app.flip .app-media{order:0;}
+  }
+  .app-media{position:relative;}
+  /* Desktop: la foto acompaña la altura completa del texto → imagen dominante */
+  .app-media .media-frame{height:100%; min-height:480px;}
+  @media (max-width:900px){ .app-media .media-frame{height:auto; min-height:0; aspect-ratio:16/10;} }
+  .app:hover .app-media img{transform:scale(1.02);}
+  .app-index{
+    position:absolute; left:clamp(18px,2.2vw,28px); bottom:clamp(14px,2vw,22px); z-index:2; pointer-events:none;
+    font-family:var(--font-display); font-weight:700; font-size:clamp(44px,5.4vw,76px); line-height:1; letter-spacing:-.03em;
+    color:#fff; text-shadow:0 2px 24px rgba(0,0,0,.45);
+  }
+  /* Panel gráfico mientras una aplicación no tiene foto/render propio */
+  .app-ph{
+    display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-end; padding:clamp(18px,2.4vw,30px);
+    background:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px) 0 0/56px 56px,
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px) 0 0/56px 56px,
+      radial-gradient(90% 70% at 80% 10%, rgba(201,107,55,.16), transparent 60%),
+      linear-gradient(160deg, var(--graphite), #0d0f10);
+    border:1px solid var(--line-on-dark);
+  }
+  .app-ph-label{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:rgba(239,234,226,.5);}
+  .app-body .project-meta{margin-bottom:16px;}
+  .app-body h3{font-size:clamp(23px,2.5vw,32px); margin-bottom:16px; max-width:20ch;}
+  .app-desc{font-size:15px; line-height:1.7; max-width:48ch;}
+  .app-highlight{
+    margin-top:20px; padding-left:16px; border-left:2px solid var(--copper);
+    font-family:var(--font-display); font-size:16px; line-height:1.5; color:#fff !important; max-width:42ch;
+  }
+  .app-label{display:block; font-family:var(--font-label); font-size:10.5px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:rgba(239,234,226,.45); margin-bottom:10px;}
+  .app-uses{margin-top:26px;}
+  .app-uses ul{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:22px;}
+  .app-uses li{
+    padding:9px 0 9px 16px; border-top:1px solid var(--line-on-dark); position:relative;
+    font-size:13.5px; color:rgba(239,234,226,.78);
+  }
+  .app-uses li::before{content:''; position:absolute; left:0; top:1.3em; width:7px; height:1px; background:var(--copper);}
+  .app-scales{margin-top:26px;}
+  .app-scales ul{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-on-dark); border:1px solid var(--line-on-dark); border-radius:var(--r-editorial); overflow:hidden;}
+  .app-scales li{background:var(--carbon); padding:14px 10px; text-align:center; font-family:var(--font-display); font-size:14px; font-weight:500; color:#fff;}
+  .app-scales li:last-child{color:var(--copper);}
+  @media (max-width:420px){ .app-scales ul{grid-template-columns:repeat(2,1fr);} }
+  .app-scales p{margin-top:10px; font-size:12.5px; line-height:1.55; color:rgba(239,234,226,.45) !important; max-width:52ch;}
+  .app-subcase{margin-top:26px; padding:18px 20px; border:1px solid var(--line-on-dark); border-radius:var(--r-editorial);}
+  .app-subcase .app-label{color:var(--copper); margin-bottom:6px;}
+  .app-subcase p{font-size:13.5px; line-height:1.6;}
+  .app-body .btn-secondary{margin-top:26px; color:#fff;}
+  .app-body .btn-secondary .arr, .respaldo-link .arr{display:inline-flex; color:var(--copper); transition:transform .3s var(--ease);}
+  .app-body .btn-secondary:hover .arr, .respaldo-link:hover .arr{transform:translateX(3px);}
+
+  /* ============ A MEDIDA ============ */
+  .amedida{background:var(--graphite); padding:130px 0; border-top:1px solid var(--line-on-dark);}
+  @media (max-width:760px){ .amedida{padding:90px 0;} }
+  .amedida-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center;}
+  @media (max-width:900px){ .amedida-grid{grid-template-columns:1fr; gap:44px;} }
+  .amedida-cta{margin-top:32px;}
+  .amedida-parts{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-on-dark); border:1px solid var(--line-on-dark); border-radius:var(--r-editorial); overflow:hidden;}
+  @media (max-width:340px){ .amedida-parts{grid-template-columns:1fr;} }
+  @media (max-width:560px){ .amedida-parts li{min-height:96px; padding:20px 16px; font-size:14.5px;} }
+  .amedida-parts li{
+    background:var(--graphite); padding:26px 22px; min-height:112px;
+    display:flex; flex-direction:column; justify-content:space-between; gap:18px;
+    font-family:var(--font-display); font-size:16px; font-weight:500; color:#fff; line-height:1.3;
+    transition:background .35s var(--ease);
+  }
+  .amedida-parts li:hover{background:#1f2325;}
+  .amedida-parts .n{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.14em; color:var(--copper);}
+
+  /* ============ CÓMO TRABAJAMOS (timeline de Civil sobre fondo claro) ============ */
+  .proceso{background:var(--bone);}
+
+  /* ============ RESPALDO ============ */
+  .respaldo-link{margin-top:22px;}
+  .respaldo-num .u{line-height:1.45;}
+
+  /* ============ FOOTER ============ */
+  .foot-col li{font-size:13.5px; color:rgba(239,234,226,.5);}
+
+  /* ============ CTA ============ */
+  .cta-final h2{margin-bottom:16px;}
+  .cta-final .cta-sub{max-width:52ch; margin:0 auto 32px; color:rgba(239,234,226,.66); font-size:15.5px; line-height:1.65;}
 </style>
 </head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav" aria-label="Navegación principal">
-  <a class="nav-brand" href="#top">
-    <span class="logo-plate"><img src="./imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="22" height="26" /></span>
-    <span class="brand-text">PRIC HOUSE</span>
+  <a class="nav-brand" href="/">
+    <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="22" height="26" /></span>
+    <span class="brand-text">PRIC HOUSE <span class="sub">Empresas</span></span>
   </a>
   <div class="nav-links" id="navLinks">
-    <a href="#top">Inicio</a>
-    <a href="#quienes-somos">PRIC HOUSE</a>
-    <a href="#soluciones">Soluciones</a>
-    <a href="#experiencia">Experiencia</a>
+    <a href="#aplicaciones">Aplicaciones</a>
+    <a href="#como-trabajamos">Cómo trabajamos</a>
+    <a href="#respaldo">Respaldo</a>
     <a href="#contacto">Contacto</a>
   </div>
   <div class="nav-actions">
-    <a href="#contacto" class="nav-cta">Hablemos</a>
+    <a href="#contacto" class="nav-cta">Contanos tu proyecto</a>
     <button class="nav-burger" id="navBurger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
@@ -681,19 +677,19 @@
       </button>
     </div>
     <nav class="mm-links" aria-label="Navegación móvil">
-      <a href="#top" data-mclose>Inicio</a>
-      <a href="#quienes-somos" data-mclose>PRIC HOUSE</a>
-      <a href="#soluciones" data-mclose>Soluciones</a>
-      <a href="#experiencia" data-mclose>Experiencia</a>
+      <a href="/" data-mclose>PRIC HOUSE</a>
+      <a href="#aplicaciones" data-mclose>Aplicaciones</a>
+      <a href="#como-trabajamos" data-mclose>Cómo trabajamos</a>
+      <a href="#respaldo" data-mclose>Respaldo</a>
       <a href="#contacto" data-mclose>Contacto</a>
     </nav>
     <div class="mm-actions">
-      <a href="#contacto" class="btn-primary btn-block" data-mclose>Hablemos <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contacto" class="btn-primary btn-block" data-mclose>Contanos tu proyecto <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
     <div class="mm-foot">
       <a href="https://wa.me/5493512142900" target="_blank" rel="noopener">WhatsApp: +54 9 351 2142900</a>
       <a href="mailto:info@prichouse.com">info@prichouse.com</a>
-      <span style="color:rgba(255,255,255,.4); font-size:11px; letter-spacing:.1em; text-transform:uppercase;">Córdoba, Argentina — operamos en todo el país</span>
+      <span style="color:rgba(255,255,255,.4); font-size:11px; letter-spacing:.1em; text-transform:uppercase;">Córdoba, Argentina — alcance nacional</span>
     </div>
   </aside>
 </div>
@@ -702,145 +698,148 @@
 <section class="hero" id="top">
   <div class="hero-visual">
     <div class="hero-bg"></div>
-    <div class="hero-bg hero-bg--photo hero-bg--a" id="heroBgA"></div>
-    <div class="hero-bg hero-bg--photo hero-bg--b" id="heroBgB"></div>
     <div class="hero-grid"></div>
     <div class="hero-vignette"></div>
   </div>
 
   <div class="hero-content">
-    <span class="hero-meta"><span class="dot"></span> Casas modulares transportables a toda la Argentina</span>
-    <h1>
-      <span class="ln"><span>Soluciones <span class="accent">modulares</span></span></span>
-      <span class="ln"><span>transportables para</span></span>
-      <span class="ln"><span>vivir, trabajar o alquilar.</span></span>
-    </h1>
+    <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Empresas</span>
+    <h1>Soluciones modulares para proyectos <span class="accent">que necesitan avanzar.</span></h1>
     <p class="sub">
-      Para tu próximo proyecto, personal o empresarial, tenemos una opción
-      que se ajusta a lo que necesitás.
+      Diseñamos, trasladamos e instalamos infraestructura modular para
+      empresas, inversores y desarrolladores en todo el país.
     </p>
     <div class="hero-cta">
-      <a href="#soluciones" class="btn-primary">
-        Explorar soluciones
+      <a href="#contacto" class="btn-primary">
+        Contanos tu proyecto
         <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a href="#quienes-somos" class="btn-secondary on-dark">Conocer PRIC HOUSE</a>
+      <a href="#aplicaciones" class="btn-secondary">Explorar aplicaciones</a>
     </div>
   </div>
 
   <div class="hero-attrs">
-    <div class="hero-attr"><div class="n">01</div><div class="t">Arquitectura modular</div></div>
-    <div class="hero-attr"><div class="n">02</div><div class="t">Traslado</div></div>
-    <div class="hero-attr"><div class="n">03</div><div class="t">Instalación</div></div>
-    <div class="hero-attr"><div class="n">04</div><div class="t">Personal y empresarial</div></div>
+    <div class="hero-attr"><div class="n">01</div><div class="t">Configuración</div></div>
+    <div class="hero-attr"><div class="n">02</div><div class="t">Planificación</div></div>
+    <div class="hero-attr"><div class="n">03</div><div class="t">Traslado</div></div>
+    <div class="hero-attr"><div class="n">04</div><div class="t">Instalación</div></div>
   </div>
 </section>
 
-<!-- ============ ¿QUIÉN ES PRIC HOUSE? ============ -->
-<section class="quien" id="quienes-somos">
+<!-- ============ INTRODUCCIÓN ============ -->
+<section class="intro" id="enfoque">
   <div class="wrap">
-    <div class="quien-grid">
-      <div class="quien-text reveal">
-        <span class="eyebrow"><span class="technical-line"></span>PRIC HOUSE</span>
-        <h2 class="display-title">Una solución integral detrás de cada proyecto.</h2>
-        <p style="margin-top:20px;">
-          Seleccionamos, trasladamos e instalamos unidades modulares listas
-          para vivir, trabajar o generar renta. Vos elegís dónde, nosotros
-          coordinamos todo lo demás.
-        </p>
-        <p class="small">
-          La marca absorbe la complejidad de planificación y logística para
-          darle al cliente mayor claridad durante todo el proceso.
-          PRIC&nbsp;HOUSE no simplemente entrega un módulo, también se ocupa
-          de resolver la solución.
-        </p>
-
-        <div class="quien-attrs">
-          <div class="quien-attr"><div class="n">01</div><div class="t">Arquitectura</div></div>
-          <div class="quien-attr"><div class="n">02</div><div class="t">Planificación</div></div>
-          <div class="quien-attr"><div class="n">03</div><div class="t">Traslado</div></div>
-          <div class="quien-attr"><div class="n">04</div><div class="t">Instalación</div></div>
+    <div class="intro-grid">
+      <div class="reveal">
+        <span class="eyebrow"><span class="technical-line"></span>Una solución, distintas escalas</span>
+        <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px); margin-bottom:20px;">La infraestructura se adapta al proyecto. No al revés.</h2>
+        <p class="lead">Cada operación tiene requerimientos distintos. Analizamos el uso, la escala, la ubicación y el cronograma para configurar una solución modular acorde a cada necesidad.</p>
+        <div class="intro-points">
+          <div class="intro-point">
+            <div class="n">01</div>
+            <h3>Configuración según necesidad</h3>
+            <p>Unidades y distribución definidas a partir del uso real de cada operación.</p>
+          </div>
+          <div class="intro-point">
+            <div class="n">02</div>
+            <h3>Implementación coordinada</h3>
+            <p>Planificación, traslado e instalación gestionados por un mismo equipo.</p>
+          </div>
+          <div class="intro-point">
+            <div class="n">03</div>
+            <h3>Crecimiento por etapas</h3>
+            <p>La solución puede ampliarse a medida que el proyecto avanza.</p>
+          </div>
+          <div class="intro-point">
+            <div class="n">04</div>
+            <h3>Alcance nacional</h3>
+            <p>Llegamos a proyectos en todo el país, incluso lejos de los centros urbanos.</p>
+          </div>
         </div>
       </div>
-
-      <div class="quien-img reveal delay-1">
+      <div class="intro-media reveal delay-1">
         <div class="media-frame media-frame--4-5">
-          <img src="./imagenes/quienes-somos-pric-house.png" alt="Módulo PRIC HOUSE siendo montado con grúa sobre su base durante la instalación en obra" loading="lazy" decoding="async" />
-        </div>
-        <div class="quien-badge">
-          <span class="num">4</span>
-          <span class="txt">etapas coordinadas por PRIC HOUSE</span>
+          <img src="/imagenes/vertical-empresas.png" alt="Oficinas modulares PRIC HOUSE instaladas junto a una nave industrial" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ LAS 3 VERTICALES ============ -->
-<section class="verticales" id="soluciones">
+<!-- ============ APLICACIONES ============ -->
+<!-- Los bloques se generan desde el array APLICACIONES (ver <script>): para
+     sumar una industria nueva alcanza con agregar un objeto a ese array. -->
+<section class="aplicaciones on-dark" id="aplicaciones">
   <div class="wrap">
-    <div class="section-head reveal on-dark">
-      <span class="eyebrow"><span class="technical-line"></span>Nuestras verticales</span>
-      <h2 class="display-title">Una misma capacidad.<br/>Tres formas de aplicarla.</h2>
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="technical-line"></span>Aplicaciones</span>
+      <h2 class="display-title" style="font-size:clamp(28px,3.6vw,46px);">Un mismo sistema modular. Distintas formas de aplicarlo.</h2>
+    </div>
+
+    <div class="app-list" id="appList"></div>
+    <noscript>
+      <p class="lead">Industria, energía y minería · Complejos deportivos · Turismo &amp; hospitality. Escribinos a <a href="https://wa.me/5493512142900">WhatsApp</a> para conocer cada aplicación.</p>
+    </noscript>
+  </div>
+</section>
+
+<!-- ============ A MEDIDA ============ -->
+<section class="amedida on-dark" id="a-medida">
+  <div class="wrap">
+    <div class="amedida-grid">
+      <div class="reveal">
+        <span class="eyebrow"><span class="technical-line"></span>A medida</span>
+        <h2 class="display-title" style="font-size:clamp(26px,3.2vw,40px); margin-bottom:20px;">Si el proyecto es distinto, la solución también puede serlo.</h2>
+        <p class="lead">Podemos combinar unidades habitacionales, sanitarios, oficinas, áreas comunes, espacios gastronómicos y otras configuraciones según la operación.</p>
+        <div class="amedida-cta">
+          <a href="#contacto" class="btn-primary" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero diseñar una solución modular a medida para mi proyecto.">
+            Diseñar una solución
+            <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <ul class="amedida-parts reveal delay-1" aria-label="Componentes combinables">
+        <li><span class="n">A</span>Unidades habitacionales</li>
+        <li><span class="n">B</span>Sanitarios y vestuarios</li>
+        <li><span class="n">C</span>Oficinas</li>
+        <li><span class="n">D</span>Áreas comunes y SUM</li>
+        <li><span class="n">E</span>Espacios gastronómicos</li>
+        <li><span class="n">F</span>Otras configuraciones</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <div class="vert-grid reveal delay-1">
-    <!-- CIVIL -->
-    <a href="/civil/" class="vertical-panel">
-      <div class="media-frame hoverable">
-        <img src="./imagenes/vertical-civil.jpg" alt="Vivienda modular PRIC HOUSE con revestimiento símil madera instalada en un terreno particular" loading="lazy" decoding="async" />
-      </div>
-      <div class="vp-overlay"></div>
-      <div class="vp-content">
-        <span class="vp-num">01 / 03</span>
-        <div class="vp-bottom">
-          <span class="vp-line"></span>
-          <h3 class="vp-title">CIVIL</h3>
-          <p class="vp-desc">Soluciones modulares para quienes buscan desarrollar una vivienda en su propio terreno con un proceso más claro, coordinado y simple.</p>
-          <p class="vp-extra">Selección, traslado e instalación coordinados de principio a fin.</p>
-          <span class="vp-link">Explorar Civil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </div>
-    </a>
+<!-- ============ CÓMO TRABAJAMOS ============ -->
+<section class="proceso" id="como-trabajamos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="technical-line"></span>Cómo trabajamos</span>
+      <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">Un proceso coordinado, de la primera conversación a la puesta en funcionamiento.</h2>
+    </div>
 
-    <!-- EMPRESAS -->
-    <a href="/empresas/" class="vertical-panel">
-      <div class="media-frame hoverable">
-        <img src="./imagenes/vertical-empresas.png" alt="Infraestructura modular PRIC HOUSE para empresas, integrada a una operación industrial" loading="lazy" decoding="async" />
+    <div class="timeline reveal delay-1">
+      <div class="timeline-step">
+        <div class="n">01</div>
+        <h3>Relevamiento</h3>
+        <p>Entendemos ubicación, uso, capacidad y necesidades del proyecto.</p>
       </div>
-      <div class="vp-overlay"></div>
-      <div class="vp-content">
-        <span class="vp-num">02 / 03</span>
-        <div class="vp-bottom">
-          <span class="vp-line"></span>
-          <h3 class="vp-title">EMPRESAS</h3>
-          <p class="vp-desc">Soluciones modulares adaptables a las necesidades operativas, administrativas y de infraestructura de empresas y proyectos.</p>
-          <p class="vp-extra">Configuraciones a medida de cada operación.</p>
-          <span class="vp-link">Explorar Empresas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
+      <div class="timeline-step">
+        <div class="n">02</div>
+        <h3>Configuración</h3>
+        <p>Definimos unidades, distribución y alcance de la solución.</p>
       </div>
-    </a>
-
-    <!-- CORPORATIVO -->
-    <!-- TEMPORAL: CTA redirigido a WhatsApp en vez de /corporativo/ (ver data-wa-link).
-         Para volver a la landing interna, quitar data-wa-link y data-wa-message. -->
-    <a href="/corporativo/" class="vertical-panel" data-wa-link data-wa-message="Hola, me gustaría saber más sobre posibles urbanizaciones modulares de gran escala.">
-      <div class="media-frame hoverable">
-        <img src="./imagenes/corporativo-equipo.jpg" alt="Equipo de PRIC HOUSE recorriendo un campamento modular, capacidad operativa del sistema" loading="lazy" decoding="async" />
+      <div class="timeline-step">
+        <div class="n">03</div>
+        <h3>Planificación y traslado</h3>
+        <p>Coordinamos logística, accesos y cronograma.</p>
       </div>
-      <div class="vp-overlay"></div>
-      <div class="vp-content">
-        <span class="vp-num">03 / 03</span>
-        <div class="vp-bottom">
-          <span class="vp-line"></span>
-          <h3 class="vp-title">CORPORATIVO</h3>
-          <p class="vp-desc">Conocé la capacidad técnica y la estructura corporativa que están detrás de cada solución PRIC HOUSE.</p>
-          <p class="vp-extra">Un mismo equipo, un mismo estándar en cada proyecto.</p>
-          <span class="vp-link">Conocer PRIC <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
+      <div class="timeline-step">
+        <div class="n">04</div>
+        <h3>Instalación</h3>
+        <p>Ejecutamos el montaje y coordinamos la puesta en funcionamiento.</p>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -853,123 +852,59 @@
       </div>
       <div class="respaldo-text reveal delay-1">
         <span class="eyebrow"><span class="technical-line"></span>El respaldo</span>
-        <h2 class="display-title" style="font-size:clamp(24px,3vw,36px); margin-bottom:20px;">La confianza no empieza con una promesa. Empieza con experiencia.</h2>
+        <h2 class="display-title" style="font-size:clamp(24px,3vw,36px); margin-bottom:20px;">Una solución modular respaldada por experiencia en proyectos reales.</h2>
         <p>
-          PRIC HOUSE está respaldada por PRIC&nbsp;Construcciones, que
-          ejecuta proyectos para clientes corporativos de alto estándar en
-          todo el país.
+          PRIC HOUSE cuenta con el respaldo de PRIC&nbsp;Construcciones y su
+          experiencia ejecutando proyectos para clientes corporativos de alto
+          estándar.
         </p>
-        <p>
-          Esa misma trayectoria reduce la incertidumbre del cliente. Del
-          otro lado hay una empresa que ya demostró que cumple.
-        </p>
+        <!-- TEMPORAL: /corporativo/ todavía no tiene landing; igual que en la home,
+             el link sigue por WhatsApp. Para activarlo, quitar data-wa-link y data-wa-message. -->
+        <a href="/corporativo/" class="btn-secondary respaldo-link" data-wa-link data-wa-message="Hola, me gustaría saber más sobre PRIC Construcciones y su experiencia corporativa.">
+          Conocer PRIC Construcciones
+          <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
       <div class="respaldo-media reveal delay-2">
         <div class="media-frame media-frame--4-5">
-          <img src="./imagenes/respaldo-pric-construcciones.png" alt="Módulo PRIC HOUSE en montaje sobre camión plataforma, obra en ejecución" loading="lazy" decoding="async" />
+          <img src="/imagenes/respaldo-pric-construcciones.png" alt="Módulo PRIC HOUSE en montaje sobre camión plataforma, obra en ejecución" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ POSIBLES PROYECTOS ============ -->
-<!-- Conceptual: aplicaciones posibles del sistema modular, no obras ejecutadas -->
-<section class="casos" id="experiencia">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="technical-line"></span>Posibles proyectos</span>
-      <h2 class="display-title">Un mismo sistema modular. Distintas formas de aplicarlo.</h2>
-    </div>
-    <p class="lead reveal">Algunas posibilidades de aplicación del sistema modular PRIC HOUSE, según el uso, la escala y el entorno de cada proyecto.</p>
-
-    <div class="caso-row reveal">
-      <div class="caso-media">
-        <div class="media-frame media-frame--16-9">
-          <img src="./imagenes/caso-vaca-muerta.png" alt="Urbanización modular PRIC HOUSE en entorno energético, paisaje árido patagónico" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div class="caso-body">
-        <div class="project-meta"><span>01 / Aplicación posible</span><span>Sector energético</span></div>
-        <h3>Bases y campamentos modulares para el sector energético</h3>
-        <p>Una posible configuración del sistema PRIC HOUSE aplicada a campamentos y bases operativas: unidades que se trasladan, se instalan y se adaptan según cada etapa del proyecto.</p>
-        <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
-      </div>
-    </div>
-
-    <div class="caso-row flip reveal delay-1">
-      <div class="caso-media">
-        <div class="media-frame media-frame--16-9">
-          <img src="./imagenes/caso-mineria-san-juan.png" alt="Base modular PRIC HOUSE en entorno minero de montaña, con vehículos y cordillera de fondo" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div class="caso-body">
-        <div class="project-meta"><span>02 / Aplicación posible</span><span>Sector minero</span></div>
-        <h3>Bases modulares para operaciones mineras en altura</h3>
-        <p>Otra posible aplicación del mismo sistema, pensada para campamentos y bases en entornos de montaña donde el traslado y la instalación son determinantes.</p>
-        <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
-      </div>
-    </div>
-
-    <div class="caso-row reveal delay-2">
-      <div class="caso-media">
-        <div class="media-frame media-frame--16-9">
-          <img src="./imagenes/caso-turismo-cordoba.png" alt="Complejo turístico de viviendas modulares PRIC HOUSE integrado al paisaje serrano de Córdoba" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div class="caso-body">
-        <div class="project-meta"><span>03 / Aplicación posible</span><span>Turismo y hospitality</span></div>
-        <h3>Complejos modulares para proyectos turísticos</h3>
-        <p>Una configuración posible del sistema PRIC HOUSE para desarrollos turísticos, integrando arquitectura modular al paisaje sin resignar diseño ni confort.</p>
-        <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
-      </div>
-    </div>
-
-    <!--
-      TESTIMONIOS — componente preparado, sin instanciar.
-      Sólo activar cuando exista un testimonio REAL (nombre, cita, ubicación
-      y fotografía verificados). No completar con datos ficticios.
-    -->
-  </div>
-</section>
-
-<!-- ============ CLIENTES ============ -->
+<!-- ============ CLIENTES (mismo carrusel y assets que la home) ============ -->
 <section class="clientes">
   <div class="wrap">
-    <div class="section-head center reveal on-dark">
-      <span class="eyebrow"><span class="technical-line"></span>Quiénes somos</span>
-      <h2 class="display-title">Experiencia puesta al servicio de soluciones reales.</h2>
-    </div>
-    <p class="lead reveal delay-1">Nuestro equipo reúne experiencia en proyectos de distintas escalas y para clientes de alto estándar. Todo ese conocimiento hoy lo aplicamos a soluciones modulares pensadas para necesidades concretas, combinando arquitectura, planificación, logística e instalación.</p>
-
-    <p class="eyebrow" style="justify-content:center;"><span class="technical-line"></span>Experiencia</p>
-    <p class="lead">Trayectoria construida junto a clientes exigentes.</p>
+    <p class="eyebrow reveal" style="justify-content:center;"><span class="technical-line"></span>Experiencia corporativa</p>
+    <p class="lead reveal">Trayectoria construida junto a clientes exigentes.</p>
     <div class="marquee" aria-label="Clientes y referencias de PRIC Construcciones">
       <div class="marquee-track">
         <!-- Set real (accesible) -->
-        <span class="cliente-item"><img src="./imagenes/logo-aeropuertos-argentina.svg" alt="Logo Aeropuertos Argentina" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-assist-card.png" alt="Logo Assist Card" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-cnh-industrial.svg" alt="Logo CNH Industrial" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-yenny.png" alt="Logo Yenny" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-shopgallery.png" alt="Logo ShopGallery" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-sullair.svg" alt="Logo Sullair" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-andrea-nahas.png" alt="Logo Andrea Nahás" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-dufry.svg" alt="Logo Dufry" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-farmacias-red.png" alt="Logo Farmacias Red" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-eana.png" alt="Logo EANA" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item"><img src="./imagenes/logo-tostado-cafe-club.png" alt="Logo Tostado Café Club" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-aeropuertos-argentina.svg" alt="Logo Aeropuertos Argentina" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-assist-card.png" alt="Logo Assist Card" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-cnh-industrial.svg" alt="Logo CNH Industrial" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-yenny.png" alt="Logo Yenny" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-shopgallery.png" alt="Logo ShopGallery" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-sullair.svg" alt="Logo Sullair" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-andrea-nahas.png" alt="Logo Andrea Nahás" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-dufry.svg" alt="Logo Dufry" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-farmacias-red.png" alt="Logo Farmacias Red" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-eana.png" alt="Logo EANA" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item"><img src="/imagenes/logo-tostado-cafe-club.png" alt="Logo Tostado Café Club" loading="lazy" decoding="async" /></span>
         <!-- Set duplicado, oculto para lectores de pantalla: sólo sostiene el loop visual infinito -->
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-aeropuertos-argentina.svg" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-assist-card.png" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-cnh-industrial.svg" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-yenny.png" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-shopgallery.png" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-sullair.svg" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-andrea-nahas.png" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-dufry.svg" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-farmacias-red.png" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-eana.png" alt="" loading="lazy" decoding="async" /></span>
-        <span class="cliente-item" aria-hidden="true"><img src="./imagenes/logo-tostado-cafe-club.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-aeropuertos-argentina.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-assist-card.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-cnh-industrial.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-yenny.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-shopgallery.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-sullair.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-andrea-nahas.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-dufry.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-farmacias-red.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-eana.png" alt="" loading="lazy" decoding="async" /></span>
+        <span class="cliente-item" aria-hidden="true"><img src="/imagenes/logo-tostado-cafe-club.png" alt="" loading="lazy" decoding="async" /></span>
       </div>
     </div>
     <p class="clientes-note">Parte de la cartera de clientes de PRIC Construcciones, la empresa detrás de PRIC HOUSE.</p>
@@ -979,12 +914,13 @@
 <!-- ============ CTA ============ -->
 <section class="cta-final">
   <div class="wrap reveal">
-    <span class="eyebrow" style="justify-content:center;"><span class="technical-line"></span>¿Tenés un proyecto en mente?<span class="technical-line"></span></span>
-    <h2>Conversemos.</h2>
+    <span class="eyebrow" style="justify-content:center;"><span class="technical-line"></span>Tu proyecto<span class="technical-line"></span></span>
+    <h2>Contanos qué necesitás resolver.</h2>
+    <p class="cta-sub">Analizamos el uso, la ubicación y la escala para preparar una configuración acorde a tu proyecto.</p>
     <div class="row">
-      <a href="#" class="btn-whatsapp" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero más información sobre sus soluciones.">
+      <a href="#" class="btn-whatsapp" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero conversar sobre una solución modular para mi empresa.">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.3-.7.1-1-.5-2-1.2-2.8-2.1-.7-.8-1.3-1.6-1.7-2.4-.1-.2-.1-.4.1-.6l.9-1c.2-.2.2-.5.1-.7l-1-2.2c-.2-.3-.5-.5-.9-.4l-1.8.4c-.4.1-.6.4-.6.8 0 4.5 4.6 9.1 9.1 9.1.4 0 .7-.2.8-.6l.4-1.8c.1-.4-.1-.7-.4-.9zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.7 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-        Hablar por WhatsApp
+        Hablar con PRIC HOUSE
       </a>
       <a href="#contacto" class="btn-secondary on-dark">
         Completar formulario
@@ -994,54 +930,73 @@
   </div>
 </section>
 
-<!-- ============ CONTACTO / FORMULARIO ============ -->
+<!-- ============ CONTACTO / FORMULARIO EMPRESAS ============ -->
 <section class="contacto on-dark" id="contacto">
   <div class="wrap">
     <div class="contacto-grid">
       <div class="contacto-side reveal">
-        <span class="eyebrow"><span class="technical-line"></span>Hablemos</span>
-        <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">Contanos qué necesitás.</h2>
-        <p>Completá estos datos y continuemos la conversación por WhatsApp.</p>
+        <span class="eyebrow"><span class="technical-line"></span>Contacto</span>
+        <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">Solicitá una propuesta para tu proyecto.</h2>
+        <p>Completá los datos principales y continuamos la conversación para definir la configuración, la logística y el alcance.</p>
         <div class="contacto-alt">
           <a href="https://wa.me/5493512142900" target="_blank" rel="noopener">WhatsApp: +54 9 351 2142900</a>
           <a href="mailto:info@prichouse.com">info@prichouse.com</a>
-          <span style="color:rgba(239,234,226,.4);">Córdoba, Argentina — operamos en todo el país</span>
+          <span style="color:rgba(239,234,226,.4);">Córdoba, Argentina — alcance nacional</span>
         </div>
       </div>
 
-      <form class="cf reveal delay-1" id="contactForm" novalidate>
+      <form class="cf reveal delay-1" id="empresasForm" novalidate>
         <div class="cf-row">
           <div class="cf-field">
-            <label for="cf-name">Nombre <span class="req">*</span></label>
-            <input type="text" id="cf-name" name="name" required maxlength="120" autocomplete="name" />
-            <span class="cf-err" data-err-for="cf-name" aria-live="polite"></span>
+            <label for="em-name">Nombre y apellido <span class="req">*</span></label>
+            <input type="text" id="em-name" name="name" required maxlength="120" autocomplete="name" />
+            <span class="cf-err" data-err-for="em-name" aria-live="polite"></span>
           </div>
           <div class="cf-field">
-            <label for="cf-interest">Vertical <span class="req">*</span></label>
-            <select id="cf-interest" name="interest" required>
+            <label for="em-company">Empresa <span class="req">*</span></label>
+            <input type="text" id="em-company" name="company" required maxlength="120" autocomplete="organization" />
+            <span class="cf-err" data-err-for="em-company" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="em-phone">Teléfono / WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="em-phone" name="phone" required maxlength="40" autocomplete="tel" inputmode="tel" />
+            <span class="cf-err" data-err-for="em-phone" aria-live="polite"></span>
+          </div>
+          <div class="cf-field">
+            <label for="em-email">Email <span class="opt">(opcional)</span></label>
+            <input type="email" id="em-email" name="email" maxlength="160" autocomplete="email" inputmode="email" />
+            <span class="cf-err" data-err-for="em-email" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="em-location">Provincia / ubicación del proyecto <span class="req">*</span></label>
+            <input type="text" id="em-location" name="location" required maxlength="160" autocomplete="address-level1" />
+            <span class="cf-err" data-err-for="em-location" aria-live="polite"></span>
+          </div>
+          <div class="cf-field">
+            <label for="em-type">Tipo de proyecto <span class="req">*</span></label>
+            <!-- Las opciones de aplicaciones se completan desde APLICACIONES; "Otro" queda fijo al final -->
+            <select id="em-type" name="type" required>
               <option value="">Seleccionar…</option>
-              <option value="Civil">Civil</option>
-              <option value="Empresas">Empresas</option>
-              <option value="Corporativo">Corporativo</option>
-              <option value="Otra consulta">Otra consulta</option>
+              <option value="Otro">Otro</option>
             </select>
-            <span class="cf-err" data-err-for="cf-interest" aria-live="polite"></span>
+            <span class="cf-err" data-err-for="em-type" aria-live="polite"></span>
           </div>
         </div>
 
         <div class="cf-field">
-          <label for="cf-location">Ubicación <span class="opt">(opcional)</span></label>
-          <input type="text" id="cf-location" name="location" maxlength="160" autocomplete="address-level2" />
-        </div>
-
-        <div class="cf-field">
-          <label for="cf-message">Mensaje <span class="opt">(opcional)</span></label>
-          <textarea id="cf-message" name="message" rows="3" maxlength="600" placeholder="Contanos brevemente sobre tu proyecto…"></textarea>
+          <label for="em-message">Contanos brevemente qué necesitás <span class="opt">(opcional)</span></label>
+          <textarea id="em-message" name="message" rows="3" maxlength="800" placeholder="Uso, cantidad de personas o unidades, plazos, accesos al lugar…"></textarea>
         </div>
 
         <div class="cf-submit-row">
-          <button type="submit" class="btn-primary btn-block" id="cfSubmit">
-            Continuar por WhatsApp
+          <button type="submit" class="btn-primary btn-block" id="empresasSubmit">
+            Solicitar propuesta
             <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </button>
           <p class="cf-note">Se abrirá WhatsApp con tu mensaje ya redactado. No enviamos ni almacenamos estos datos en un servidor.</p>
@@ -1057,26 +1012,25 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="lg">
-          <span class="logo-plate"><img src="./imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="20" height="24" /></span>
-          <span class="t">PRIC HOUSE</span>
+          <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="20" height="24" /></span>
+          <span class="t">PRIC HOUSE Empresas</span>
         </div>
-        <p>Arquitectura modular para personas, empresas y proyectos, con el respaldo de PRIC Construcciones.</p>
+        <p>Soluciones modulares para empresas, desarrolladores e inversores.</p>
       </div>
 
       <div class="foot-col">
-        <h6>Soluciones</h6>
-        <ul>
-          <li><a href="/civil/">Civil</a></li>
-          <li><a href="/empresas/">Empresas</a></li>
-          <li><a href="/corporativo/">Corporativo</a></li>
+        <h6>Aplicaciones</h6>
+        <!-- Los links de aplicaciones se completan desde APLICACIONES; "A medida" queda fijo al final -->
+        <ul id="footApps">
+          <li><a href="#a-medida">A medida</a></li>
         </ul>
       </div>
 
       <div class="foot-col">
         <h6>Empresa</h6>
         <ul>
-          <li><a href="#quienes-somos">PRIC HOUSE</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="/">PRIC HOUSE</a></li>
+          <li><a href="/corporativo/" data-wa-link data-wa-message="Hola, me gustaría saber más sobre PRIC Construcciones y su experiencia corporativa.">PRIC Construcciones / Corporativo</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
@@ -1086,15 +1040,15 @@
         <ul>
           <li><a href="https://wa.me/5493512142900" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:info@prichouse.com">info@prichouse.com</a></li>
-          <li><a href="https://www.instagram.com/pric.house/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/company/prichouse" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li>Córdoba, Argentina</li>
+          <li>Alcance nacional</li>
         </ul>
       </div>
     </div>
 
     <div class="foot-legal">
       <span>© <span id="footYear">2026</span> PRIC HOUSE · PRIC Construcciones · Todos los derechos reservados</span>
-      <span>Arquitectura modular · Civil · Empresas · Corporativo</span>
+      <span>Soluciones modulares para empresas</span>
     </div>
   </div>
 </footer>
@@ -1108,112 +1062,138 @@
   const WHATSAPP_NUMBER = "5493512142900";
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const fy = document.getElementById('footYear');
-  if(fy) fy.textContent = new Date().getFullYear();
+  /* ==========================================================================
+     APLICACIONES — fuente única de datos de la sección, del selector
+     "Tipo de proyecto" del formulario y de los links del footer.
+     Para sumar una industria: agregar un objeto con la misma forma.
+       image:     {src, alt} o null (muestra un panel gráfico hasta tener foto)
+       href:      landing propia de la aplicación; si es null, el CTA sigue por WhatsApp
+       scales:    escalas de referencia (opcional)
+       highlight: idea comercial destacada (opcional)
+       subcase:   caso específico dentro de la aplicación (opcional)
+     ========================================================================== */
+  const APLICACIONES = [
+    {
+      id: 'industria',
+      sector: 'Industria, energía y minería',
+      formLabel: 'Industria / energía / minería',
+      footerLabel: 'Industria',
+      title: 'Infraestructura modular para operaciones donde el tiempo importa.',
+      desc: 'Soluciones modulares para petróleo, gas, minería, energía e infraestructura, diseñadas para resolver alojamiento y espacios operativos en proyectos ubicados lejos de los centros urbanos.',
+      usesLabel: 'Configuraciones posibles',
+      uses: ['Dormitorios', 'Sanitarios', 'Comedor / SUM', 'Cocina', 'Oficinas operativas', 'Salas de reunión', 'Vestuarios', 'Espacios de apoyo'],
+      scales: {
+        label: 'Escalas de referencia',
+        items: ['5 unidades', '10 unidades', '20 unidades', 'A medida'],
+        note: 'Orientativas: cada solución se configura según la cantidad de personas, la ubicación y la etapa del proyecto.'
+      },
+      cta: 'Explorar solución industrial',
+      href: null,
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto de industria, energía o minería.',
+      image: { src: '/imagenes/imagen%202.png', alt: 'Campamento modular PRIC HOUSE para una operación energética, con personal circulando entre unidades al atardecer' }
+    },
+    {
+      id: 'deportes',
+      sector: 'Complejos deportivos',
+      formLabel: 'Complejo deportivo',
+      footerLabel: 'Deportes',
+      title: 'La infraestructura que tu complejo necesita para empezar a funcionar.',
+      desc: 'Soluciones modulares para complementar clubes, complejos de pádel y desarrollos deportivos sin depender de largos procesos de obra tradicional.',
+      highlight: 'Que la infraestructura de apoyo no retrase la apertura de las canchas ni del complejo.',
+      usesLabel: 'Usos posibles',
+      uses: ['Recepción', 'Administración', 'Vestuarios', 'Sanitarios', 'Bar o cafetería', 'Espacio gastronómico', 'Oficina', 'Depósito', 'SUM / espacio social'],
+      cta: 'Explorar proyectos deportivos',
+      href: null,
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un complejo deportivo.',
+      image: null // TODO: reemplazar por foto/render real de un complejo deportivo con módulos PRIC HOUSE
+    },
+    {
+      id: 'turismo',
+      sector: 'Turismo & hospitality',
+      formLabel: 'Turismo / hospitality',
+      footerLabel: 'Turismo',
+      title: 'Alojamiento modular pensado para convertirse en experiencia.',
+      desc: 'Unidades habitacionales y espacios complementarios para proyectos turísticos que buscan crecer con rapidez, diseño y una inversión escalable: complejos turísticos, glamping premium, hoteles modulares, cabañas y renta temporaria.',
+      highlight: 'Empezar con pocas unidades, validar la demanda y ampliar progresivamente.',
+      usesLabel: 'Aplicaciones',
+      uses: ['Unidades de alojamiento', 'Recepción', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía', 'Ampliaciones por etapas'],
+      subcase: {
+        title: 'Bodegas y enoturismo',
+        text: 'Unidades habitacionales integradas a viñedos, fincas o bodegas, con posibilidad de adaptar estética y terminaciones a la identidad del proyecto.'
+      },
+      cta: 'Explorar proyectos turísticos',
+      href: null,
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico.',
+      image: { src: '/imagenes/caso-turismo-cordoba.png', alt: 'Complejo turístico de unidades modulares PRIC HOUSE integrado al paisaje serrano de Córdoba' }
+    }
+  ];
 
-  /* ============ HERO — fondos rotativos ============ */
+  const ARROW = '<span class="arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const pad = (n) => String(n).padStart(2, '0');
+
+  function renderAplicacion(app, i){
+    const num = pad(i + 1);
+    const media = app.image
+      ? `<div class="media-frame"><img src="${esc(app.image.src)}" alt="${esc(app.image.alt)}" loading="lazy" decoding="async" /></div>`
+      : `<div class="media-frame app-ph" aria-hidden="true"><span class="app-ph-label">${esc(app.sector)}</span></div>`;
+    const cta = app.href
+      ? `<a href="${esc(app.href)}" class="btn-secondary">${esc(app.cta)} ${ARROW}</a>`
+      : `<a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="${esc(app.waMessage)}">${esc(app.cta)} ${ARROW}</a>`;
+    const scales = app.scales ? `
+          <div class="app-scales">
+            <span class="app-label">${esc(app.scales.label)}</span>
+            <ul>${app.scales.items.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+            ${app.scales.note ? `<p>${esc(app.scales.note)}</p>` : ''}
+          </div>` : '';
+    const highlight = app.highlight ? `<p class="app-highlight">${esc(app.highlight)}</p>` : '';
+    const subcase = app.subcase ? `
+          <div class="app-subcase"><span class="app-label">${esc(app.subcase.title)}</span><p>${esc(app.subcase.text)}</p></div>` : '';
+    return `
+      <article class="app reveal${i % 2 ? ' flip' : ''}" id="${esc(app.id)}">
+        <div class="app-media">${media}<span class="app-index" aria-hidden="true">${num}</span></div>
+        <div class="app-body">
+          <div class="project-meta"><span>${num} — Aplicación</span><span>${esc(app.sector)}</span></div>
+          <h3>${esc(app.title)}</h3>
+          <p class="app-desc">${esc(app.desc)}</p>
+          ${highlight}
+          <div class="app-uses">
+            <span class="app-label">${esc(app.usesLabel)}</span>
+            <ul>${app.uses.map(u => `<li>${esc(u)}</li>`).join('')}</ul>
+          </div>
+          ${scales}${subcase}
+          ${cta}
+        </div>
+      </article>`;
+  }
+
   (function(){
-    const layerEls = [document.getElementById('heroBgA'), document.getElementById('heroBgB')];
-    if(!layerEls[0] || !layerEls[1]) return;
+    const list = document.getElementById('appList');
+    if(list) list.innerHTML = APLICACIONES.map(renderAplicacion).join('');
 
-    const HERO_IMAGES = [
-      './imagenes/imagen-hero-1.png',
-      './imagenes/imagen-hero-2.png',
-      './imagenes/imagen-hero-3.png',
-      './imagenes/imagen-hero-4.png',
-      './imagenes/imagen-hero-5.png',
-      './imagenes/imagen-hero-6.png'
-    ];
-    const HERO_INTERVAL = 7000;
-
-    /* Variaciones sutiles de Ken Burns — nunca se supera scale(1.07), sin paneos ni rotaciones */
-    const KEN_BURNS = [
-      { from:'scale(1.02)', to:'scale(1.06)' },
-      { from:'scale(1.06)', to:'scale(1.025)' },
-      { from:'scale(1.02) translateX(-0.4%)', to:'scale(1.06) translateX(0.4%)' },
-      { from:'scale(1.03) translateX(0.3%)', to:'scale(1.065) translateX(-0.3%)' }
-    ];
-
-    function shuffle(arr){
-      const a = arr.slice();
-      for(let i = a.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
+    const select = document.getElementById('em-type');
+    if(select){
+      const other = select.querySelector('option[value="Otro"]');
+      APLICACIONES.forEach(app => {
+        const opt = document.createElement('option');
+        opt.value = app.formLabel; opt.textContent = app.formLabel;
+        select.insertBefore(opt, other);
+      });
     }
 
-    /* Precarga: sólo se usan las imágenes que efectivamente cargan */
-    const usable = [];
-    let checked = 0;
-    let started = false;
-
-    HERO_IMAGES.forEach((src) => {
-      const img = new Image();
-      img.onload = () => { usable.push(src); afterCheck(); };
-      img.onerror = () => { afterCheck(); };
-      img.src = src;
-    });
-
-    function afterCheck(){
-      checked++;
-      if(!started && checked === HERO_IMAGES.length){
-        started = true;
-        if(usable.length > 0) init(usable);
-        /* si ninguna imagen carga, se conserva el fondo oscuro por defecto (.hero-bg) */
-      }
-    }
-
-    let images = [];
-    let bag = [];
-    let lastShown = null;
-    let activeLayer = 0;
-    let kbIndex = 0;
-    let timer = null;
-
-    function nextImage(){
-      if(bag.length === 0){
-        bag = shuffle(images);
-        if(bag.length > 1 && bag[0] === lastShown){
-          const swapIdx = 1 + Math.floor(Math.random() * (bag.length - 1));
-          [bag[0], bag[swapIdx]] = [bag[swapIdx], bag[0]];
-        }
-      }
-      const img = bag.shift();
-      lastShown = img;
-      return img;
-    }
-
-    function showImage(src){
-      const layer = layerEls[activeLayer];
-      const other = layerEls[1 - activeLayer];
-      const kb = KEN_BURNS[kbIndex % KEN_BURNS.length];
-      kbIndex++;
-
-      layer.classList.remove('is-animating');
-      layer.style.transition = 'none';
-      layer.style.backgroundImage = `url('${src}')`;
-      layer.style.transform = kb.from;
-      layer.offsetHeight; /* fuerza reflow para aplicar el estado inicial sin transición */
-      layer.style.transition = '';
-      layer.classList.add('is-animating');
-      layer.classList.add('is-visible');
-      requestAnimationFrame(() => { layer.style.transform = kb.to; });
-
-      other.classList.remove('is-visible');
-      activeLayer = 1 - activeLayer;
-    }
-
-    function init(list){
-      images = list;
-      const first = images[Math.floor(Math.random() * images.length)];
-      lastShown = first;
-      showImage(first);
-      timer = setInterval(() => {
-        if(document.visibilityState === 'visible') showImage(nextImage());
-      }, HERO_INTERVAL);
+    const foot = document.getElementById('footApps');
+    if(foot){
+      const custom = foot.firstElementChild;
+      APLICACIONES.forEach(app => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="#${esc(app.id)}">${esc(app.footerLabel)}</a>`;
+        foot.insertBefore(li, custom);
+      });
     }
   })();
+
+  const fy = document.getElementById('footYear');
+  if(fy) fy.textContent = new Date().getFullYear();
 
   /* Nav scroll state */
   const nav = document.getElementById('nav');
@@ -1277,14 +1257,11 @@
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && menu.classList.contains('open')) closeMenu(); });
   })();
 
-  /* Carrusel de clientes — pausa sólo con el cursor encima de un logo puntual
-     (no con :hover en el contenedor, para que el track siga andando sobre
-     el fondo y los espacios vacíos entre logos). */
+  /* Carrusel de clientes — pausa sólo con el cursor encima de un logo puntual */
   (function(){
     const track = document.querySelector('.marquee-track');
     if(!track) return;
-    const items = track.querySelectorAll('.cliente-item');
-    items.forEach(item => {
+    track.querySelectorAll('.cliente-item').forEach(item => {
       item.addEventListener('pointerenter', () => { track.style.animationPlayState = 'paused'; });
       item.addEventListener('pointerleave', () => { track.style.animationPlayState = 'running'; });
     });
@@ -1301,10 +1278,12 @@
     a.setAttribute('rel', 'noopener');
   });
 
-  /* Formulario — construye mensaje y abre WhatsApp */
+  /* Formulario Empresas — construye mensaje y abre WhatsApp */
   (function(){
-    const form = document.getElementById('contactForm');
+    const form = document.getElementById('empresasForm');
     if(!form) return;
+    const REQUIRED = ['em-name','em-company','em-phone','em-location','em-type'];
+    const $ = (id) => form.querySelector('#' + id);
 
     function setError(input, msg){
       input.classList.add('invalid');
@@ -1323,14 +1302,16 @@
 
     function validate(){
       let ok = true;
-      ['cf-name','cf-interest'].forEach(id => {
-        const el = form.querySelector('#'+id);
+      REQUIRED.forEach(id => {
+        const el = $(id);
         clearError(el);
-        if(!el.value || !el.value.trim()){
-          setError(el, 'Este campo es obligatorio.');
-          ok = false;
-        }
+        if(!el.value || !el.value.trim()){ setError(el, 'Este campo es obligatorio.'); ok = false; }
       });
+      const email = $('em-email');
+      clearError(email);
+      if(email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
+        setError(email, 'Revisá el formato del email.'); ok = false;
+      }
       return ok;
     }
 
@@ -1341,14 +1322,12 @@
         if(firstErr) firstErr.focus();
         return;
       }
-      const name = form.querySelector('#cf-name').value.trim();
-      const interest = form.querySelector('#cf-interest').value.trim();
-      const location = form.querySelector('#cf-location').value.trim();
-      const message = form.querySelector('#cf-message').value.trim();
-
-      let text = `Hola PRIC HOUSE, soy ${name}. Estoy interesado/a en ${interest}.`;
-      if(location){ text += ` Mi proyecto o consulta es en ${location}.`; }
-      if(message){ text += ` ${message}`; }
+      const v = (id) => $(id).value.trim();
+      let text = `Hola PRIC HOUSE, soy ${v('em-name')} de ${v('em-company')}.`;
+      text += ` Quiero solicitar una propuesta para un proyecto de tipo "${v('em-type')}" en ${v('em-location')}.`;
+      text += ` Mi teléfono de contacto es ${v('em-phone')}.`;
+      if(v('em-email')){ text += ` Email: ${v('em-email')}.`; }
+      if(v('em-message')){ text += ` Necesidad: ${v('em-message')}`; }
 
       window.open(buildWaUrl(text), '_blank', 'noopener');
     });
