@@ -1313,24 +1313,33 @@
         desc: 'Viviendas modulares en 37 y 74 m², con versiones Standard y Deluxe y la opción de sumar galería y cubierta exterior. Se agrupan y amplían según la escala del proyecto.',
         uses: ['Alojamiento de personal', 'Unidades turísticas', 'Cabañas', 'Renta temporaria', 'Desarrollos inmobiliarios']
       },
-      // TODO: reemplazar por render/foto específica de viviendas en contexto empresarial
+      // Imagen de respaldo de la familia; cada modelo define la suya (fotos en /imagenes/modelos/).
+      // Sin fotos propias todavía de las versiones con galería ni de 74 m²: usan una foto de su línea.
       image: { src: '/imagenes/vertical-civil.jpg', alt: 'Vivienda modular PRIC HOUSE con revestimiento símil madera' },
       models: [
         { surface: 37, tier: 'standard', gallery: false, price: 25100, pricePerM2: 678, tagline: 'Unidad compacta',
+          image: { src: '/imagenes/modelos/estandar-atardecer.jpg', alt: 'Unidad modular PRIC HOUSE Standard de paneles blancos al atardecer' },
           description: 'Unidad habitacional compacta y eficiente, pensada para alojamiento de personal, unidades turísticas o renta.' },
         { surface: 37, tier: 'deluxe', gallery: false, price: 27600, pricePerM2: 746, tagline: '2 dormitorios',
+          image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
           description: 'Unidad expandible con dos dormitorios, área social integrada, cocina en L y baño completo, con una selección superior de terminaciones.' },
         { surface: 37, tier: 'standard', gallery: true, price: 28900, pricePerM2: 781, tagline: 'Expansión exterior',
+          image: { src: '/imagenes/modelos/estandar-frente.jpg', alt: 'Frente de una unidad modular PRIC HOUSE Standard de paneles blancos' },
           description: 'La unidad Standard con galería y cubierta exterior, sumando un espacio semicubierto de uso cotidiano.' },
         { surface: 37, tier: 'deluxe', gallery: true, price: 31500, pricePerM2: 851, tagline: 'Expansión exterior',
+          image: { src: '/imagenes/vertical-civil.jpg', alt: 'Vivienda modular PRIC HOUSE Deluxe con revestimiento símil madera y deck de acceso' },
           description: 'La configuración Deluxe con galería y cubierta exterior: mayor nivel de terminación y un espacio semicubierto integrado.' },
         { surface: 74, tier: 'standard', gallery: false, price: 45800, pricePerM2: 619, tagline: 'Mayor amplitud',
+          image: { src: '/imagenes/modelos/estandar-real-3.jpg', alt: 'Unidad modular PRIC HOUSE Standard de paneles blancos con doble puerta' },
           description: 'Mayor superficie habitacional para equipos, familias o huéspedes, con la eficiencia constructiva del sistema PRIC HOUSE.' },
         { surface: 74, tier: 'deluxe', gallery: false, price: 49700, pricePerM2: 672, tagline: 'Mayor amplitud y equipamiento',
+          image: { src: '/imagenes/modelos/deluxe-real-taller.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe símil madera terminada en planta' },
           description: 'Una unidad de mayor escala con una selección superior de terminaciones y equipamiento.' },
         { surface: 74, tier: 'standard', gallery: true, price: 51300, pricePerM2: 693, tagline: 'Expansión exterior',
+          image: { src: '/imagenes/modelos/estandar-real-1.jpg', alt: 'Unidad modular PRIC HOUSE Standard de paneles blancos con la puerta abierta' },
           description: 'Gran superficie complementada con galería y cubierta exterior, generando espacios de encuentro al aire libre.' },
         { surface: 74, tier: 'deluxe', gallery: true, price: 55300, pricePerM2: 747, tagline: 'Configuración superior',
+          image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
           description: 'La propuesta habitacional más completa: mayor superficie, terminaciones Deluxe y galería con cubierta.' }
       ]
     },
@@ -1347,24 +1356,32 @@
         uses: ['Recepción', 'Oficinas', 'Salas de reunión', 'SUM', 'Espacios comunes', 'Cafetería', 'Gastronomía', 'Club house', 'Áreas sociales', 'Espacios comerciales', 'Apoyo para complejos deportivos', 'Apoyo para desarrollos turísticos'],
         usesNote: 'Usos de referencia: el equipamiento y la distribución interior se definen según cada proyecto.'
       },
-      // TODO: reemplazar por render/foto específica de Salones de Espacios Múltiples
+      // Imagen de respaldo de la familia; cada modelo define la suya. TODO: renders propios de SM.
       image: { src: '/imagenes/vertical-empresas.png', alt: 'Salón de Espacios Múltiples PRIC HOUSE instalado junto a una nave industrial' },
       models: [
         { surface: 37, tier: 'standard', gallery: false, price: 22900, pricePerM2: 619, tagline: 'Espacio versátil',
+          image: { src: '/imagenes/modelos/sm-nave-industrial.jpg', alt: 'Salón de Espacios Múltiples PRIC HOUSE de paneles blancos junto a una nave industrial' },
           description: 'Espacio modular versátil para áreas comunes, comerciales u operativas, adaptable según las necesidades del proyecto.' },
         { surface: 37, tier: 'deluxe', gallery: false, price: 24900, pricePerM2: 673, tagline: 'Terminación superior',
+          image: { src: '/imagenes/modelos/deluxe-real-taller.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe símil madera terminada en planta' },
           description: 'Una configuración de mayor nivel de terminación para proyectos donde el diseño y la presencia del espacio tienen un papel central.' },
         { surface: 37, tier: 'standard', gallery: true, price: 26600, pricePerM2: 719, tagline: 'Expansión exterior',
+          image: { src: '/imagenes/modelos/estandar-detalle.jpg', alt: 'Detalle de acceso de un módulo PRIC HOUSE Standard de paneles blancos' },
           description: 'El espacio versátil del SM Standard con galería y cubierta exterior, para extender el uso hacia un área semicubierta.' },
         { surface: 37, tier: 'deluxe', gallery: true, price: 28700, pricePerM2: 776, tagline: 'Expansión exterior',
+          image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
           description: 'Terminación Deluxe con galería y cubierta exterior, para espacios que también se proyectan hacia afuera.' },
         { surface: 74, tier: 'standard', gallery: false, price: 42300, pricePerM2: 572, tagline: 'Mayor superficie',
+          image: { src: '/imagenes/modelos/sm-conjunto-industrial.jpg', alt: 'Conjunto de Salones de Espacios Múltiples PRIC HOUSE en un predio industrial' },
           description: 'Mayor superficie libre para usos comunes, comerciales u operativos que requieren más capacidad.' },
         { surface: 74, tier: 'deluxe', gallery: false, price: 45300, pricePerM2: 612, tagline: 'Mayor superficie y terminación',
+          image: { src: '/imagenes/modelos/deluxe-real-taller.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe símil madera terminada en planta' },
           description: 'Un espacio amplio con terminaciones de mayor nivel, pensado para recepciones, áreas sociales o espacios de marca.' },
         { surface: 74, tier: 'standard', gallery: true, price: 47900, pricePerM2: 647, tagline: 'Expansión exterior',
+          image: { src: '/imagenes/modelos/estandar-atardecer.jpg', alt: 'Unidad modular PRIC HOUSE Standard de paneles blancos al atardecer' },
           description: 'Gran superficie complementada con galería y cubierta, integrando el interior con un área semicubierta.' },
         { surface: 74, tier: 'deluxe', gallery: true, price: 50800, pricePerM2: 686, tagline: 'Configuración superior',
+          image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
           description: 'La configuración SM más completa: mayor superficie, terminaciones Deluxe y galería con cubierta exterior.' }
       ]
     }
