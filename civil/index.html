@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PRIC HOUSE Civil | Tu casa modular en tu propio terreno</title>
-<meta name="description" content="Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas, con financiación disponible y el respaldo de más de 20 años de PRIC Construcciones." />
+<meta name="description" content="Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas, con facilidad de pago y el respaldo de más de 20 años de PRIC Construcciones." />
 
 <!-- TODO: completar dominio definitivo al publicar -->
 <!-- <link rel="canonical" href="https://www.pricconstrucciones.com/house/civil/" /> -->
@@ -352,7 +352,7 @@
   @media (min-width:761px){ .hero{ padding-bottom:190px; } }
 
   /* ============ FIXES RESPONSIVE (grid min-width:auto) ============ */
-  .how-grid > *, .models-grid > *, .diff-grid > *, .timeline > *, .finance-grid > *,
+  .how-grid > *, .models-grid > *, .diff-grid > *,
   .contacto-grid > *, .cf-row > *, .foot-grid > *{ min-width:0; }
 
   /* ============ CÓMO FUNCIONA ============ */
@@ -416,6 +416,9 @@
     font-family:var(--font-label); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
     color:rgba(239,234,226,.62);
   }
+  .modelos .model-tags{flex-wrap:nowrap; gap:5px;}
+  .modelos .model-tag{padding:0 7px; letter-spacing:.07em; font-size:9.5px;}
+  @media (max-width:380px){ .modelos .model-tags{flex-wrap:wrap;} }
   .model-tag--deluxe{border-color:rgba(201,107,55,.6); color:var(--copper);}
   .model-body h3{font-family:var(--font-display); font-size:19px; font-weight:600; color:#fff; margin-top:4px;}
   .model-body .m2{font-family:var(--font-label); font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--copper);}
@@ -453,25 +456,10 @@
   .diff-item p{font-size:14.5px; line-height:1.6; max-width:46ch;}
   .porque-more{margin-top:36px;}
 
-  /* ============ PROCESO ============ */
-  .proceso{background:var(--stone); padding:150px 0;}
-  @media (max-width:760px){ .proceso{padding:90px 0;} }
-  .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,3vw,36px); margin-top:8px;}
-  @media (max-width:900px){ .timeline{grid-template-columns:1fr 1fr; gap:34px;} }
-  @media (max-width:560px){ .timeline{grid-template-columns:1fr;} }
-  .timeline-step .n{font-family:var(--font-display); font-weight:700; font-size:34px; color:var(--carbon); letter-spacing:-.02em; line-height:1;}
-  .timeline-step h3{font-family:var(--font-display); font-size:16px; font-weight:600; color:var(--carbon); margin:12px 0 8px;}
-  .timeline-step p{font-size:14px; line-height:1.6; color:#3c3f3a; max-width:32ch;}
-
   /* ============ FINANCIACIÓN ============ */
-  .financiacion{background:var(--carbon); padding:150px 0;}
-  @media (max-width:760px){ .financiacion{padding:90px 0;} }
-  .financiacion .section-head p{max-width:640px;}
-  .finance-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-on-dark); border:1px solid var(--line-on-dark); margin-top:8px;}
-  @media (max-width:700px){ .finance-grid{grid-template-columns:1fr;} }
-  .finance-item{background:var(--carbon); padding:30px 28px;}
-  .finance-item h4{font-family:var(--font-display); font-size:15.5px; font-weight:600; color:#fff; margin-bottom:8px;}
-  .finance-item p{font-size:14px; line-height:1.6; color:rgba(239,234,226,.62);}
+  .facilidad-pago{background:var(--carbon); padding:150px 0;}
+  @media (max-width:760px){ .facilidad-pago{padding:90px 0;} }
+  .facilidad-pago .section-head p{max-width:640px; margin-top:18px;}
   .finance-cta{margin-top:40px;}
 
   /* ============ FAQ ============ */
@@ -626,9 +614,9 @@
     <span class="hero-meta"><span class="dot"></span> Casas modulares transportables a toda la Argentina</span>
     <h1>La casa que soñás, <span class="accent">en el lugar que elegiste</span></h1>
     <p class="sub">
-      Acompañamos a familias a hacer realidad su casa a través de la
-      construcción modular y un servicio completo de traslado e instalación,
-      para entregársela lista para habitar.
+      Acompañamos a familias a hacer realidad su casa con construcción
+      modular y un servicio coordinado de selección, traslado e instalación
+      en el terreno que elijan.
     </p>
     <div class="hero-cta">
       <a href="#contacto" class="btn-primary">
@@ -643,7 +631,7 @@
     <div class="hero-attr"><div class="n">01</div><div class="t">Selección del modelo</div></div>
     <div class="hero-attr"><div class="n">02</div><div class="t">Traslado</div></div>
     <div class="hero-attr"><div class="n">03</div><div class="t">Instalación</div></div>
-    <div class="hero-attr"><div class="n">04</div><div class="t">Financiación disponible</div></div>
+    <div class="hero-attr"><div class="n">04</div><div class="t">Facilidad de pago</div></div>
   </div>
 </section>
 
@@ -653,19 +641,23 @@
     <div class="como-grid">
       <div class="reveal">
         <span class="eyebrow"><span class="technical-line"></span>Cómo funciona</span>
-        <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">De la idea a tu casa instalada, en tres pasos.</h2>
+        <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">De la consulta a tu casa instalada, en cuatro etapas.</h2>
         <div class="how-grid">
           <div class="how-step">
             <div class="n">01</div>
-            <div><h3>Elegís tu modelo</h3><p>Definimos juntos el modelo y la distribución que mejor se adapta a tu terreno y tu familia.</p></div>
+            <div><h3>Consulta</h3><p>Nos contás dónde está tu terreno, qué necesitás y cuál es tu presupuesto.</p></div>
           </div>
           <div class="how-step">
             <div class="n">02</div>
-            <div><h3>Coordinamos todo el traslado</h3><p>Organizamos el transporte hasta tu terreno, sin que tengas que gestionar nada por tu cuenta.</p></div>
+            <div><h3>Propuesta</h3><p>Definimos juntos el modelo y la distribución que mejor se adaptan a tu terreno y tu familia. Te presentamos la propuesta con el plazo estimado, el flete y la instalación para tu ubicación, y las condiciones de pago.</p></div>
           </div>
           <div class="how-step">
             <div class="n">03</div>
-            <div><h3>Instalamos y te la entregamos lista</h3><p>Instalación completa en el lugar que elegiste. Vos solo te mudás.</p></div>
+            <div><h3>Traslado e instalación</h3><p>Coordinamos el transporte hasta tu terreno y realizamos la instalación de tu casa.</p></div>
+          </div>
+          <div class="how-step">
+            <div class="n">04</div>
+            <div><h3>Entrega</h3><p>Te entregamos tu casa instalada, con acompañamiento posterior ante cualquier consulta.</p></div>
           </div>
         </div>
       </div>
@@ -702,7 +694,7 @@
       <article class="model-card" data-model="37 m² Standard">
         <div class="media-frame"><img src="/imagenes/modelos/estandar-atardecer.jpg" alt="Casa modular PRIC HOUSE versión Standard, de paneles blancos, instalada en un terreno abierto al atardecer" width="1200" height="675" loading="lazy" decoding="async" /></div>
         <div class="model-body">
-          <div class="model-tags"></div>
+          <div class="model-tags"><span class="model-tag">Standard</span></div>
           <h3>37 m² Standard</h3>
           <span class="m2">37 m² · Vivienda compacta</span>
           <p>Vivienda modular diseñada para aprovechar al máximo cada metro cuadrado. Una solución funcional y eficiente, ideal como primera vivienda, casa de fin de semana o unidad para renta.</p>
@@ -721,10 +713,10 @@
           <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </div>
       </article>
-      <article class="model-card" data-model="37 m² Standard + Galería y Techo">
+      <article class="model-card" data-model="37 m² Standard + Galería y cubierta">
         <div class="media-frame"><img src="/imagenes/modelos/estandar-frente.jpg" alt="Frente de una casa modular PRIC HOUSE versión Standard, de paneles blancos, con puerta central y dos ventanas" width="1200" height="900" loading="lazy" decoding="async" /></div>
         <div class="model-body">
-          <div class="model-tags"><span class="model-tag">+ Galería y cubierta</span></div>
+          <div class="model-tags"><span class="model-tag">Standard</span><span class="model-tag">+ Galería y cubierta</span></div>
           <h3>37 m² Standard</h3>
           <span class="m2">37 m² + expansión exterior</span>
           <p>La funcionalidad del modelo Standard incorporando galería y cubierta exterior para ampliar el uso cotidiano de la vivienda y generar una transición entre interior y exterior.</p>
@@ -732,7 +724,7 @@
           <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </div>
       </article>
-      <article class="model-card" data-model="37 m² Deluxe + Galería y Techo">
+      <article class="model-card" data-model="37 m² Deluxe + Galería y cubierta">
         <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE versión Deluxe con revestimiento símil madera y deck de acceso, en un jardín" width="1672" height="941" loading="lazy" decoding="async" /></div>
         <div class="model-body">
           <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span><span class="model-tag">+ Galería y cubierta</span></div>
@@ -748,7 +740,7 @@
       <article class="model-card" data-model="74 m² Standard">
         <div class="media-frame"><img src="/imagenes/modelos/estandar-real-3.jpg" alt="Casa modular PRIC HOUSE versión Standard, de paneles blancos con doble puerta de acceso" width="570" height="427" loading="lazy" decoding="async" /></div>
         <div class="model-body">
-          <div class="model-tags"></div>
+          <div class="model-tags"><span class="model-tag">Standard</span></div>
           <h3>74 m² Standard</h3>
           <span class="m2">74 m² · Mayor amplitud</span>
           <p>Una propuesta modular de mayor superficie pensada para familias que necesitan más espacio, conservando la eficiencia constructiva y la rapidez de implementación del sistema PRIC HOUSE.</p>
@@ -767,10 +759,10 @@
           <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </div>
       </article>
-      <article class="model-card" data-model="74 m² Standard + Galería y Techo">
+      <article class="model-card" data-model="74 m² Standard + Galería y cubierta">
         <div class="media-frame"><img src="/imagenes/modelos/estandar-real-1.jpg" alt="Casa modular PRIC HOUSE versión Standard, de paneles blancos, con la puerta central abierta" width="781" height="453" loading="lazy" decoding="async" /></div>
         <div class="model-body">
-          <div class="model-tags"><span class="model-tag">+ Galería y cubierta</span></div>
+          <div class="model-tags"><span class="model-tag">Standard</span><span class="model-tag">+ Galería y cubierta</span></div>
           <h3>74 m² Standard</h3>
           <span class="m2">74 m² + expansión exterior</span>
           <p>Una vivienda de gran superficie complementada con galería y cubierta exterior, generando nuevos espacios de encuentro y una mayor relación con el terreno.</p>
@@ -778,7 +770,7 @@
           <a href="#contacto" class="btn-secondary" data-model-cta>Consultar este modelo <span class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </div>
       </article>
-      <article class="model-card" data-model="74 m² Deluxe + Galería y Techo">
+      <article class="model-card" data-model="74 m² Deluxe + Galería y cubierta">
         <div class="media-frame"><img src="/imagenes/modelos/deluxe-real-frente.jpg" alt="Casa modular expandible PRIC HOUSE versión Deluxe, con revestimiento símil madera y frente vidriado" width="1200" height="900" loading="lazy" decoding="async" /></div>
         <div class="model-body">
           <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span><span class="model-tag">+ Galería y cubierta</span></div>
@@ -814,23 +806,23 @@
     <div class="diff-grid reveal delay-1">
       <div class="diff-item">
         <div class="n">01</div>
-        <h3>Llave en mano real</h3>
-        <p>Vos elegís dónde. Nosotros coordinamos selección, traslado e instalación de principio a fin.</p>
+        <h3>Un solo equipo, de principio a fin</h3>
+        <p>Vos elegís dónde. Nosotros coordinamos la selección, el traslado y la instalación de tu casa.</p>
       </div>
       <div class="diff-item">
         <div class="n">02</div>
-        <h3>Financiación transparente</h3>
-        <p>Financiación disponible, con toda la información clara desde el primer momento: sin costos ocultos.</p>
+        <h3>Facilidad de pago</h3>
+        <p>Definimos desde el inicio un cronograma de pagos con montos y fechas claras, para que organices tu inversión.</p>
       </div>
       <div class="diff-item">
         <div class="n">03</div>
         <h3>Instalación en todo el país</h3>
-        <p>Trasladamos e instalamos tu casa donde esté tu terreno, sin importar la distancia.</p>
+        <p>Trasladamos e instalamos tu casa donde esté tu terreno. El flete y la instalación se cotizan según la ubicación.</p>
       </div>
       <div class="diff-item">
         <div class="n">04</div>
-        <h3>Certeza de tiempos</h3>
-        <p>Sabés desde el principio cuánto tarda cada etapa del proceso.</p>
+        <h3>Plazos claros</h3>
+        <p>La propuesta incluye el plazo estimado de cada etapa, para que sepas qué esperar desde el inicio.</p>
       </div>
     </div>
 
@@ -842,41 +834,10 @@
   </div>
 </section>
 
-<!-- ============ PROCESO DE TRABAJO ============ -->
-<section class="proceso" id="proceso">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="technical-line"></span>Proceso de trabajo</span>
-      <h2 class="display-title" style="font-size:clamp(26px,3.2vw,38px);">De la consulta a tu casa instalada, en cuatro etapas.</h2>
-    </div>
-
-    <div class="timeline reveal delay-1">
-      <div class="timeline-step">
-        <div class="n">01</div>
-        <h3>Consulta</h3>
-        <p>Nos contás dónde está tu terreno, qué necesitás y cuál es tu presupuesto.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="n">02</div>
-        <h3>Propuesta y financiación</h3>
-        <p>Te presentamos el modelo recomendado, el plazo estimado y las condiciones claras de financiación.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="n">03</div>
-        <h3>Traslado e instalación</h3>
-        <p>Coordinamos el transporte hasta tu terreno y realizamos la instalación completa.</p>
-      </div>
-      <div class="timeline-step">
-        <div class="n">04</div>
-        <h3>Entrega</h3>
-        <p>Te entregamos tu casa lista para habitar, con acompañamiento posterior ante cualquier consulta.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ FACILIDAD DE PAGO ============ -->
-<section class="financiacion" id="financiacion">
+<!-- PENDIENTE DE VALIDACIÓN COMERCIAL: qué incluye y qué no el monto, plazos, cuotas y seña.
+     Se retiraron los bloques "[A completar]" hasta tener la información aprobada. -->
+<section class="facilidad-pago" id="facilidad-de-pago">
   <div class="wrap">
     <div class="section-head reveal on-dark">
       <span class="eyebrow"><span class="technical-line"></span>Facilidad de pago</span>
@@ -889,27 +850,8 @@
       </p>
     </div>
 
-    <div class="finance-grid reveal delay-1">
-      <div class="finance-item">
-        <h4>Qué incluye el monto financiado</h4>
-        <p>[A completar — detalle de qué incluye el monto financiado.]</p>
-      </div>
-      <div class="finance-item">
-        <h4>Qué no incluye</h4>
-        <p>[A completar — detalle de qué no incluye el monto financiado.]</p>
-      </div>
-      <div class="finance-item">
-        <h4>Cómo funciona la financiación</h4>
-        <p>[A completar — tasas, plazos y cantidad de cuotas específicas.]</p>
-      </div>
-      <div class="finance-item">
-        <h4>Seña o anticipo</h4>
-        <p>[A completar — monto y momento en que se solicita la seña o el anticipo.]</p>
-      </div>
-    </div>
-
     <div class="finance-cta reveal delay-2">
-      <a href="#" class="btn-primary" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero conocer las condiciones de financiación.">
+      <a href="#" class="btn-primary" data-wa-link data-wa-message="Hola PRIC HOUSE, quiero conocer las condiciones de pago.">
         Quiero conocer las condiciones
         <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
@@ -928,10 +870,10 @@
     <div class="faq-list reveal delay-1">
       <div class="faq-item">
         <button type="button" class="faq-q" aria-expanded="false">
-          <span>¿El traslado a mi terreno está incluido?</span>
+          <span>¿El traslado y la instalación están incluidos?</span>
           <span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><p>Sí, la selección, el traslado y la instalación son parte de un mismo servicio.</p></div>
+        <div class="faq-a"><p>Coordinamos el traslado y la instalación como parte del servicio. El flete y la instalación se cotizan según la ubicación del proyecto y las condiciones del terreno, y los vas a ver detallados en tu propuesta.</p></div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q" aria-expanded="false">
@@ -942,24 +884,25 @@
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q" aria-expanded="false">
-          <span>¿Cómo funciona la financiación?</span>
+          <span>¿Cómo funciona la facilidad de pago?</span>
           <span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><p>Contamos con plazos de financiación definidos para que te puedas organizar. No necesitás pagar todo de antemano.</p></div>
+        <div class="faq-a"><p>Definimos desde el inicio un cronograma de pagos con montos y fechas claras, para que te puedas organizar. No necesitás pagar todo de antemano. Las condiciones se detallan en cada propuesta.</p></div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q" aria-expanded="false">
           <span>¿Cuánto tarda todo el proceso, de la consulta a la casa instalada?</span>
           <span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><p>90 días.</p></div>
+        <!-- PENDIENTE DE VALIDACIÓN COMERCIAL: plazo de entrega (se publicaba "90 días") y desde cuándo se cuenta. -->
+        <div class="faq-a"><p>Depende del modelo, de la ubicación y del estado del terreno. Te informamos el plazo estimado de cada etapa en la propuesta.</p></div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q" aria-expanded="false">
           <span>¿Qué pasa si mi terreno es de difícil acceso?</span>
           <span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><p>Coordinamos la logística para poder acceder.</p></div>
+        <div class="faq-a"><p>Evaluamos el acceso al terreno al preparar la propuesta y coordinamos la logística necesaria. Las condiciones del terreno pueden influir en el costo del flete y la instalación.</p></div>
       </div>
     </div>
   </div>
@@ -1034,10 +977,15 @@
           <label for="cv-model">Modelo de interés <span class="opt">(opcional)</span></label>
           <select id="cv-model" name="model">
             <option value="">Seleccionar…</option>
-            <option value="Modelo Base">Modelo Base</option>
-            <option value="Modelo Intermedio">Modelo Intermedio</option>
-            <option value="Modelo Ampliado">Modelo Ampliado</option>
-            <option value="A medida">A medida</option>
+            <option value="37 m² Standard">37 m² Standard</option>
+            <option value="37 m² Standard + Galería y cubierta">37 m² Standard + Galería y cubierta</option>
+            <option value="37 m² Deluxe">37 m² Deluxe</option>
+            <option value="37 m² Deluxe + Galería y cubierta">37 m² Deluxe + Galería y cubierta</option>
+            <option value="74 m² Standard">74 m² Standard</option>
+            <option value="74 m² Standard + Galería y cubierta">74 m² Standard + Galería y cubierta</option>
+            <option value="74 m² Deluxe">74 m² Deluxe</option>
+            <option value="74 m² Deluxe + Galería y cubierta">74 m² Deluxe + Galería y cubierta</option>
+            <option value="Proyecto a medida">Proyecto a medida</option>
             <option value="Todavía no estoy seguro/a">Todavía no estoy seguro/a</option>
           </select>
         </div>
@@ -1074,10 +1022,10 @@
       <div class="foot-col">
         <h6>Modelos</h6>
         <ul>
-          <li><a href="#modelos">Modelo Base</a></li>
-          <li><a href="#modelos">Modelo Intermedio</a></li>
-          <li><a href="#modelos">Modelo Ampliado</a></li>
-          <li><a href="#modelos">A medida</a></li>
+          <li><a href="#modelos">Modelos de 37 m²</a></li>
+          <li><a href="#modelos">Modelos de 74 m²</a></li>
+          <li><a href="#modelos">Standard y Deluxe</a></li>
+          <li><a href="#modelos">Proyecto a medida</a></li>
         </ul>
       </div>
 
@@ -1085,6 +1033,8 @@
         <h6>Empresa</h6>
         <ul>
           <li><a href="/">PRIC HOUSE</a></li>
+          <li><a href="/empresas/">PRIC HOUSE Empresas</a></li>
+          <li><a href="/#respaldo">PRIC Construcciones</a></li>
           <li><a href="#por-que">Por qué PRIC HOUSE</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contacto">Contacto</a></li>

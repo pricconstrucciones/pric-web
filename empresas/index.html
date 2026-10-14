@@ -16,7 +16,7 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
-<meta name="twitter:description" content="Diseñamos, trasladamos e instalamos infraestructura modular para empresas, inversores y desarrolladores en todo el país." />
+<meta name="twitter:description" content="Planificamos, trasladamos e instalamos infraestructura modular para empresas, inversores y desarrolladores en todo el país." />
 
 <script type="application/ld+json">
 {
@@ -701,6 +701,8 @@
   .modelos.configuraciones{background:var(--graphite); padding:150px 0; border-top:1px solid var(--line-on-dark);}
   @media (max-width:760px){ .modelos.configuraciones{padding:90px 0;} }
   /* Tier + galería siempre en una línea para que títulos y precios queden alineados */
+  .configuraciones .model-family{font-family:var(--font-label); font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,234,226,.6); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:6px;}
+  .configuraciones .model-body h3{margin-top:0;}
   .configuraciones .model-tags{flex-wrap:nowrap; gap:5px;}
   .configuraciones .model-tag{padding:0 7px; letter-spacing:.07em; font-size:9.5px;}
   @media (max-width:380px){ .configuraciones .model-tags{flex-wrap:wrap;} }
@@ -826,7 +828,7 @@
     <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Empresas</span>
     <h1>Soluciones modulares para proyectos <span class="accent">que necesitan avanzar.</span></h1>
     <p class="sub">
-      Diseñamos, trasladamos e instalamos infraestructura modular para
+      Planificamos, trasladamos e instalamos infraestructura modular para
       empresas, inversores y desarrolladores en todo el país.
     </p>
     <div class="hero-cta">
@@ -929,7 +931,7 @@
         <div class="models-grid" id="modelsGrid"></div>
       </div>
 
-      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SM como recepción en un complejo turístico, o unidades habitacionales, oficinas y espacios comunes en una operación industrial.</p>
+      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SUM como recepción en un complejo turístico, o unidades habitacionales, oficinas y espacios comunes en una operación industrial.</p>
     </div>
   </div>
 </section>
@@ -1009,9 +1011,9 @@
           experiencia ejecutando proyectos para clientes corporativos de alto
           estándar.
         </p>
-        <!-- TEMPORAL: /corporativo/ todavía no tiene landing; igual que en la home,
-             el link sigue por WhatsApp. Para activarlo, quitar data-wa-link y data-wa-message. -->
-        <a href="/corporativo/" class="btn-secondary respaldo-link" data-wa-link data-wa-message="Hola, me gustaría saber más sobre PRIC Construcciones y su experiencia corporativa.">
+        <!-- PROVISORIO: /corporativo/ no tiene página todavía. Lleva a la sección Respaldo de la
+             home (PRIC Construcciones). Cambiar el href cuando se defina el destino. -->
+        <a href="/#respaldo" class="btn-secondary respaldo-link">
           Conocer PRIC Construcciones
           <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
@@ -1181,7 +1183,8 @@
         <h6>Empresa</h6>
         <ul>
           <li><a href="/">PRIC HOUSE</a></li>
-          <li><a href="/corporativo/" data-wa-link data-wa-message="Hola, me gustaría saber más sobre PRIC Construcciones y su experiencia corporativa.">PRIC Construcciones / Corporativo</a></li>
+          <li><a href="/civil/">PRIC HOUSE Civil</a></li>
+          <li><a href="/#respaldo">PRIC Construcciones</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
@@ -1305,7 +1308,7 @@
     {
       id: 'housing',
       label: 'Viviendas Modulares',
-      cardPrefix: 'Vivienda',
+      cardPrefix: 'Vivienda Modular',
       waName: 'la Vivienda Modular',
       waPublished: 'publicada',
       intro: {
@@ -1347,7 +1350,7 @@
     {
       id: 'multipurpose',
       label: 'Salones de Espacios Múltiples',
-      cardPrefix: 'SM',
+      cardPrefix: 'Salón de Espacios Múltiples',
       waName: 'el Salón de Espacios Múltiples',
       waPublished: 'publicado',
       intro: {
@@ -1357,7 +1360,7 @@
         uses: ['Recepción', 'Oficinas', 'Salas de reunión', 'SUM', 'Espacios comunes', 'Cafetería', 'Gastronomía', 'Club house', 'Áreas sociales', 'Espacios comerciales', 'Apoyo para complejos deportivos', 'Apoyo para desarrollos turísticos'],
         usesNote: 'Usos de referencia: el equipamiento y la distribución interior se definen según cada proyecto.'
       },
-      // Imagen de respaldo de la familia; cada modelo define la suya. TODO: renders propios de SM.
+      // Imagen de respaldo de la familia; cada modelo define la suya. TODO: renders propios de SUM.
       image: { src: '/imagenes/vertical-empresas.png', alt: 'Salón de Espacios Múltiples PRIC HOUSE instalado junto a una nave industrial' },
       models: [
         { surface: 37, tier: 'standard', gallery: false, price: 22900, pricePerM2: 619, tagline: 'Espacio versátil',
@@ -1368,7 +1371,7 @@
           description: 'Una configuración de mayor nivel de terminación para proyectos donde el diseño y la presencia del espacio tienen un papel central.' },
         { surface: 37, tier: 'standard', gallery: true, price: 26600, pricePerM2: 719, tagline: 'Expansión exterior',
           image: { src: '/imagenes/modelos/estandar-detalle.jpg', alt: 'Detalle de acceso de un módulo PRIC HOUSE Standard de paneles blancos' },
-          description: 'El espacio versátil del SM Standard con galería y cubierta exterior, para extender el uso hacia un área semicubierta.' },
+          description: 'El espacio versátil del SUM Standard con galería y cubierta exterior, para extender el uso hacia un área semicubierta.' },
         { surface: 37, tier: 'deluxe', gallery: true, price: 28700, pricePerM2: 776, tagline: 'Expansión exterior',
           image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
           description: 'Terminación Deluxe con galería y cubierta exterior, para espacios que también se proyectan hacia afuera.' },
@@ -1383,7 +1386,7 @@
           description: 'Gran superficie complementada con galería y cubierta, integrando el interior con un área semicubierta.' },
         { surface: 74, tier: 'deluxe', gallery: true, price: 50800, pricePerM2: 686, tagline: 'Configuración superior',
           image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
-          description: 'La configuración SM más completa: mayor superficie, terminaciones Deluxe y galería con cubierta exterior.' }
+          description: 'La configuración SUM más completa: mayor superficie, terminaciones Deluxe y galería con cubierta exterior.' }
       ]
     }
   ];
@@ -1476,7 +1479,8 @@
         <div class="media-frame"><img src="${esc(img.src)}" alt="${esc(img.alt + ' — ' + modelName(m))}" loading="lazy" decoding="async" /></div>
         <div class="model-body">
           <div class="model-tags">${tags.join('')}</div>
-          <h3>${esc(fam.cardPrefix)} ${m.surface} m²</h3>
+          <span class="model-family">${esc(fam.cardPrefix)}</span>
+          <h3>${m.surface} m²</h3>
           <span class="m2">${esc(m.tagline)}</span>
           <p>${esc(m.description)}</p>
           <div class="model-price"><span class="total">${fmtUSD(m.price)}</span><span class="per">${fmtUSD(m.pricePerM2)} / m²</span></div>
