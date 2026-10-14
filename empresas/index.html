@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos</title>
-<meta name="description" content="Soluciones modulares para empresas, desarrolladores e inversores. Infraestructura para industria, minería, deporte, turismo y proyectos a medida en Argentina." />
+<meta name="description" content="Soluciones modulares para empresas, desarrolladores e inversores. Infraestructura para gastronomía, complejos deportivos, turismo, bodegas y proyectos a medida en Argentina." />
 
 <!-- TODO: completar dominio definitivo al publicar -->
 <!-- <link rel="canonical" href="https://www.pricconstrucciones.com/house/empresas/" /> -->
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:title" content="PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos" />
-<meta property="og:description" content="Infraestructura modular para industria, minería, deporte, turismo y proyectos a medida, con el respaldo de PRIC Construcciones." />
+<meta property="og:description" content="Infraestructura modular para gastronomía, complejos deportivos, turismo, bodegas y proyectos a medida, con el respaldo de PRIC Construcciones." />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos" />
@@ -23,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "PRIC HOUSE Emprendimientos y Empresas",
-  "description": "Soluciones modulares para empresas, desarrolladores e inversores: industria, energía, minería, complejos deportivos, turismo y proyectos a medida.",
+  "description": "Soluciones modulares para empresas, desarrolladores e inversores: cafeterías y gastronomía, complejos deportivos, turismo, bodegas, viñedos y proyectos a medida.",
   "areaServed": "AR",
   "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
   "contactPoint": {
@@ -299,7 +299,7 @@
   .hero-visual{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--carbon);}
   .hero-bg{
     position:absolute; inset:0; z-index:0;
-    background-image:url('/imagenes/100%20personas.png');
+    background-image:url('/imagenes/imagen-hero-4.png');
     background-size:cover; background-position:center;
     filter:saturate(1.02);
     transform:scale(1.03);
@@ -906,7 +906,7 @@
 
     <div class="app-list" id="appList"></div>
     <noscript>
-      <p class="lead">Industria, energía y minería · Complejos deportivos · Turismo &amp; hospitality. Escribinos a <a href="https://wa.me/5493512142900">WhatsApp</a> para conocer cada aplicación.</p>
+      <p class="lead">Cafeterías y gastronomía · Complejos deportivos · Turismo, bodegas y viñedos. Escribinos a <a href="https://wa.me/5493512142900">WhatsApp</a> para conocer cada aplicación.</p>
     </noscript>
   </div>
 </section>
@@ -937,7 +937,7 @@
         <div class="models-grid" id="modelsGrid"></div>
       </div>
 
-      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SUM como recepción en un complejo turístico, o unidades habitacionales, oficinas y espacios comunes en una operación industrial.</p>
+      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SUM como recepción en un complejo turístico, o un SUM con cantina y vestuarios en un complejo deportivo.</p>
     </div>
   </div>
 </section>
@@ -1234,40 +1234,35 @@
      ========================================================================== */
   const APLICACIONES = [
     {
-      id: 'industria',
-      sector: 'Industria, energía y minería',
-      formLabel: 'Industria / energía / minería',
-      footerLabel: 'Industria',
-      title: 'Infraestructura modular para operaciones donde el tiempo importa.',
-      desc: 'Soluciones modulares para petróleo, gas, minería, energía e infraestructura, diseñadas para resolver alojamiento y espacios operativos en proyectos ubicados lejos de los centros urbanos.',
-      usesLabel: 'Configuraciones posibles',
-      uses: ['Dormitorios', 'Sanitarios', 'Comedor / SUM', 'Cocina', 'Oficinas operativas', 'Salas de reunión', 'Vestuarios', 'Espacios de apoyo'],
-      scales: {
-        label: 'Escalas de referencia',
-        items: ['5 unidades', '10 unidades', '20 unidades', 'A medida'],
-        note: 'Orientativas: cada solución se configura según la cantidad de personas, la ubicación y la etapa del proyecto.'
-      },
+      id: 'gastronomia',
+      sector: 'Cafeterías y gastronomía',
+      formLabel: 'Cafetería / gastronomía',
+      footerLabel: 'Gastronomía',
+      title: 'Tu espacio gastronómico, con diseño y sin una obra tradicional.',
+      desc: 'Cafeterías, cantinas, paradores y locales gastronómicos en módulos que se trasladan e instalan donde está tu emprendimiento: en la ciudad, sobre una ruta o dentro de un club.',
+      highlight: 'Empezar con un módulo y sumar superficie o una galería cuando el negocio crece.',
+      usesLabel: 'Usos posibles',
+      uses: ['Cafetería', 'Cantina', 'Parador', 'Barra y atención', 'Salón', 'Cocina', 'Depósito', 'Galería o terraza'],
       products: [
-        { family: 'housing', uses: ['Alojamiento de personal', 'Dormitorios'] },
-        { family: 'multipurpose', uses: ['Oficinas', 'Comedor / SUM', 'Salas de reunión', 'Espacios operativos'] }
+        { family: 'multipurpose', uses: ['Cafetería', 'Cantina', 'Salón', 'Galería y cubierta'] }
       ],
-      cta: 'Explorar solución industrial',
+      cta: 'Explorar proyectos gastronómicos',
       href: null,
-      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto de industria, energía o minería.',
-      image: { src: '/imagenes/imagen%202.png', alt: 'Campamento modular PRIC HOUSE para una operación energética, con personal circulando entre unidades al atardecer' }
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para una cafetería o un espacio gastronómico.',
+      image: { src: '/imagenes/aplicaciones/gastronomia-salon.jpg', alt: 'Salón gastronómico modular vidriado con terraza iluminada al anochecer' }
     },
     {
       id: 'deportes',
       sector: 'Complejos deportivos',
       formLabel: 'Complejo deportivo',
-      footerLabel: 'Deportes',
+      footerLabel: 'Complejos deportivos',
       title: 'La infraestructura que tu complejo necesita para empezar a funcionar.',
-      desc: 'Soluciones modulares para complementar clubes, complejos de pádel y desarrollos deportivos sin depender de largos procesos de obra tradicional.',
+      desc: 'Recepción, vestuarios, cantina y salón de usos múltiples para clubes, complejos de pádel y desarrollos deportivos, sin depender de largos procesos de obra tradicional.',
       highlight: 'Que la infraestructura de apoyo no retrase la apertura de las canchas ni del complejo.',
       usesLabel: 'Usos posibles',
-      uses: ['Recepción', 'Administración', 'Vestuarios', 'Sanitarios', 'Bar o cafetería', 'Espacio gastronómico', 'Oficina', 'Depósito', 'SUM / espacio social'],
+      uses: ['Recepción', 'Administración', 'Vestuarios', 'Sanitarios', 'Cantina', 'Bar o cafetería', 'SUM / espacio social', 'Depósito'],
       products: [
-        { family: 'multipurpose', uses: ['Recepción', 'Club house', 'Cafetería', 'Administración', 'SUM'] }
+        { family: 'multipurpose', uses: ['Cantina', 'Club house', 'Recepción', 'Administración', 'SUM'] }
       ],
       cta: 'Explorar proyectos deportivos',
       href: null,
@@ -1276,25 +1271,25 @@
     },
     {
       id: 'turismo',
-      sector: 'Turismo & hospitality',
-      formLabel: 'Turismo / hospitality',
-      footerLabel: 'Turismo',
+      sector: 'Turismo, bodegas y viñedos',
+      formLabel: 'Turismo / bodegas / viñedos',
+      footerLabel: 'Turismo y viñedos',
       title: 'Alojamiento modular pensado para convertirse en experiencia.',
-      desc: 'Unidades habitacionales y espacios complementarios para proyectos turísticos que buscan crecer con rapidez, diseño y una inversión escalable: complejos turísticos, glamping premium, hoteles modulares, cabañas y renta temporaria.',
+      desc: 'Unidades habitacionales y espacios complementarios para complejos turísticos, glamping, cabañas, bodegas y viñedos que buscan crecer con rapidez, diseño y una inversión escalable.',
       highlight: 'Empezar con pocas unidades, validar la demanda y ampliar progresivamente.',
       usesLabel: 'Aplicaciones',
-      uses: ['Unidades de alojamiento', 'Recepción', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía', 'Ampliaciones por etapas'],
+      uses: ['Unidades de alojamiento', 'Recepción', 'Sala de degustación', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía', 'Ampliaciones por etapas'],
       subcase: {
-        title: 'Bodegas y enoturismo',
-        text: 'Unidades habitacionales integradas a viñedos, fincas o bodegas, con posibilidad de adaptar estética y terminaciones a la identidad del proyecto.'
+        title: 'Bodegas y viñedos',
+        text: 'Unidades de alojamiento, salas de degustación o espacios de recepción integrados a viñedos, fincas o bodegas, con estética y terminaciones adaptadas a la identidad del proyecto.'
       },
       products: [
         { family: 'housing', uses: ['Unidades de alojamiento', 'Cabañas', 'Renta temporaria'] },
-        { family: 'multipurpose', uses: ['Recepción', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía'] }
+        { family: 'multipurpose', uses: ['Recepción', 'Sala de degustación', 'Desayunador', 'SUM', 'Gastronomía'] }
       ],
       cta: 'Explorar proyectos turísticos',
       href: null,
-      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico.',
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico, una bodega o un viñedo.',
       image: { src: '/imagenes/caso-turismo-cordoba.png', alt: 'Complejo turístico de unidades modulares PRIC HOUSE integrado al paisaje serrano de Córdoba' }
     }
   ];
