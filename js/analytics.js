@@ -29,6 +29,8 @@
   }
 
   function pageType() {
+    var forced = document.documentElement.getAttribute('data-page'); // p. ej. 404.html
+    if (forced) return forced;
     var p = location.pathname;
     if (p.indexOf('/civil') === 0) return 'civil';
     if (p.indexOf('/empresas') === 0) return 'empresas';
