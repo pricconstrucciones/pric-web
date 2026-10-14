@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PRIC HOUSE Empresas | Soluciones modulares para proyectos</title>
+<title>PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos</title>
 <meta name="description" content="Soluciones modulares para empresas, desarrolladores e inversores. Infraestructura para industria, minería, deporte, turismo y proyectos a medida en Argentina." />
 
 <!-- TODO: completar dominio definitivo al publicar -->
@@ -11,18 +11,18 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
-<meta property="og:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
+<meta property="og:title" content="PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos" />
 <meta property="og:description" content="Infraestructura modular para industria, minería, deporte, turismo y proyectos a medida, con el respaldo de PRIC Construcciones." />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
+<meta name="twitter:title" content="PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos" />
 <meta name="twitter:description" content="Planificamos, trasladamos e instalamos infraestructura modular para empresas, inversores y desarrolladores en todo el país." />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "PRIC HOUSE Empresas",
+  "name": "PRIC HOUSE Emprendimientos y Empresas",
   "description": "Soluciones modulares para empresas, desarrolladores e inversores: industria, energía, minería, complejos deportivos, turismo y proyectos a medida.",
   "areaServed": "AR",
   "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
@@ -261,6 +261,12 @@
     .nav-burger{display:flex;}
   }
 
+  @media (max-width:420px){ .nav-brand .brand-text .sub{display:none;} }
+  @media (max-width:1360px){ .nav-brand .brand-text .sub{display:none;} }
+  .nav-brand .brand-text, .nav-links a, .nav-cta{white-space:nowrap;}
+  .logo-plate{flex-shrink:0;}
+  /* El menú completo no entra por debajo de ~1180px: se pasa antes al botón hamburguesa */
+  @media (max-width:1180px){ .nav-links, .nav-cta{display:none;} .nav-burger{display:flex;} }
   .mobile-menu{position:fixed; inset:0; z-index:200; display:none; opacity:0; transition:opacity .3s var(--ease);}
   .mobile-menu.open{display:block; opacity:1;}
   .mm-backdrop{position:absolute; inset:0; background:rgba(8,9,10,.72); backdrop-filter:blur(8px);}
@@ -770,7 +776,7 @@
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="/">
     <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="22" height="26" /></span>
-    <span class="brand-text">PRIC HOUSE <span class="sub">Empresas</span></span>
+    <span class="brand-text">PRIC HOUSE <span class="sub">Emprendimientos y Empresas</span></span>
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#aplicaciones">Aplicaciones</a>
@@ -825,7 +831,7 @@
   </div>
 
   <div class="hero-content">
-    <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Empresas</span>
+    <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Emprendimientos y Empresas</span>
     <h1>Soluciones modulares para proyectos <span class="accent">que necesitan avanzar.</span></h1>
     <p class="sub">
       Planificamos, trasladamos e instalamos infraestructura modular para
@@ -1166,7 +1172,7 @@
       <div class="foot-brand">
         <div class="lg">
           <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="20" height="24" /></span>
-          <span class="t">PRIC HOUSE Empresas</span>
+          <span class="t">PRIC HOUSE Emprendimientos y Empresas</span>
         </div>
         <p>Soluciones modulares para empresas, desarrolladores e inversores.</p>
       </div>
@@ -1183,7 +1189,7 @@
         <h6>Empresa</h6>
         <ul>
           <li><a href="/">PRIC HOUSE</a></li>
-          <li><a href="/civil/">PRIC HOUSE Civil</a></li>
+          <li><a href="/civil/">Civil y Turismo</a></li>
           <li><a href="/#respaldo">PRIC Construcciones</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>

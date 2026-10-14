@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PRIC HOUSE Civil | Tu casa modular en tu propio terreno</title>
+<title>PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno</title>
 <meta name="description" content="Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas, con facilidad de pago y el respaldo de más de 20 años de PRIC Construcciones." />
 
 <!-- TODO: completar dominio definitivo al publicar -->
@@ -11,18 +11,18 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
-<meta property="og:title" content="PRIC HOUSE Civil | Tu casa modular en tu propio terreno" />
+<meta property="og:title" content="PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno" />
 <meta property="og:description" content="Selección, traslado e instalación de tu casa modular, con el respaldo de PRIC Construcciones." />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="PRIC HOUSE Civil | Tu casa modular en tu propio terreno" />
+<meta name="twitter:title" content="PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno" />
 <meta name="twitter:description" content="Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas." />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "PRIC HOUSE Civil",
+  "name": "PRIC HOUSE Civil y Turismo",
   "description": "Casas modulares transportables, seleccionadas, trasladadas e instaladas en el terreno del cliente.",
   "areaServed": "AR",
   "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
@@ -261,6 +261,11 @@
     .nav-burger{display:flex;}
   }
 
+  @media (max-width:420px){ .nav-brand .brand-text .sub{display:none;} }
+  .nav-brand .brand-text, .nav-links a, .nav-cta{white-space:nowrap;}
+  .logo-plate{flex-shrink:0;}
+  /* El menú completo no entra por debajo de ~1180px: se pasa antes al botón hamburguesa */
+  @media (max-width:1180px){ .nav-links, .nav-cta{display:none;} .nav-burger{display:flex;} }
   .mobile-menu{position:fixed; inset:0; z-index:200; display:none; opacity:0; transition:opacity .3s var(--ease);}
   .mobile-menu.open{display:block; opacity:1;}
   .mm-backdrop{position:absolute; inset:0; background:rgba(8,9,10,.72); backdrop-filter:blur(8px);}
@@ -556,7 +561,7 @@
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="/">
     <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="22" height="26" /></span>
-    <span class="brand-text">PRIC HOUSE <span class="sub">Civil</span></span>
+    <span class="brand-text">PRIC HOUSE <span class="sub">Civil y Turismo</span></span>
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#modelos">Modelos</a>
@@ -1014,7 +1019,7 @@
       <div class="foot-brand">
         <div class="lg">
           <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="20" height="24" /></span>
-          <span class="t">PRIC HOUSE Civil</span>
+          <span class="t">PRIC HOUSE Civil y Turismo</span>
         </div>
         <p>Casas modulares transportables. Una línea de negocio de PRIC Construcciones, 20 años de trayectoria.</p>
       </div>
@@ -1033,7 +1038,7 @@
         <h6>Empresa</h6>
         <ul>
           <li><a href="/">PRIC HOUSE</a></li>
-          <li><a href="/empresas/">PRIC HOUSE Empresas</a></li>
+          <li><a href="/empresas/">Emprendimientos y Empresas</a></li>
           <li><a href="/#respaldo">PRIC Construcciones</a></li>
           <li><a href="#por-que">Por qué PRIC HOUSE</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
