@@ -560,6 +560,7 @@
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
 </style>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -1223,6 +1224,10 @@
     const price = card.querySelector('.model-price .total').textContent.trim();
     a.setAttribute('data-wa-link', '');
     a.setAttribute('data-wa-message', `Hola, quiero recibir más información sobre la PRIC HOUSE de ${card.dataset.model} (${price}).`);
+    a.setAttribute('data-track', 'model_inquiry');
+    a.setAttribute('data-model-family', 'vivienda');
+    a.setAttribute('data-model-name', card.dataset.model);
+    a.setAttribute('data-model-value', price.replace(/\D/g, ''));
   });
 
   /* WhatsApp — enlaces genéricos */
@@ -1289,6 +1294,7 @@
       if(model){ text += ` Modelo de interés: ${model}.`; }
       if(message){ text += ` ${message}`; }
 
+      if(window.pricTrack) pricTrack('generate_lead', { form_id: 'civil_cotizacion', model_interest: model || 'sin_definir', land_status: land });
       window.open(buildWaUrl(text), '_blank', 'noopener');
     });
   })();

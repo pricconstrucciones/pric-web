@@ -646,6 +646,7 @@
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
 </style>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -1350,6 +1351,7 @@
       if(location){ text += ` Mi proyecto o consulta es en ${location}.`; }
       if(message){ text += ` ${message}`; }
 
+      if(window.pricTrack) pricTrack('generate_lead', { form_id: 'home_contacto', interest: interest });
       window.open(buildWaUrl(text), '_blank', 'noopener');
     });
   })();

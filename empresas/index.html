@@ -760,6 +760,7 @@
   .cta-final h2{margin-bottom:16px;}
   .cta-final .cta-sub{max-width:52ch; margin:0 auto 32px; color:rgba(239,234,226,.66); font-size:15.5px; line-height:1.65;}
 </style>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -1479,7 +1480,7 @@
           <span class="m2">${esc(m.tagline)}</span>
           <p>${esc(m.description)}</p>
           <div class="model-price"><span class="total">${fmtUSD(m.price)}</span><span class="per">${fmtUSD(m.pricePerM2)} / m²</span></div>
-          <a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="${esc(msg)}">Consultar configuración ${ARROW}</a>
+          <a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="${esc(msg)}" data-track="model_inquiry" data-model-family="${esc(fam.id)}" data-model-name="${esc(fam.label + ' ' + modelName(m))}" data-model-value="${m.price}">Consultar configuración ${ARROW}</a>
         </div>
       </article>`;
   }
@@ -1685,6 +1686,7 @@
       if(v('em-email')){ text += ` Email: ${v('em-email')}.`; }
       if(v('em-message')){ text += ` Necesidad: ${v('em-message')}`; }
 
+      if(window.pricTrack) pricTrack('generate_lead', { form_id: 'empresas_propuesta', project_type: v('em-type') });
       window.open(buildWaUrl(text), '_blank', 'noopener');
     });
   })();
