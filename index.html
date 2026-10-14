@@ -646,6 +646,7 @@
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
 </style>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -724,7 +725,6 @@
         Explorar soluciones
         <span class="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a href="#quienes-somos" class="btn-secondary on-dark">Conocer PRIC HOUSE</a>
     </div>
   </div>
 
@@ -744,15 +744,14 @@
         <span class="eyebrow"><span class="technical-line"></span>PRIC HOUSE</span>
         <h2 class="display-title">Una solución integral detrás de cada proyecto.</h2>
         <p style="margin-top:20px;">
-          Seleccionamos, trasladamos e instalamos unidades modulares listas
+          Seleccionamos, trasladamos e instalamos unidades modulares pensadas
           para vivir, trabajar o generar renta. Vos elegís dónde, nosotros
           coordinamos todo lo demás.
         </p>
         <p class="small">
-          La marca absorbe la complejidad de planificación y logística para
-          darle al cliente mayor claridad durante todo el proceso.
-          PRIC&nbsp;HOUSE no simplemente entrega un módulo, también se ocupa
-          de resolver la solución.
+          Nos ocupamos de la planificación y la logística para que tengas
+          claridad en cada etapa. No entregamos solo un módulo: coordinamos
+          todo lo necesario para que llegue y quede instalado donde lo necesitás.
         </p>
 
         <div class="quien-attrs">
@@ -786,7 +785,7 @@
   </div>
 
   <div class="vert-grid reveal delay-1">
-    <!-- CIVIL -->
+    <!-- CIVIL Y TURISMO -->
     <a href="/civil/" class="vertical-panel">
       <div class="media-frame hoverable">
         <img src="./imagenes/vertical-civil.jpg" alt="Vivienda modular PRIC HOUSE con revestimiento símil madera instalada en un terreno particular" loading="lazy" decoding="async" />
@@ -796,15 +795,15 @@
         <span class="vp-num">01 / 03</span>
         <div class="vp-bottom">
           <span class="vp-line"></span>
-          <h3 class="vp-title">CIVIL</h3>
-          <p class="vp-desc">Soluciones modulares para quienes buscan desarrollar una vivienda en su propio terreno con un proceso más claro, coordinado y simple.</p>
+          <h3 class="vp-title">CIVIL Y TURISMO</h3>
+          <p class="vp-desc">Tu casa modular en tu propio terreno, con un proceso claro y coordinado de principio a fin.</p>
           <p class="vp-extra">Selección, traslado e instalación coordinados de principio a fin.</p>
-          <span class="vp-link">Explorar Civil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="vp-link">Explorar Civil y Turismo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </div>
     </a>
 
-    <!-- EMPRESAS -->
+    <!-- EMPRENDIMIENTOS Y EMPRESAS -->
     <a href="/empresas/" class="vertical-panel">
       <div class="media-frame hoverable">
         <img src="./imagenes/vertical-empresas.png" alt="Infraestructura modular PRIC HOUSE para empresas, integrada a una operación industrial" loading="lazy" decoding="async" />
@@ -814,18 +813,18 @@
         <span class="vp-num">02 / 03</span>
         <div class="vp-bottom">
           <span class="vp-line"></span>
-          <h3 class="vp-title">EMPRESAS</h3>
-          <p class="vp-desc">Soluciones modulares adaptables a las necesidades operativas, administrativas y de infraestructura de empresas y proyectos.</p>
+          <h3 class="vp-title">EMPRENDIMIENTOS Y EMPRESAS</h3>
+          <p class="vp-desc">Espacios modulares para tu emprendimiento: cafeterías, cantinas, salones de usos múltiples, complejos deportivos, turísticos y viñedos.</p>
           <p class="vp-extra">Configuraciones a medida de cada operación.</p>
-          <span class="vp-link">Explorar Empresas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="vp-link">Explorar Emprendimientos y Empresas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </div>
     </a>
 
-    <!-- CORPORATIVO -->
-    <!-- TEMPORAL: CTA redirigido a WhatsApp en vez de /corporativo/ (ver data-wa-link).
-         Para volver a la landing interna, quitar data-wa-link y data-wa-message. -->
-    <a href="/corporativo/" class="vertical-panel" data-wa-link data-wa-message="Hola, me gustaría saber más sobre posibles urbanizaciones modulares de gran escala.">
+    <!-- URBANIZACIONES -->
+    <!-- PROVISORIO: Urbanizaciones (antes Corporativo) no tiene página todavía. El panel lleva a
+         las aplicaciones ilustrativas de esta página. Cambiar el href cuando se defina el destino. -->
+    <a href="#experiencia" class="vertical-panel">
       <div class="media-frame hoverable">
         <img src="./imagenes/corporativo-equipo.jpg" alt="Equipo de PRIC HOUSE recorriendo un campamento modular, capacidad operativa del sistema" loading="lazy" decoding="async" />
       </div>
@@ -834,10 +833,10 @@
         <span class="vp-num">03 / 03</span>
         <div class="vp-bottom">
           <span class="vp-line"></span>
-          <h3 class="vp-title">CORPORATIVO</h3>
-          <p class="vp-desc">Conocé la capacidad técnica y la estructura corporativa que están detrás de cada solución PRIC HOUSE.</p>
-          <p class="vp-extra">Un mismo equipo, un mismo estándar en cada proyecto.</p>
-          <span class="vp-link">Conocer PRIC <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3 class="vp-title">URBANIZACIONES</h3>
+          <p class="vp-desc">Urbanizaciones modulares de gran escala: campamentos, bases operativas y complejos planificados como un solo proyecto.</p>
+          <p class="vp-extra">Planificación, traslado e instalación a escala.</p>
+          <span class="vp-link">Ver aplicaciones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </div>
     </a>
@@ -860,8 +859,8 @@
           todo el país.
         </p>
         <p>
-          Esa misma trayectoria reduce la incertidumbre del cliente. Del
-          otro lado hay una empresa que ya demostró que cumple.
+          Esa trayectoria te da certeza: del otro lado hay una empresa que
+          ya demostró que cumple.
         </p>
       </div>
       <div class="respaldo-media reveal delay-2">
@@ -878,10 +877,10 @@
 <section class="casos" id="experiencia">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="technical-line"></span>Posibles proyectos</span>
-      <h2 class="display-title">Un mismo sistema modular. Distintas formas de aplicarlo.</h2>
+      <span class="eyebrow"><span class="technical-line"></span>Aplicaciones ilustrativas</span>
+      <h2 class="display-title">Dónde aplica el sistema PRIC HOUSE.</h2>
     </div>
-    <p class="lead reveal">Algunas posibilidades de aplicación del sistema modular PRIC HOUSE, según el uso, la escala y el entorno de cada proyecto.</p>
+    <p class="lead reveal">Ejemplos ilustrativos de cómo se configura el sistema según el uso, la escala y el entorno. No son obras ejecutadas.</p>
 
     <div class="caso-row reveal">
       <div class="caso-media">
@@ -890,9 +889,9 @@
         </div>
       </div>
       <div class="caso-body">
-        <div class="project-meta"><span>01 / Aplicación posible</span><span>Sector energético</span></div>
+        <div class="project-meta"><span>01 / Ejemplo ilustrativo</span><span>Sector energético</span></div>
         <h3>Bases y campamentos modulares para el sector energético</h3>
-        <p>Una posible configuración del sistema PRIC HOUSE aplicada a campamentos y bases operativas: unidades que se trasladan, se instalan y se adaptan según cada etapa del proyecto.</p>
+        <p>El sistema PRIC HOUSE aplicado a campamentos y bases operativas: unidades que se trasladan, se instalan y se adaptan a cada etapa del proyecto.</p>
         <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
       </div>
     </div>
@@ -904,9 +903,9 @@
         </div>
       </div>
       <div class="caso-body">
-        <div class="project-meta"><span>02 / Aplicación posible</span><span>Sector minero</span></div>
+        <div class="project-meta"><span>02 / Ejemplo ilustrativo</span><span>Sector minero</span></div>
         <h3>Bases modulares para operaciones mineras en altura</h3>
-        <p>Otra posible aplicación del mismo sistema, pensada para campamentos y bases en entornos de montaña donde el traslado y la instalación son determinantes.</p>
+        <p>El mismo sistema, pensado para campamentos y bases en entornos de montaña, donde el traslado y la instalación son determinantes.</p>
         <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
       </div>
     </div>
@@ -918,9 +917,9 @@
         </div>
       </div>
       <div class="caso-body">
-        <div class="project-meta"><span>03 / Aplicación posible</span><span>Turismo y hospitality</span></div>
+        <div class="project-meta"><span>03 / Ejemplo ilustrativo</span><span>Turismo y hospitality</span></div>
         <h3>Complejos modulares para proyectos turísticos</h3>
-        <p>Una configuración posible del sistema PRIC HOUSE para desarrollos turísticos, integrando arquitectura modular al paisaje sin resignar diseño ni confort.</p>
+        <p>Arquitectura modular integrada al paisaje para desarrollos turísticos, sin resignar diseño ni confort.</p>
         <a href="#contacto" class="btn-secondary">Conversar sobre esta idea</a>
       </div>
     </div>
@@ -1017,13 +1016,14 @@
             <span class="cf-err" data-err-for="cf-name" aria-live="polite"></span>
           </div>
           <div class="cf-field">
-            <label for="cf-interest">Vertical <span class="req">*</span></label>
+            <label for="cf-interest">¿Qué estás buscando? <span class="req">*</span></label>
             <select id="cf-interest" name="interest" required>
               <option value="">Seleccionar…</option>
-              <option value="Civil">Civil</option>
-              <option value="Empresas">Empresas</option>
-              <option value="Corporativo">Corporativo</option>
-              <option value="Otra consulta">Otra consulta</option>
+              <option value="una casa modular para mi terreno">Una casa modular para mi terreno</option>
+              <option value="soluciones modulares para mi empresa o proyecto">Soluciones para mi empresa o proyecto</option>
+              <option value="una urbanización o proyecto de gran escala">Una urbanización o proyecto de gran escala</option>
+              <option value="la trayectoria de PRIC Construcciones">Conocer PRIC Construcciones</option>
+              <option value="otra consulta">Otra consulta</option>
             </select>
             <span class="cf-err" data-err-for="cf-interest" aria-live="polite"></span>
           </div>
@@ -1066,9 +1066,9 @@
       <div class="foot-col">
         <h6>Soluciones</h6>
         <ul>
-          <li><a href="/civil/">Civil</a></li>
-          <li><a href="/empresas/">Empresas</a></li>
-          <li><a href="/corporativo/">Corporativo</a></li>
+          <li><a href="/civil/">Civil y Turismo</a></li>
+          <li><a href="/empresas/">Emprendimientos y Empresas</a></li>
+          <li><a href="#experiencia">Urbanizaciones</a></li>
         </ul>
       </div>
 
@@ -1076,6 +1076,7 @@
         <h6>Empresa</h6>
         <ul>
           <li><a href="#quienes-somos">PRIC HOUSE</a></li>
+          <li><a href="#respaldo">PRIC Construcciones</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -1350,6 +1351,7 @@
       if(location){ text += ` Mi proyecto o consulta es en ${location}.`; }
       if(message){ text += ` ${message}`; }
 
+      if(window.pricTrack) pricTrack('generate_lead', { form_id: 'home_contacto', interest: interest });
       window.open(buildWaUrl(text), '_blank', 'noopener');
     });
   })();

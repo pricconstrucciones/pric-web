@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PRIC HOUSE Empresas | Soluciones modulares para proyectos</title>
-<meta name="description" content="Soluciones modulares para empresas, desarrolladores e inversores. Infraestructura para industria, minería, deporte, turismo y proyectos a medida en Argentina." />
+<title>PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos</title>
+<meta name="description" content="Soluciones modulares para empresas, desarrolladores e inversores. Infraestructura para gastronomía, complejos deportivos, turismo, bodegas y proyectos a medida en Argentina." />
 
 <!-- TODO: completar dominio definitivo al publicar -->
 <!-- <link rel="canonical" href="https://www.pricconstrucciones.com/house/empresas/" /> -->
 
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
-<meta property="og:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
-<meta property="og:description" content="Infraestructura modular para industria, minería, deporte, turismo y proyectos a medida, con el respaldo de PRIC Construcciones." />
+<meta property="og:title" content="PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos" />
+<meta property="og:description" content="Infraestructura modular para gastronomía, complejos deportivos, turismo, bodegas y proyectos a medida, con el respaldo de PRIC Construcciones." />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="PRIC HOUSE Empresas | Soluciones modulares para proyectos" />
-<meta name="twitter:description" content="Diseñamos, trasladamos e instalamos infraestructura modular para empresas, inversores y desarrolladores en todo el país." />
+<meta name="twitter:title" content="PRIC HOUSE Emprendimientos y Empresas | Soluciones modulares para proyectos" />
+<meta name="twitter:description" content="Planificamos, trasladamos e instalamos infraestructura modular para empresas, inversores y desarrolladores en todo el país." />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "PRIC HOUSE Empresas",
-  "description": "Soluciones modulares para empresas, desarrolladores e inversores: industria, energía, minería, complejos deportivos, turismo y proyectos a medida.",
+  "name": "PRIC HOUSE Emprendimientos y Empresas",
+  "description": "Soluciones modulares para empresas, desarrolladores e inversores: cafeterías y gastronomía, complejos deportivos, turismo, bodegas, viñedos y proyectos a medida.",
   "areaServed": "AR",
   "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
   "contactPoint": {
@@ -261,6 +261,12 @@
     .nav-burger{display:flex;}
   }
 
+  @media (max-width:420px){ .nav-brand .brand-text .sub{display:none;} }
+  @media (max-width:1360px){ .nav-brand .brand-text .sub{display:none;} }
+  .nav-brand .brand-text, .nav-links a, .nav-cta{white-space:nowrap;}
+  .logo-plate{flex-shrink:0;}
+  /* El menú completo no entra por debajo de ~1180px: se pasa antes al botón hamburguesa */
+  @media (max-width:1180px){ .nav-links, .nav-cta{display:none;} .nav-burger{display:flex;} }
   .mobile-menu{position:fixed; inset:0; z-index:200; display:none; opacity:0; transition:opacity .3s var(--ease);}
   .mobile-menu.open{display:block; opacity:1;}
   .mm-backdrop{position:absolute; inset:0; background:rgba(8,9,10,.72); backdrop-filter:blur(8px);}
@@ -293,7 +299,7 @@
   .hero-visual{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--carbon);}
   .hero-bg{
     position:absolute; inset:0; z-index:0;
-    background-image:url('/imagenes/100%20personas.png');
+    background-image:url('/imagenes/imagen-hero-4.png');
     background-size:cover; background-position:center;
     filter:saturate(1.02);
     transform:scale(1.03);
@@ -701,6 +707,8 @@
   .modelos.configuraciones{background:var(--graphite); padding:150px 0; border-top:1px solid var(--line-on-dark);}
   @media (max-width:760px){ .modelos.configuraciones{padding:90px 0;} }
   /* Tier + galería siempre en una línea para que títulos y precios queden alineados */
+  .configuraciones .model-family{font-family:var(--font-label); font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,234,226,.6); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:6px;}
+  .configuraciones .model-body h3{margin-top:0;}
   .configuraciones .model-tags{flex-wrap:nowrap; gap:5px;}
   .configuraciones .model-tag{padding:0 7px; letter-spacing:.07em; font-size:9.5px;}
   @media (max-width:380px){ .configuraciones .model-tags{flex-wrap:wrap;} }
@@ -760,6 +768,7 @@
   .cta-final h2{margin-bottom:16px;}
   .cta-final .cta-sub{max-width:52ch; margin:0 auto 32px; color:rgba(239,234,226,.66); font-size:15.5px; line-height:1.65;}
 </style>
+<script src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -767,7 +776,7 @@
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="/">
     <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="22" height="26" /></span>
-    <span class="brand-text">PRIC HOUSE <span class="sub">Empresas</span></span>
+    <span class="brand-text">PRIC HOUSE <span class="sub">Emprendimientos y Empresas</span></span>
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#aplicaciones">Aplicaciones</a>
@@ -822,10 +831,10 @@
   </div>
 
   <div class="hero-content">
-    <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Empresas</span>
+    <span class="hero-meta"><span class="dot"></span> PRIC HOUSE · Emprendimientos y Empresas</span>
     <h1>Soluciones modulares para proyectos <span class="accent">que necesitan avanzar.</span></h1>
     <p class="sub">
-      Diseñamos, trasladamos e instalamos infraestructura modular para
+      Planificamos, trasladamos e instalamos infraestructura modular para
       empresas, inversores y desarrolladores en todo el país.
     </p>
     <div class="hero-cta">
@@ -897,7 +906,7 @@
 
     <div class="app-list" id="appList"></div>
     <noscript>
-      <p class="lead">Industria, energía y minería · Complejos deportivos · Turismo &amp; hospitality. Escribinos a <a href="https://wa.me/5493512142900">WhatsApp</a> para conocer cada aplicación.</p>
+      <p class="lead">Cafeterías y gastronomía · Complejos deportivos · Turismo, bodegas y viñedos. Escribinos a <a href="https://wa.me/5493512142900">WhatsApp</a> para conocer cada aplicación.</p>
     </noscript>
   </div>
 </section>
@@ -928,7 +937,7 @@
         <div class="models-grid" id="modelsGrid"></div>
       </div>
 
-      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SM como recepción en un complejo turístico, o unidades habitacionales, oficinas y espacios comunes en una operación industrial.</p>
+      <p class="config-combine">Un mismo proyecto puede combinar ambas tipologías: por ejemplo, viviendas modulares y un SUM como recepción en un complejo turístico, o un SUM con cantina y vestuarios en un complejo deportivo.</p>
     </div>
   </div>
 </section>
@@ -1008,9 +1017,9 @@
           experiencia ejecutando proyectos para clientes corporativos de alto
           estándar.
         </p>
-        <!-- TEMPORAL: /corporativo/ todavía no tiene landing; igual que en la home,
-             el link sigue por WhatsApp. Para activarlo, quitar data-wa-link y data-wa-message. -->
-        <a href="/corporativo/" class="btn-secondary respaldo-link" data-wa-link data-wa-message="Hola, me gustaría saber más sobre PRIC Construcciones y su experiencia corporativa.">
+        <!-- PROVISORIO: /corporativo/ no tiene página todavía. Lleva a la sección Respaldo de la
+             home (PRIC Construcciones). Cambiar el href cuando se defina el destino. -->
+        <a href="/#respaldo" class="btn-secondary respaldo-link">
           Conocer PRIC Construcciones
           <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
@@ -1163,7 +1172,7 @@
       <div class="foot-brand">
         <div class="lg">
           <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="20" height="24" /></span>
-          <span class="t">PRIC HOUSE Empresas</span>
+          <span class="t">PRIC HOUSE Emprendimientos y Empresas</span>
         </div>
         <p>Soluciones modulares para empresas, desarrolladores e inversores.</p>
       </div>
@@ -1180,7 +1189,8 @@
         <h6>Empresa</h6>
         <ul>
           <li><a href="/">PRIC HOUSE</a></li>
-          <li><a href="/corporativo/" data-wa-link data-wa-message="Hola, me gustaría saber más sobre PRIC Construcciones y su experiencia corporativa.">PRIC Construcciones / Corporativo</a></li>
+          <li><a href="/civil/">Civil y Turismo</a></li>
+          <li><a href="/#respaldo">PRIC Construcciones</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
@@ -1224,40 +1234,35 @@
      ========================================================================== */
   const APLICACIONES = [
     {
-      id: 'industria',
-      sector: 'Industria, energía y minería',
-      formLabel: 'Industria / energía / minería',
-      footerLabel: 'Industria',
-      title: 'Infraestructura modular para operaciones donde el tiempo importa.',
-      desc: 'Soluciones modulares para petróleo, gas, minería, energía e infraestructura, diseñadas para resolver alojamiento y espacios operativos en proyectos ubicados lejos de los centros urbanos.',
-      usesLabel: 'Configuraciones posibles',
-      uses: ['Dormitorios', 'Sanitarios', 'Comedor / SUM', 'Cocina', 'Oficinas operativas', 'Salas de reunión', 'Vestuarios', 'Espacios de apoyo'],
-      scales: {
-        label: 'Escalas de referencia',
-        items: ['5 unidades', '10 unidades', '20 unidades', 'A medida'],
-        note: 'Orientativas: cada solución se configura según la cantidad de personas, la ubicación y la etapa del proyecto.'
-      },
+      id: 'gastronomia',
+      sector: 'Cafeterías y gastronomía',
+      formLabel: 'Cafetería / gastronomía',
+      footerLabel: 'Gastronomía',
+      title: 'Tu espacio gastronómico, con diseño y sin una obra tradicional.',
+      desc: 'Cafeterías, cantinas, paradores y locales gastronómicos en módulos que se trasladan e instalan donde está tu emprendimiento: en la ciudad, sobre una ruta o dentro de un club.',
+      highlight: 'Empezar con un módulo y sumar superficie o una galería cuando el negocio crece.',
+      usesLabel: 'Usos posibles',
+      uses: ['Cafetería', 'Cantina', 'Parador', 'Barra y atención', 'Salón', 'Cocina', 'Depósito', 'Galería o terraza'],
       products: [
-        { family: 'housing', uses: ['Alojamiento de personal', 'Dormitorios'] },
-        { family: 'multipurpose', uses: ['Oficinas', 'Comedor / SUM', 'Salas de reunión', 'Espacios operativos'] }
+        { family: 'multipurpose', uses: ['Cafetería', 'Cantina', 'Salón', 'Galería y cubierta'] }
       ],
-      cta: 'Explorar solución industrial',
+      cta: 'Explorar proyectos gastronómicos',
       href: null,
-      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto de industria, energía o minería.',
-      image: { src: '/imagenes/imagen%202.png', alt: 'Campamento modular PRIC HOUSE para una operación energética, con personal circulando entre unidades al atardecer' }
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para una cafetería o un espacio gastronómico.',
+      image: { src: '/imagenes/aplicaciones/gastronomia-salon.jpg', alt: 'Salón gastronómico modular vidriado con terraza iluminada al anochecer' }
     },
     {
       id: 'deportes',
       sector: 'Complejos deportivos',
       formLabel: 'Complejo deportivo',
-      footerLabel: 'Deportes',
+      footerLabel: 'Complejos deportivos',
       title: 'La infraestructura que tu complejo necesita para empezar a funcionar.',
-      desc: 'Soluciones modulares para complementar clubes, complejos de pádel y desarrollos deportivos sin depender de largos procesos de obra tradicional.',
+      desc: 'Recepción, vestuarios, cantina y salón de usos múltiples para clubes, complejos de pádel y desarrollos deportivos, sin depender de largos procesos de obra tradicional.',
       highlight: 'Que la infraestructura de apoyo no retrase la apertura de las canchas ni del complejo.',
       usesLabel: 'Usos posibles',
-      uses: ['Recepción', 'Administración', 'Vestuarios', 'Sanitarios', 'Bar o cafetería', 'Espacio gastronómico', 'Oficina', 'Depósito', 'SUM / espacio social'],
+      uses: ['Recepción', 'Administración', 'Vestuarios', 'Sanitarios', 'Cantina', 'Bar o cafetería', 'SUM / espacio social', 'Depósito'],
       products: [
-        { family: 'multipurpose', uses: ['Recepción', 'Club house', 'Cafetería', 'Administración', 'SUM'] }
+        { family: 'multipurpose', uses: ['Cantina', 'Club house', 'Recepción', 'Administración', 'SUM'] }
       ],
       cta: 'Explorar proyectos deportivos',
       href: null,
@@ -1266,25 +1271,25 @@
     },
     {
       id: 'turismo',
-      sector: 'Turismo & hospitality',
-      formLabel: 'Turismo / hospitality',
-      footerLabel: 'Turismo',
+      sector: 'Turismo, bodegas y viñedos',
+      formLabel: 'Turismo / bodegas / viñedos',
+      footerLabel: 'Turismo y viñedos',
       title: 'Alojamiento modular pensado para convertirse en experiencia.',
-      desc: 'Unidades habitacionales y espacios complementarios para proyectos turísticos que buscan crecer con rapidez, diseño y una inversión escalable: complejos turísticos, glamping premium, hoteles modulares, cabañas y renta temporaria.',
+      desc: 'Unidades habitacionales y espacios complementarios para complejos turísticos, glamping, cabañas, bodegas y viñedos que buscan crecer con rapidez, diseño y una inversión escalable.',
       highlight: 'Empezar con pocas unidades, validar la demanda y ampliar progresivamente.',
       usesLabel: 'Aplicaciones',
-      uses: ['Unidades de alojamiento', 'Recepción', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía', 'Ampliaciones por etapas'],
+      uses: ['Unidades de alojamiento', 'Recepción', 'Sala de degustación', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía', 'Ampliaciones por etapas'],
       subcase: {
-        title: 'Bodegas y enoturismo',
-        text: 'Unidades habitacionales integradas a viñedos, fincas o bodegas, con posibilidad de adaptar estética y terminaciones a la identidad del proyecto.'
+        title: 'Bodegas y viñedos',
+        text: 'Unidades de alojamiento, salas de degustación o espacios de recepción integrados a viñedos, fincas o bodegas, con estética y terminaciones adaptadas a la identidad del proyecto.'
       },
       products: [
         { family: 'housing', uses: ['Unidades de alojamiento', 'Cabañas', 'Renta temporaria'] },
-        { family: 'multipurpose', uses: ['Recepción', 'Desayunador', 'SUM', 'Espacios comunes', 'Gastronomía'] }
+        { family: 'multipurpose', uses: ['Recepción', 'Sala de degustación', 'Desayunador', 'SUM', 'Gastronomía'] }
       ],
       cta: 'Explorar proyectos turísticos',
       href: null,
-      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico.',
+      waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico, una bodega o un viñedo.',
       image: { src: '/imagenes/caso-turismo-cordoba.png', alt: 'Complejo turístico de unidades modulares PRIC HOUSE integrado al paisaje serrano de Córdoba' }
     }
   ];
@@ -1304,7 +1309,7 @@
     {
       id: 'housing',
       label: 'Viviendas Modulares',
-      cardPrefix: 'Vivienda',
+      cardPrefix: 'Vivienda Modular',
       waName: 'la Vivienda Modular',
       waPublished: 'publicada',
       intro: {
@@ -1346,7 +1351,7 @@
     {
       id: 'multipurpose',
       label: 'Salones de Espacios Múltiples',
-      cardPrefix: 'SM',
+      cardPrefix: 'Salón de Espacios Múltiples',
       waName: 'el Salón de Espacios Múltiples',
       waPublished: 'publicado',
       intro: {
@@ -1356,7 +1361,7 @@
         uses: ['Recepción', 'Oficinas', 'Salas de reunión', 'SUM', 'Espacios comunes', 'Cafetería', 'Gastronomía', 'Club house', 'Áreas sociales', 'Espacios comerciales', 'Apoyo para complejos deportivos', 'Apoyo para desarrollos turísticos'],
         usesNote: 'Usos de referencia: el equipamiento y la distribución interior se definen según cada proyecto.'
       },
-      // Imagen de respaldo de la familia; cada modelo define la suya. TODO: renders propios de SM.
+      // Imagen de respaldo de la familia; cada modelo define la suya. TODO: renders propios de SUM.
       image: { src: '/imagenes/vertical-empresas.png', alt: 'Salón de Espacios Múltiples PRIC HOUSE instalado junto a una nave industrial' },
       models: [
         { surface: 37, tier: 'standard', gallery: false, price: 22900, pricePerM2: 619, tagline: 'Espacio versátil',
@@ -1367,7 +1372,7 @@
           description: 'Una configuración de mayor nivel de terminación para proyectos donde el diseño y la presencia del espacio tienen un papel central.' },
         { surface: 37, tier: 'standard', gallery: true, price: 26600, pricePerM2: 719, tagline: 'Expansión exterior',
           image: { src: '/imagenes/modelos/estandar-detalle.jpg', alt: 'Detalle de acceso de un módulo PRIC HOUSE Standard de paneles blancos' },
-          description: 'El espacio versátil del SM Standard con galería y cubierta exterior, para extender el uso hacia un área semicubierta.' },
+          description: 'El espacio versátil del SUM Standard con galería y cubierta exterior, para extender el uso hacia un área semicubierta.' },
         { surface: 37, tier: 'deluxe', gallery: true, price: 28700, pricePerM2: 776, tagline: 'Expansión exterior',
           image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
           description: 'Terminación Deluxe con galería y cubierta exterior, para espacios que también se proyectan hacia afuera.' },
@@ -1382,7 +1387,7 @@
           description: 'Gran superficie complementada con galería y cubierta, integrando el interior con un área semicubierta.' },
         { surface: 74, tier: 'deluxe', gallery: true, price: 50800, pricePerM2: 686, tagline: 'Configuración superior',
           image: { src: '/imagenes/modelos/deluxe-real-frente.jpg', alt: 'Unidad modular PRIC HOUSE Deluxe con revestimiento símil madera y frente vidriado' },
-          description: 'La configuración SM más completa: mayor superficie, terminaciones Deluxe y galería con cubierta exterior.' }
+          description: 'La configuración SUM más completa: mayor superficie, terminaciones Deluxe y galería con cubierta exterior.' }
       ]
     }
   ];
@@ -1475,11 +1480,12 @@
         <div class="media-frame"><img src="${esc(img.src)}" alt="${esc(img.alt + ' — ' + modelName(m))}" loading="lazy" decoding="async" /></div>
         <div class="model-body">
           <div class="model-tags">${tags.join('')}</div>
-          <h3>${esc(fam.cardPrefix)} ${m.surface} m²</h3>
+          <span class="model-family">${esc(fam.cardPrefix)}</span>
+          <h3>${m.surface} m²</h3>
           <span class="m2">${esc(m.tagline)}</span>
           <p>${esc(m.description)}</p>
           <div class="model-price"><span class="total">${fmtUSD(m.price)}</span><span class="per">${fmtUSD(m.pricePerM2)} / m²</span></div>
-          <a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="${esc(msg)}">Consultar configuración ${ARROW}</a>
+          <a href="#contacto" class="btn-secondary" data-wa-link data-wa-message="${esc(msg)}" data-track="model_inquiry" data-model-family="${esc(fam.id)}" data-model-name="${esc(fam.label + ' ' + modelName(m))}" data-model-value="${m.price}">Consultar configuración ${ARROW}</a>
         </div>
       </article>`;
   }
@@ -1685,6 +1691,7 @@
       if(v('em-email')){ text += ` Email: ${v('em-email')}.`; }
       if(v('em-message')){ text += ` Necesidad: ${v('em-message')}`; }
 
+      if(window.pricTrack) pricTrack('generate_lead', { form_id: 'empresas_propuesta', project_type: v('em-type') });
       window.open(buildWaUrl(text), '_blank', 'noopener');
     });
   })();
