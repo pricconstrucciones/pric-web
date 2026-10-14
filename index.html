@@ -529,7 +529,7 @@
     margin-left:clamp(-20px,-2vw,-12px);
     white-space:nowrap;
   }
-  .respaldo-num .u{display:block; font-family:var(--font-label); font-size:14px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--copper); margin-top:14px;}
+  .respaldo-num .u{line-height:1.45; display:block; font-family:var(--font-label); font-size:14px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--copper); margin-top:14px;}
   .respaldo-text p{font-size:16.5px; line-height:1.7; color:#3c3f3a; margin-bottom:14px; max-width:44ch;}
   .respaldo-text p:last-child{margin-bottom:0;}
   .respaldo-media .media-frame{aspect-ratio:4/5; min-height:320px;}
@@ -637,8 +637,8 @@
   .contacto-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(36px,6vw,70px); align-items:start;}
   @media (max-width:900px){.contacto-grid{grid-template-columns:1fr; gap:36px;}}
   .contacto-side p{max-width:42ch; font-size:15.5px; line-height:1.65;}
-  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:9px; font-size:13.5px;}
-  .contacto-alt a{color:var(--copper); font-weight:500;}
+  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:0; font-size:13.5px;}
+  .contacto-alt a{display:inline-flex; align-items:center; min-height:44px; color:var(--copper); font-weight:500;}
   .contacto-alt a:hover{color:var(--copper-2);}
 
   form.cf{display:flex; flex-direction:column; gap:22px;}
@@ -704,6 +704,8 @@
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
 </style>
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/imagen-hero-1-desktop.webp" media="(min-width: 1201px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/imagen-hero-1-mobile.webp" media="(max-width: 1200px)" fetchpriority="high" />
 <script src="/js/analytics.js"></script>
 </head>
 <body>
@@ -711,7 +713,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="#top">
-    <span class="logo-plate"><img src="./imagenes/logo-pric-house.png" alt="" width="22" height="26" /></span>
+    <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="22" height="26" /></span>
     <span class="brand-text">PRIC HOUSE</span>
   </a>
   <div class="nav-links" id="navLinks">
@@ -822,7 +824,7 @@
 
       <div class="quien-img reveal delay-1">
         <div class="media-frame media-frame--4-5">
-          <img src="./imagenes/quienes-somos-pric-house.png" alt="Módulo PRIC HOUSE siendo montado con grúa sobre su base durante la instalación en obra" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/quienes-somos-pric-house.webp" alt="Módulo PRIC HOUSE siendo montado con grúa sobre su base durante la instalación en obra" loading="lazy" decoding="async" />
         </div>
         <div class="quien-badge">
           <span class="num">4</span>
@@ -846,7 +848,7 @@
     <!-- CIVIL Y TURISMO -->
     <a href="/civil/" class="vertical-panel">
       <div class="media-frame hoverable">
-        <img src="./imagenes/vertical-civil.jpg" alt="Vivienda modular PRIC HOUSE con revestimiento símil madera instalada en un terreno particular" loading="lazy" decoding="async" />
+        <img src="/imagenes/opt/vertical-civil.webp" alt="Vivienda modular PRIC HOUSE con revestimiento símil madera instalada en un terreno particular" loading="lazy" decoding="async" />
       </div>
       <div class="vp-overlay"></div>
       <div class="vp-content">
@@ -864,7 +866,7 @@
     <!-- EMPRENDIMIENTOS Y EMPRESAS -->
     <a href="/empresas/" class="vertical-panel">
       <div class="media-frame hoverable">
-        <img src="./imagenes/vertical-empresas.png" alt="Infraestructura modular PRIC HOUSE para empresas, integrada a una operación industrial" loading="lazy" decoding="async" />
+        <img src="/imagenes/opt/vertical-empresas.webp" alt="Infraestructura modular PRIC HOUSE para empresas, integrada a una operación industrial" loading="lazy" decoding="async" />
       </div>
       <div class="vp-overlay"></div>
       <div class="vp-content">
@@ -884,7 +886,7 @@
          las aplicaciones ilustrativas de esta página. Cambiar el href cuando se defina el destino. -->
     <a href="#experiencia" class="vertical-panel">
       <div class="media-frame hoverable">
-        <img src="./imagenes/corporativo-equipo.jpg" alt="Equipo de PRIC HOUSE recorriendo un campamento modular, capacidad operativa del sistema" loading="lazy" decoding="async" />
+        <img src="/imagenes/opt/corporativo-equipo.webp" alt="Equipo de PRIC HOUSE recorriendo un campamento modular, capacidad operativa del sistema" loading="lazy" decoding="async" />
       </div>
       <div class="vp-overlay"></div>
       <div class="vp-content">
@@ -923,7 +925,7 @@
       </div>
       <div class="respaldo-media reveal delay-2">
         <div class="media-frame media-frame--4-5">
-          <img src="./imagenes/respaldo-pric-construcciones.png" alt="Módulo PRIC HOUSE en montaje sobre camión plataforma, obra en ejecución" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/respaldo-pric-construcciones.webp" alt="Módulo PRIC HOUSE en montaje sobre camión plataforma, obra en ejecución" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -943,7 +945,7 @@
     <div class="caso-row reveal">
       <div class="caso-media">
         <div class="media-frame media-frame--16-9">
-          <img src="./imagenes/caso-vaca-muerta.png" alt="Urbanización modular PRIC HOUSE en entorno energético, paisaje árido patagónico" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/caso-vaca-muerta.webp" alt="Urbanización modular PRIC HOUSE en entorno energético, paisaje árido patagónico" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="caso-body">
@@ -957,7 +959,7 @@
     <div class="caso-row flip reveal delay-1">
       <div class="caso-media">
         <div class="media-frame media-frame--16-9">
-          <img src="./imagenes/caso-mineria-san-juan.png" alt="Base modular PRIC HOUSE en entorno minero de montaña, con vehículos y cordillera de fondo" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/caso-mineria-san-juan.webp" alt="Base modular PRIC HOUSE en entorno minero de montaña, con vehículos y cordillera de fondo" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="caso-body">
@@ -971,7 +973,7 @@
     <div class="caso-row reveal delay-2">
       <div class="caso-media">
         <div class="media-frame media-frame--16-9">
-          <img src="./imagenes/caso-turismo-cordoba.png" alt="Complejo turístico de viviendas modulares PRIC HOUSE integrado al paisaje serrano de Córdoba" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/caso-turismo-cordoba.webp" alt="Complejo turístico de viviendas modulares PRIC HOUSE integrado al paisaje serrano de Córdoba" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="caso-body">
@@ -1115,7 +1117,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="lg">
-          <span class="logo-plate"><img src="./imagenes/logo-pric-house.png" alt="" width="20" height="24" /></span>
+          <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="20" height="24" /></span>
           <span class="t">PRIC HOUSE</span>
         </div>
         <p>Arquitectura modular para personas, empresas y proyectos, con el respaldo de PRIC Construcciones.</p>
@@ -1153,7 +1155,7 @@
 
     <div class="foot-legal">
       <span>© <span id="footYear">2026</span> PRIC HOUSE · PRIC Construcciones · Todos los derechos reservados</span>
-      <span>Arquitectura modular · Civil · Empresas · Corporativo</span>
+      <span>Civil y Turismo · Emprendimientos y Empresas · Urbanizaciones</span>
     </div>
   </div>
 </footer>
@@ -1175,14 +1177,10 @@
     const layerEls = [document.getElementById('heroBgA'), document.getElementById('heroBgB')];
     if(!layerEls[0] || !layerEls[1]) return;
 
-    const HERO_IMAGES = [
-      './imagenes/imagen-hero-1.png',
-      './imagenes/imagen-hero-2.png',
-      './imagenes/imagen-hero-3.png',
-      './imagenes/imagen-hero-4.png',
-      './imagenes/imagen-hero-5.png',
-      './imagenes/imagen-hero-6.png'
-    ];
+    /* WebP livianos: versión "mobile" hasta 1200px de ancho, "desktop" por encima
+       (el mismo corte que el <link rel="preload"> del <head>). */
+    const HERO_SIZE = window.matchMedia('(max-width: 1200px)').matches ? 'mobile' : 'desktop';
+    const HERO_IMAGES = [1, 2, 3, 4, 5, 6].map(n => `/imagenes/hero/imagen-hero-${n}-${HERO_SIZE}.webp`);
     const HERO_INTERVAL = 7000;
 
     /* Variaciones sutiles de Ken Burns — nunca se supera scale(1.07), sin paneos ni rotaciones */
@@ -1202,25 +1200,16 @@
       return a;
     }
 
-    /* Precarga: sólo se usan las imágenes que efectivamente cargan */
-    const usable = [];
-    let checked = 0;
-    let started = false;
-
-    HERO_IMAGES.forEach((src) => {
-      const img = new Image();
-      img.onload = () => { usable.push(src); afterCheck(); };
-      img.onerror = () => { afterCheck(); };
-      img.src = src;
-    });
-
-    function afterCheck(){
-      checked++;
-      if(!started && checked === HERO_IMAGES.length){
-        started = true;
-        if(usable.length > 0) init(usable);
-        /* si ninguna imagen carga, se conserva el fondo oscuro por defecto (.hero-bg) */
-      }
+    /* Carga progresiva: la primera foto (precargada en el <head>) se muestra apenas
+       llega y cada siguiente se descarga mientras se ve la actual. Si una foto no
+       carga, se saltea; si no carga ninguna, queda el fondo oscuro (.hero-bg). */
+    function loadImage(src){
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(src);
+        img.onerror = () => resolve(null);
+        img.src = src;
+      });
     }
 
     let images = [];
@@ -1263,15 +1252,24 @@
       activeLayer = 1 - activeLayer;
     }
 
-    function init(list){
-      images = list;
-      const first = images[Math.floor(Math.random() * images.length)];
-      lastShown = first;
-      showImage(first);
+    let upcoming = null;
+    let busy = false;
+    function prepareNext(){ upcoming = loadImage(nextImage()); }
+
+    images = HERO_IMAGES;
+    loadImage(HERO_IMAGES[0]).then((first) => {
+      if(first){ lastShown = first; showImage(first); }
+      prepareNext();
       timer = setInterval(() => {
-        if(document.visibilityState === 'visible') showImage(nextImage());
+        if(busy || document.visibilityState !== 'visible') return;
+        busy = true;
+        upcoming.then((src) => {
+          if(src) showImage(src);
+          prepareNext();
+          busy = false;
+        });
       }, HERO_INTERVAL);
-    }
+    });
   })();
 
   /* Nav scroll state */

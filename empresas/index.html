@@ -319,11 +319,12 @@
   .hero-visual{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--carbon);}
   .hero-bg{
     position:absolute; inset:0; z-index:0;
-    background-image:url('/imagenes/imagen-hero-4.png');
+    background-image:url('/imagenes/hero/imagen-hero-4-desktop.webp');
     background-size:cover; background-position:center;
     filter:saturate(1.02);
     transform:scale(1.03);
   }
+  @media (max-width:900px){ .hero-bg{ background-image:url('/imagenes/hero/imagen-hero-4-mobile.webp'); } }
   .hero-grid{
     position:absolute; inset:0; z-index:1; opacity:.16;
     background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
@@ -573,8 +574,8 @@
   .contacto-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(36px,6vw,70px); align-items:start;}
   @media (max-width:900px){.contacto-grid{grid-template-columns:1fr; gap:36px;}}
   .contacto-side p{max-width:42ch; font-size:15.5px; line-height:1.65;}
-  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:9px; font-size:13.5px;}
-  .contacto-alt a{color:var(--copper); font-weight:500;}
+  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:0; font-size:13.5px;}
+  .contacto-alt a{display:inline-flex; align-items:center; min-height:44px; color:var(--copper); font-weight:500;}
   .contacto-alt a:hover{color:var(--copper-2);}
 
   form.cf{display:flex; flex-direction:column; gap:22px;}
@@ -762,9 +763,8 @@
   .amedida-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center;}
   @media (max-width:900px){ .amedida-grid{grid-template-columns:1fr; gap:44px;} }
   .amedida-cta{margin-top:32px;}
-  .amedida-parts{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-on-dark); border:1px solid var(--line-on-dark); border-radius:var(--r-editorial); overflow:hidden;}
+  .amedida-parts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line-on-dark); border:1px solid var(--line-on-dark); border-radius:var(--r-editorial); overflow:hidden;}
   @media (max-width:340px){ .amedida-parts{grid-template-columns:1fr;} }
-  @media (max-width:560px){ .amedida-parts li{min-height:96px; padding:20px 16px; font-size:14.5px;} }
   .amedida-parts li{
     background:var(--carbon); padding:26px 22px; min-height:112px;
     display:flex; flex-direction:column; justify-content:space-between; gap:18px;
@@ -772,6 +772,8 @@
     transition:background .35s var(--ease);
   }
   .amedida-parts li:hover{background:var(--graphite);}
+  @media (max-width:560px){ .amedida-parts li{min-height:96px; padding:20px 16px; font-size:14.5px;} }
+  @media (max-width:420px){ .amedida-parts li{font-size:13.5px; padding:18px 14px;} }
   .amedida-parts .n{font-family:var(--font-label); font-size:11px; font-weight:600; letter-spacing:.14em; color:var(--copper);}
 
   /* ============ CÓMO TRABAJAMOS (timeline de Civil sobre fondo claro) ============ */
@@ -788,6 +790,8 @@
   .cta-final h2{margin-bottom:16px;}
   .cta-final .cta-sub{max-width:52ch; margin:0 auto 32px; color:rgba(239,234,226,.66); font-size:15.5px; line-height:1.65;}
 </style>
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/imagen-hero-4-desktop.webp" media="(min-width: 901px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/imagen-hero-4-mobile.webp" media="(max-width: 900px)" fetchpriority="high" />
 <script src="/js/analytics.js"></script>
 </head>
 <body>
@@ -795,7 +799,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="/">
-    <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="" width="22" height="26" /></span>
+    <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="22" height="26" /></span>
     <span class="brand-text">PRIC HOUSE <span class="sub">Emprendimientos y Empresas</span></span>
   </a>
   <div class="nav-links" id="navLinks">
@@ -907,7 +911,7 @@
       </div>
       <div class="intro-media reveal delay-1">
         <div class="media-frame media-frame--4-5">
-          <img src="/imagenes/vertical-empresas.png" alt="Oficinas modulares PRIC HOUSE instaladas junto a una nave industrial" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/vertical-empresas.webp" alt="Oficinas modulares PRIC HOUSE instaladas junto a una nave industrial" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -1046,7 +1050,7 @@
       </div>
       <div class="respaldo-media reveal delay-2">
         <div class="media-frame media-frame--4-5">
-          <img src="/imagenes/respaldo-pric-construcciones.png" alt="Módulo PRIC HOUSE en montaje sobre camión plataforma, obra en ejecución" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/respaldo-pric-construcciones.webp" alt="Módulo PRIC HOUSE en montaje sobre camión plataforma, obra en ejecución" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -1191,7 +1195,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="lg">
-          <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="" width="20" height="24" /></span>
+          <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="20" height="24" /></span>
           <span class="t">PRIC HOUSE Emprendimientos y Empresas</span>
         </div>
         <p>Soluciones modulares para empresas, desarrolladores e inversores.</p>
@@ -1310,7 +1314,7 @@
       cta: 'Explorar proyectos turísticos',
       href: null,
       waMessage: 'Hola PRIC HOUSE, quiero explorar una solución modular para un proyecto turístico, una bodega o un viñedo.',
-      image: { src: '/imagenes/caso-turismo-cordoba.png', alt: 'Complejo turístico de unidades modulares PRIC HOUSE integrado al paisaje serrano de Córdoba' }
+      image: { src: '/imagenes/opt/caso-turismo-cordoba.webp', alt: 'Complejo turístico de unidades modulares PRIC HOUSE integrado al paisaje serrano de Córdoba' }
     }
   ];
 
@@ -1340,7 +1344,7 @@
       },
       // Imagen de respaldo de la familia; cada modelo define la suya (fotos en /imagenes/modelos/).
       // Sin fotos propias todavía de las versiones con galería ni de 74 m²: usan una foto de su línea.
-      image: { src: '/imagenes/vertical-civil.jpg', alt: 'Vivienda modular PRIC HOUSE con revestimiento símil madera' },
+      image: { src: '/imagenes/opt/vertical-civil.webp', alt: 'Vivienda modular PRIC HOUSE con revestimiento símil madera' },
       models: [
         { surface: 37, tier: 'standard', gallery: false, price: 25100, pricePerM2: 678, tagline: 'Unidad compacta',
           image: { src: '/imagenes/modelos/estandar-atardecer.jpg', alt: 'Unidad modular PRIC HOUSE Standard de paneles blancos al atardecer' },
@@ -1352,7 +1356,7 @@
           image: { src: '/imagenes/modelos/estandar-frente.jpg', alt: 'Frente de una unidad modular PRIC HOUSE Standard de paneles blancos' },
           description: 'La unidad Standard con galería y cubierta exterior, sumando un espacio semicubierto de uso cotidiano.' },
         { surface: 37, tier: 'deluxe', gallery: true, price: 31500, pricePerM2: 851, tagline: 'Expansión exterior',
-          image: { src: '/imagenes/vertical-civil.jpg', alt: 'Vivienda modular PRIC HOUSE Deluxe con revestimiento símil madera y deck de acceso' },
+          image: { src: '/imagenes/opt/vertical-civil.webp', alt: 'Vivienda modular PRIC HOUSE Deluxe con revestimiento símil madera y deck de acceso' },
           description: 'La configuración Deluxe con galería y cubierta exterior: mayor nivel de terminación y un espacio semicubierto integrado.' },
         { surface: 74, tier: 'standard', gallery: false, price: 45800, pricePerM2: 619, tagline: 'Mayor amplitud',
           image: { src: '/imagenes/modelos/estandar-real-3.jpg', alt: 'Unidad modular PRIC HOUSE Standard de paneles blancos con doble puerta' },
@@ -1382,7 +1386,7 @@
         usesNote: 'Usos de referencia: el equipamiento y la distribución interior se definen según cada proyecto.'
       },
       // Imagen de respaldo de la familia; cada modelo define la suya. TODO: renders propios de SUM.
-      image: { src: '/imagenes/vertical-empresas.png', alt: 'Salón de Espacios Múltiples PRIC HOUSE instalado junto a una nave industrial' },
+      image: { src: '/imagenes/opt/vertical-empresas.webp', alt: 'Salón de Espacios Múltiples PRIC HOUSE instalado junto a una nave industrial' },
       models: [
         { surface: 37, tier: 'standard', gallery: false, price: 22900, pricePerM2: 619, tagline: 'Espacio versátil',
           image: { src: '/imagenes/modelos/sm-nave-industrial.jpg', alt: 'Salón de Espacios Múltiples PRIC HOUSE de paneles blancos junto a una nave industrial' },

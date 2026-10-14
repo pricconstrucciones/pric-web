@@ -318,11 +318,12 @@
   .hero-visual{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--carbon);}
   .hero-bg{
     position:absolute; inset:0; z-index:0;
-    background-image:url('/imagenes/vertical-civil.jpg');
+    background-image:url('/imagenes/hero/civil-hero-desktop.webp');
     background-size:cover; background-position:center;
     filter:saturate(1.02);
     transform:scale(1.03);
   }
+  @media (max-width:900px){ .hero-bg{ background-image:url('/imagenes/hero/civil-hero-mobile.webp'); } }
   .hero-grid{
     position:absolute; inset:0; z-index:1; opacity:.16;
     background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
@@ -518,8 +519,8 @@
   .contacto-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(36px,6vw,70px); align-items:start;}
   @media (max-width:900px){.contacto-grid{grid-template-columns:1fr; gap:36px;}}
   .contacto-side p{max-width:42ch; font-size:15.5px; line-height:1.65;}
-  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:9px; font-size:13.5px;}
-  .contacto-alt a{color:var(--copper); font-weight:500;}
+  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:0; font-size:13.5px;}
+  .contacto-alt a{display:inline-flex; align-items:center; min-height:44px; color:var(--copper); font-weight:500;}
   .contacto-alt a:hover{color:var(--copper-2);}
 
   form.cf{display:flex; flex-direction:column; gap:22px;}
@@ -555,6 +556,7 @@
   .foot-col h6{font-family:var(--font-label); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,234,226,.4); margin-bottom:16px; font-weight:600;}
   .foot-col ul{display:flex; flex-direction:column; gap:11px;}
   .foot-col a{color:rgba(239,234,226,.7); font-size:13.5px;}
+  .foot-col li{font-size:13.5px; color:rgba(239,234,226,.5);}
   .foot-col a:hover{color:var(--copper);}
   .foot-legal{
     border-top:1px solid var(--line-on-dark); padding-top:24px;
@@ -573,6 +575,8 @@
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
 </style>
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/civil-hero-desktop.webp" media="(min-width: 901px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/civil-hero-mobile.webp" media="(max-width: 900px)" fetchpriority="high" />
 <script src="/js/analytics.js"></script>
 </head>
 <body>
@@ -580,7 +584,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="/">
-    <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="" width="22" height="26" /></span>
+    <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="22" height="26" /></span>
     <span class="brand-text">PRIC HOUSE <span class="sub">Civil y Turismo</span></span>
   </a>
   <div class="nav-links" id="navLinks">
@@ -688,7 +692,7 @@
       </div>
       <div class="como-img reveal delay-1">
         <div class="media-frame media-frame--4-5">
-          <img src="/imagenes/quienes-somos-pric-house.png" alt="Módulo PRIC HOUSE siendo montado con grúa sobre su base durante la instalación en obra" loading="lazy" decoding="async" />
+          <img src="/imagenes/opt/quienes-somos-pric-house.webp" alt="Módulo PRIC HOUSE siendo montado con grúa sobre su base durante la instalación en obra" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -750,7 +754,7 @@
         </div>
       </article>
       <article class="model-card" data-model="37 m² Deluxe + Galería y cubierta">
-        <div class="media-frame"><img src="/imagenes/vertical-civil.jpg" alt="Casa modular PRIC HOUSE versión Deluxe con revestimiento símil madera y deck de acceso, en un jardín" width="1672" height="941" loading="lazy" decoding="async" /></div>
+        <div class="media-frame"><img src="/imagenes/opt/vertical-civil.webp" alt="Casa modular PRIC HOUSE versión Deluxe con revestimiento símil madera y deck de acceso, en un jardín" width="1200" height="675" loading="lazy" decoding="async" /></div>
         <div class="model-body">
           <div class="model-tags"><span class="model-tag model-tag--deluxe">Deluxe</span><span class="model-tag">+ Galería y cubierta</span></div>
           <h3>37 m² Deluxe</h3>
@@ -1038,7 +1042,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="lg">
-          <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="" width="20" height="24" /></span>
+          <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="20" height="24" /></span>
           <span class="t">PRIC HOUSE Civil y Turismo</span>
         </div>
         <p>Casas modulares transportables. Una línea de negocio de PRIC Construcciones, 20 años de trayectoria.</p>
