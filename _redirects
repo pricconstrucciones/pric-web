@@ -1,0 +1,5 @@
+# /corporativo/ estuvo enlazada desde la home y no tiene página. La vertical pasó a
+# llamarse Urbanizaciones: se redirige (temporal, 302) a las aplicaciones de la home
+# hasta definir su destino. Ver PENDIENTES.md.
+/corporativo   /#experiencia   302
+/corporativo/  /#experiencia   302

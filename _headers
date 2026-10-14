@@ -1,0 +1,5 @@
+# Cloudflare Pages: el dominio técnico de producción (pric-web.pages.dev) duplica
+# a prichouse.com; se excluye de los buscadores. Las previews (*.pric-web.pages.dev)
+# ya reciben "noindex" automáticamente de Cloudflare.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

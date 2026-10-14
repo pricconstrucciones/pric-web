@@ -39,3 +39,5 @@ Un clic en "Consultar este modelo" solo dispara `model_inquiry`: no se cuenta ta
 
 - El formulario no envía datos a un servidor: el "lead" real se concreta en la conversación de WhatsApp. `generate_lead` mide la intención declarada (formulario completo y válido), no un mensaje efectivamente enviado.
 - Si se agrega un banner de consentimiento de cookies, conectar Consent Mode de Google en GTM antes de las etiquetas de GA4, Ads y Meta.
+
+`page_type` vale `home`, `civil`, `empresas` o `404` (la página de error), para poder filtrar visitas a URLs inexistentes en GA4.
