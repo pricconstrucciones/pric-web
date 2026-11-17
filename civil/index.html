@@ -6,33 +6,53 @@
 <title>PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno</title>
 <meta name="description" content="Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas, con facilidad de pago y el respaldo de más de 20 años de PRIC Construcciones." />
 
-<!-- TODO: completar dominio definitivo al publicar -->
-<!-- <link rel="canonical" href="https://www.pricconstrucciones.com/house/civil/" /> -->
+<link rel="canonical" href="https://prichouse.com/civil/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="PRIC HOUSE" />
 <meta property="og:locale" content="es_AR" />
+<meta property="og:url" content="https://prichouse.com/civil/" />
 <meta property="og:title" content="PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno" />
 <meta property="og:description" content="Selección, traslado e instalación de tu casa modular, con el respaldo de PRIC Construcciones." />
+<meta property="og:image" content="https://prichouse.com/imagenes/og/prichouse-civil.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Vivienda modular PRIC HOUSE con revestimiento símil madera en un jardín" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno" />
 <meta name="twitter:description" content="Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas." />
+<meta name="twitter:image" content="https://prichouse.com/imagenes/og/prichouse-civil.jpg" />
+<meta name="twitter:image:alt" content="Vivienda modular PRIC HOUSE con revestimiento símil madera en un jardín" />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PRIC HOUSE Civil y Turismo",
-  "description": "Casas modulares transportables, seleccionadas, trasladadas e instaladas en el terreno del cliente.",
-  "areaServed": "AR",
-  "parentOrganization": { "@type": "Organization", "name": "PRIC Construcciones" },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+54-9-351-214-2900",
-    "contactType": "sales",
-    "availableLanguage": ["Spanish"],
-    "email": "info@prichouse.com"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://prichouse.com/#organization",
+      "name": "PRIC HOUSE",
+      "url": "https://prichouse.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://prichouse.com/civil/#webpage",
+      "url": "https://prichouse.com/civil/",
+      "name": "PRIC HOUSE Civil y Turismo | Tu casa modular en tu propio terreno",
+      "description": "Seleccionamos, trasladamos e instalamos tu casa modular en el terreno que elijas, con facilidad de pago y el respaldo de más de 20 años de PRIC Construcciones.",
+      "inLanguage": "es-AR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://prichouse.com/#website",
+        "url": "https://prichouse.com/",
+        "name": "PRIC HOUSE"
+      },
+      "publisher": {
+        "@id": "https://prichouse.com/#organization"
+      }
+    }
+  ]
 }
 </script>
 
@@ -298,11 +318,12 @@
   .hero-visual{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--carbon);}
   .hero-bg{
     position:absolute; inset:0; z-index:0;
-    background-image:url('/imagenes/vertical-civil.jpg');
+    background-image:url('/imagenes/hero/civil-hero-desktop.webp');
     background-size:cover; background-position:center;
     filter:saturate(1.02);
     transform:scale(1.03);
   }
+  @media (max-width:900px){ .hero-bg{ background-image:url('/imagenes/hero/civil-hero-mobile.webp'); } }
   .hero-grid{
     position:absolute; inset:0; z-index:1; opacity:.16;
     background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
@@ -498,8 +519,8 @@
   .contacto-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(36px,6vw,70px); align-items:start;}
   @media (max-width:900px){.contacto-grid{grid-template-columns:1fr; gap:36px;}}
   .contacto-side p{max-width:42ch; font-size:15.5px; line-height:1.65;}
-  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:9px; font-size:13.5px;}
-  .contacto-alt a{color:var(--copper); font-weight:500;}
+  .contacto-alt{margin-top:28px; padding-top:22px; border-top:1px solid var(--line-on-dark); display:flex; flex-direction:column; gap:0; font-size:13.5px;}
+  .contacto-alt a{display:inline-flex; align-items:center; min-height:44px; color:var(--copper); font-weight:500;}
   .contacto-alt a:hover{color:var(--copper-2);}
 
   form.cf{display:flex; flex-direction:column; gap:22px;}
@@ -535,6 +556,7 @@
   .foot-col h6{font-family:var(--font-label); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,234,226,.4); margin-bottom:16px; font-weight:600;}
   .foot-col ul{display:flex; flex-direction:column; gap:11px;}
   .foot-col a{color:rgba(239,234,226,.7); font-size:13.5px;}
+  .foot-col li{font-size:13.5px; color:rgba(239,234,226,.5);}
   .foot-col a:hover{color:var(--copper);}
   .foot-legal{
     border-top:1px solid var(--line-on-dark); padding-top:24px;
@@ -553,6 +575,8 @@
   .back-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
   .back-top:hover{background:var(--copper);}
 </style>
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/civil-hero-desktop.webp" media="(min-width: 901px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/webp" href="/imagenes/hero/civil-hero-mobile.webp" media="(max-width: 900px)" fetchpriority="high" />
 <script src="/js/analytics.js"></script>
 </head>
 <body>
@@ -560,7 +584,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav" aria-label="Navegación principal">
   <a class="nav-brand" href="/">
-    <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="22" height="26" /></span>
+    <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="22" height="26" /></span>
     <span class="brand-text">PRIC HOUSE <span class="sub">Civil y Turismo</span></span>
   </a>
   <div class="nav-links" id="navLinks">
@@ -1018,7 +1042,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="lg">
-          <span class="logo-plate"><img src="/imagenes/logo-pric-house.png" alt="PRIC HOUSE" width="20" height="24" /></span>
+          <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="20" height="24" /></span>
           <span class="t">PRIC HOUSE Civil y Turismo</span>
         </div>
         <p>Casas modulares transportables. Una línea de negocio de PRIC Construcciones, 20 años de trayectoria.</p>
@@ -1184,6 +1208,42 @@
     a.setAttribute('data-model-name', card.dataset.model);
     a.setAttribute('data-model-value', price.replace(/\D/g, ''));
   });
+
+  /* Datos estructurados (Schema.org) de modelos y preguntas frecuentes.
+     Se generan desde las tarjetas y la FAQ visibles, así nunca contradicen
+     lo publicado (precios, nombres, respuestas). Sin disponibilidad ni
+     características que no figuren en la página. */
+  (function(){
+    const SITE = 'https://prichouse.com';
+    const ORG = { '@id': SITE + '/#organization' };
+    const products = [...document.querySelectorAll('#modelos .model-card')].map(card => ({
+      '@type': 'Product',
+      name: 'Casa modular PRIC HOUSE ' + card.dataset.model,
+      description: card.querySelector('.model-body p').textContent.trim(),
+      image: SITE + card.querySelector('img').getAttribute('src'),
+      brand: { '@type': 'Brand', name: 'PRIC HOUSE' },
+      offers: {
+        '@type': 'Offer',
+        price: Number(card.querySelector('.model-price .total').textContent.replace(/\D/g, '')),
+        priceCurrency: 'USD',
+        url: SITE + '/civil/#modelos',
+        seller: ORG,
+      },
+    }));
+    const faq = [...document.querySelectorAll('.faq-item')].map(item => ({
+      '@type': 'Question',
+      name: item.querySelector('.faq-q span').textContent.trim(),
+      acceptedAnswer: { '@type': 'Answer', text: item.querySelector('.faq-a p').textContent.trim() },
+    }));
+    const ld = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'ItemList', name: 'Modelos de casas modulares PRIC HOUSE', itemListElement: products.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: p })) },
+      { '@type': 'FAQPage', '@id': SITE + '/civil/#faq', mainEntity: faq },
+    ] };
+    const tag = document.createElement('script');
+    tag.type = 'application/ld+json';
+    tag.textContent = JSON.stringify(ld);
+    document.head.appendChild(tag);
+  })();
 
   /* WhatsApp — enlaces genéricos */
   function buildWaUrl(message){

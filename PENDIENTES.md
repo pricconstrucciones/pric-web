@@ -25,3 +25,12 @@ Opciones para el destino definitivo:
 1. **Página `/urbanizaciones/` dentro de prichouse.com**, con el mismo sistema que Civil y Empresas: escala, etapas, casos y formulario propio. Mejor opción para SEO y campañas.
 2. **Página institucional de PRIC Construcciones** (`/pric-construcciones/` o un sitio propio; hay un borrador local "PRIC Construcciones — Soluciones Urbanísticas Modulares") para trayectoria, obras y clientes.
 3. Mientras tanto, mantener los destinos provisorios actuales.
+
+## SEO — tareas fuera del código (panel de Cloudflare / Google)
+
+Estas configuraciones no se pueden hacer desde el repositorio y no se tocaron:
+
+1. **Redirección de `www.prichouse.com` a `prichouse.com`** (301). Hoy `www` sirve la misma página con estado 200. Se configura en Cloudflare con una regla de redirección (Rules → Redirect Rules o Bulk Redirects). El canonical de cada página ya apunta a `https://prichouse.com/…`, así que mientras tanto los buscadores consolidan igual.
+2. **Google Search Console**: verificar `prichouse.com` (registro DNS TXT) y enviar `https://prichouse.com/sitemap.xml` después de publicar.
+3. **Ofuscación de emails de Cloudflare** (Scrape Shield): reemplaza `info@prichouse.com` por un script en producción. Funciona, pero agrega un script extra y el email no se ve sin JavaScript. Evaluar desactivarla.
+4. **Precios en los datos estructurados**: los productos de Civil y Empresas publican en Schema.org los mismos precios visibles en las tarjetas. Si los precios cambian, se actualizan solos (se generan desde las tarjetas y desde `PRODUCT_FAMILIES`).
