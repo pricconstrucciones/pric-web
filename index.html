@@ -532,6 +532,9 @@
   .respaldo-num .u{line-height:1.45; display:block; font-family:var(--font-label); font-size:14px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--copper); margin-top:14px;}
   .respaldo-text p{font-size:16.5px; line-height:1.7; color:#3c3f3a; margin-bottom:14px; max-width:44ch;}
   .respaldo-text p:last-child{margin-bottom:0;}
+  .respaldo-link{margin-top:22px;}
+  .respaldo-link .arr{display:inline-flex; color:var(--copper); transition:transform .3s var(--ease);}
+  .respaldo-link:hover .arr{transform:translateX(3px);}
   .respaldo-media .media-frame{aspect-ratio:4/5; min-height:320px;}
 
   /* ============ CASOS — claro, alternado ============ */
@@ -922,6 +925,10 @@
           Esa trayectoria te da certeza: del otro lado hay una empresa que
           ya demostró que cumple.
         </p>
+        <a href="https://www.pricconstrucciones.com.ar/works.html" class="btn-secondary respaldo-link" target="_blank" rel="noopener noreferrer">
+          Conocé PRIC Construcciones
+          <span class="arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
       <div class="respaldo-media reveal delay-2">
         <div class="media-frame media-frame--4-5">
