@@ -18,6 +18,7 @@ Información que el sitio **no publica** hasta tener confirmación. Ningún text
 Las verticales se llaman **Civil y Turismo** (`/civil/`), **Emprendimientos y Empresas** (`/empresas/`) y **Urbanizaciones** (antes Corporativo). `/corporativo/` no tiene página y el dominio `pricconstrucciones.com` no responde.
 
 - **Urbanizaciones**: el panel y el link del pie de la home llevan a las aplicaciones ilustrativas de la home (`#experiencia`: campamentos, bases y complejos). Comentario `PROVISORIO` en `index.html`.
+- **Imagen para compartir de Urbanizaciones**: ya está lista en `/imagenes/og/prichouse-urbanizaciones.jpg` (1200 × 630, la foto de la tarjeta de Urbanizaciones). Usarla en `og:image` y `twitter:image` cuando exista la página.
 - **PRIC Construcciones**: "Conocer PRIC Construcciones" y los links del pie llevan a la sección Respaldo de la home (`/#respaldo`). Comentario `PROVISORIO` en `empresas/index.html`.
 
 Opciones para el destino definitivo:
