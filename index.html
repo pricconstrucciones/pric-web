@@ -14,16 +14,17 @@
 <meta property="og:url" content="https://prichouse.com/" />
 <meta property="og:title" content="PRIC HOUSE | Arquitectura modular para personas, empresas y proyectos" />
 <meta property="og:description" content="Casas y espacios modulares transportables: Civil y Turismo, Emprendimientos y Empresas y Urbanizaciones, con el respaldo de PRIC Construcciones." />
-<meta property="og:image" content="https://prichouse.com/imagenes/og/prichouse-civil.jpg" />
+<meta property="og:image" content="https://www.prichouse.com/imagenes/og-cover.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Vivienda modular PRIC HOUSE con revestimiento símil madera en un jardín" />
+<meta property="og:image:alt" content="PRIC HOUSE: vivienda modular con revestimiento símil madera en un jardín y el texto «Arquitectura modular»" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PRIC HOUSE | Arquitectura modular" />
 <meta name="twitter:description" content="Soluciones modulares transportables para personas, empresas y proyectos, con el respaldo de PRIC Construcciones." />
-<meta name="twitter:image" content="https://prichouse.com/imagenes/og/prichouse-civil.jpg" />
-<meta name="twitter:image:alt" content="Vivienda modular PRIC HOUSE con revestimiento símil madera en un jardín" />
+<meta name="twitter:image" content="https://www.prichouse.com/imagenes/og-cover.jpg" />
+<meta name="twitter:image:alt" content="PRIC HOUSE: vivienda modular con revestimiento símil madera en un jardín y el texto «Arquitectura modular»" />
 
 <script type="application/ld+json">
 {
@@ -96,9 +97,12 @@
 }
 </script>
 
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/imagenes/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
 <style>
   /* ==========================================================================
@@ -390,6 +394,7 @@
   }
   .hero-bg--photo.is-visible{opacity:1;}
   .hero-bg--photo.is-animating{transition:opacity 2s ease-in-out, transform 7s linear;}
+  .hero-bg--photo.is-first.is-animating{transition:opacity .4s ease-out, transform 7s linear;} /* la primera foto aparece enseguida (mejora el LCP); el fundido de 2 s queda para las siguientes */
   @media (prefers-reduced-motion:reduce){
     .hero-bg--photo{transition:opacity 2s ease-in-out !important; transform:none !important;}
   }
@@ -1124,7 +1129,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="lg">
-          <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="20" height="24" /></span>
+          <span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="20" height="24" loading="lazy" decoding="async" /></span>
           <span class="t">PRIC HOUSE</span>
         </div>
         <p>Arquitectura modular para personas, empresas y proyectos, con el respaldo de PRIC Construcciones.</p>
@@ -1146,6 +1151,8 @@
           <li><a href="#respaldo">PRIC Construcciones</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#contacto">Contacto</a></li>
+          <li><a href="/privacidad/">Política de privacidad</a></li>
+          <li><a href="#" data-cookie-settings>Configurar cookies</a></li>
         </ul>
       </div>
 
@@ -1239,12 +1246,13 @@
       return img;
     }
 
-    function showImage(src){
+    function showImage(src, quick){
       const layer = layerEls[activeLayer];
       const other = layerEls[1 - activeLayer];
       const kb = KEN_BURNS[kbIndex % KEN_BURNS.length];
       kbIndex++;
 
+      layer.classList.toggle('is-first', !!quick);
       layer.classList.remove('is-animating');
       layer.style.transition = 'none';
       layer.style.backgroundImage = `url('${src}')`;
@@ -1265,7 +1273,7 @@
 
     images = HERO_IMAGES;
     loadImage(HERO_IMAGES[0]).then((first) => {
-      if(first){ lastShown = first; showImage(first); }
+      if(first){ lastShown = first; showImage(first, true); }
       prepareNext();
       timer = setInterval(() => {
         if(busy || document.visibilityState !== 'visible') return;

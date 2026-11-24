@@ -7,9 +7,12 @@
 <meta name="robots" content="noindex" />
 <meta name="description" content="La página que buscás no existe o cambió de dirección." />
 
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/imagenes/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&family=Archivo:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&family=Archivo:wght@600&family=Inter:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&family=Archivo:wght@600&family=Inter:wght@400;600&display=swap"></noscript>
 
 <style>
   /* Página 404 — mismo sistema visual del sitio (variables de index.html). */
@@ -45,6 +48,9 @@
   .btn:hover{border-color:var(--copper); background:rgba(201,107,55,.12);}
   .btn.primary{background:var(--copper); border-color:var(--copper); text-transform:uppercase; letter-spacing:.1em;}
   .btn.primary:hover{background:var(--copper-2); border-color:var(--copper-2);}
+  footer{padding:24px clamp(20px,4vw,48px) 32px; display:flex; flex-wrap:wrap; gap:4px 24px; font-size:13px;}
+  footer a{color:rgba(239,234,226,.7); display:inline-flex; align-items:center; min-height:44px;}
+  footer a:hover{color:var(--copper);}
 </style>
 <script src="/js/analytics.js"></script>
 </head>
@@ -65,5 +71,9 @@
       </nav>
     </div>
   </main>
+  <footer>
+    <a href="/privacidad/">Política de privacidad</a>
+    <a href="#" data-cookie-settings>Configurar cookies</a>
+  </footer>
 </body>
 </html>

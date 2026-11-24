@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-page="privacidad">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Política de privacidad | PRIC HOUSE</title>
+<meta name="description" content="Cómo PRIC HOUSE trata los datos personales de quienes visitan prichouse.com, completan sus formularios o escriben por WhatsApp, y cómo usa las cookies." />
+<!-- PENDIENTE-LEGAL: mientras la página tenga datos pendientes y no esté validada por el asesor legal, no debe indexarse.
+     Al publicarla: quitar este "noindex", el aviso de borrador y sumarla al sitemap.xml. -->
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://prichouse.com/privacidad/" />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/imagenes/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Archivo:wght@500;600&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Archivo:wght@500;600&family=Inter:wght@400;500;600&display=swap"></noscript>
+
+<style>
+  /* Página legal — mismo sistema visual del sitio (variables de index.html). */
+  :root{
+    --carbon:#111315; --graphite:#1A1D1F; --bone:#EFEAE2; --stone:#D8D2C8; --gray-arch:#7B7D78;
+    --copper:#C96B37; --copper-2:#A85A2E;
+    --line-on-dark:rgba(255,255,255,.08); --line-on-dark-2:rgba(255,255,255,.16); --line-on-light:rgba(17,19,21,.12);
+    --font-display:'Space Grotesk', system-ui, sans-serif;
+    --font-body:'Inter', system-ui, sans-serif;
+    --font-label:'Archivo', 'Inter', system-ui, sans-serif;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --gutter:clamp(20px,4vw,48px);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{min-height:100vh; display:flex; flex-direction:column; background:var(--bone); color:var(--carbon); font-family:var(--font-body); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--copper); outline-offset:3px;}
+
+  .top{background:var(--carbon); padding:18px var(--gutter);}
+  .brand{display:inline-flex; align-items:center; gap:12px; color:#fff; text-decoration:none; font-family:var(--font-display); font-weight:600; font-size:14.5px;}
+  .logo-plate{background:var(--bone); border-radius:8px; padding:6px 9px; display:inline-flex; line-height:0;}
+  .logo-plate img{height:22px; width:auto;}
+
+  main{flex:1; padding:clamp(48px,7vw,96px) var(--gutter);}
+  .doc{max-width:760px; margin:0 auto;}
+  .eyebrow{display:flex; align-items:center; gap:14px; font-family:var(--font-label); font-size:12px; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--copper-2); margin-bottom:18px;}
+  .eyebrow::before{content:''; width:40px; height:1px; background:var(--copper);}
+  h1{font-family:var(--font-display); font-weight:600; font-size:clamp(32px,5vw,48px); line-height:1.08; letter-spacing:-.02em; margin-bottom:12px; text-wrap:balance;}
+  .updated{font-family:var(--font-label); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#5d5f5b; margin-bottom:32px;}
+  h2{font-family:var(--font-display); font-weight:600; font-size:clamp(20px,2.4vw,24px); line-height:1.2; letter-spacing:-.01em; margin:44px 0 12px; padding-top:28px; border-top:1px solid var(--line-on-light);}
+  p, li{color:#3c3f3a;}
+  p{margin-bottom:14px;}
+  ul{margin:0 0 14px 1.2em;}
+  li{margin-bottom:8px; padding-left:4px;}
+  li::marker{color:var(--copper);}
+  strong{color:var(--carbon); font-weight:600;}
+  .doc a{color:var(--copper-2); text-underline-offset:3px;}
+  .doc a:hover{color:var(--carbon);}
+
+  /* Borrador: datos y validación pendientes (ver PENDIENTES.md) */
+  .borrador{border:1px solid var(--copper); background:rgba(201,107,55,.08); border-radius:4px; padding:16px 18px; margin:0 0 36px; font-size:14.5px; line-height:1.55; color:var(--carbon);}
+  .borrador strong{display:block; margin-bottom:4px;}
+  mark.pendiente{background:#fde7d6; color:#7a3412; font-weight:600; padding:1px 6px; border-radius:3px; outline:1px dashed var(--copper);}
+
+  footer{background:#0b0c0d; color:rgba(239,234,226,.7); padding:36px var(--gutter);}
+  .foot{max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; gap:16px 32px; justify-content:space-between; align-items:center; font-size:13.5px;}
+  .foot nav{display:flex; flex-wrap:wrap; gap:6px 24px;}
+  .foot a{color:rgba(239,234,226,.8); text-decoration:none; display:inline-flex; align-items:center; min-height:44px;}
+  .foot a:hover{color:var(--copper);}
+  .foot small{font-family:var(--font-label); font-size:11.5px; letter-spacing:.04em; color:rgba(239,234,226,.45);}
+</style>
+<script src="/js/analytics.js"></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><span class="logo-plate"><img src="/imagenes/opt/logo-pric-house-ui.webp" alt="" width="19" height="22" /></span>PRIC HOUSE</a>
+  </header>
+
+  <main>
+    <article class="doc">
+      <span class="eyebrow">Legal</span>
+      <h1>Política de privacidad</h1>
+      <p class="updated">Última actualización: noviembre de 2026</p>
+
+      <!-- PENDIENTE-LEGAL: eliminar este aviso al completar los datos del responsable y recibir la validación legal. -->
+      <aside class="borrador" role="note">
+        <strong>Borrador pendiente de validación</strong>
+        Esta política todavía no es la versión oficial: faltan la razón social, el CUIT y el domicilio del responsable, y la revisión del asesor legal.
+      </aside>
+
+      <h2>1. Responsable de los datos</h2>
+      <p>Esta política explica cómo PRIC HOUSE trata los datos personales de quienes visitan prichouse.com, completan nuestros formularios o nos escriben.</p>
+      <!-- PENDIENTE-LEGAL: razón social, CUIT y domicilio reales (no inventar). -->
+      <p>El responsable de los datos es <mark class="pendiente">[RAZÓN SOCIAL]</mark>, CUIT <mark class="pendiente">[XX-XXXXXXXX-X]</mark>, con domicilio en <mark class="pendiente">[DOMICILIO]</mark>, Córdoba, Argentina. Para cualquier consulta sobre tus datos podés escribirnos a <a href="mailto:info@prichouse.com">info@prichouse.com</a> o por WhatsApp al <a href="https://wa.me/5493512142900" target="_blank" rel="noopener">+54 9 351 214-2900</a>.</p>
+
+      <h2>2. Qué datos recopilamos</h2>
+      <p>Solo pedimos lo necesario para responder tu consulta:</p>
+      <ul>
+        <li><strong>Datos de contacto:</strong> nombre y número de teléfono.</li>
+        <li><strong>Datos de tu proyecto:</strong> si tenés terreno y dónde, qué uso le querés dar a la casa y tu capacidad de inversión inicial.</li>
+        <li><strong>Mensajes:</strong> lo que nos escribís por WhatsApp, correo o redes sociales.</li>
+        <li><strong>Datos de navegación:</strong> información técnica sobre cómo usás la web (páginas visitadas, dispositivo, ubicación aproximada), recogida mediante cookies y herramientas de medición.</li>
+      </ul>
+      <p>El formulario de la web que abre WhatsApp no guarda tus datos en ningún servidor: solo arma el mensaje para que lo envíes vos.</p>
+
+      <h2>3. Para qué los usamos</h2>
+      <ul>
+        <li>Contactarte por WhatsApp, teléfono o correo para responder tu consulta.</li>
+        <li>Preparar una propuesta para tu proyecto y coordinar la evaluación de tu terreno.</li>
+        <li>Enviarte información sobre PRIC HOUSE, solo si nos diste tu consentimiento.</li>
+        <li>Medir y mejorar nuestra web y nuestros anuncios.</li>
+      </ul>
+      <p>No usamos tus datos para fines distintos de estos sin avisarte antes.</p>
+
+      <h2>4. Con quién los compartimos</h2>
+      <p>No vendemos ni alquilamos tus datos. Solo los compartimos con:</p>
+      <ul>
+        <li><strong>Proveedores que nos ayudan a operar:</strong> servicios de mensajería (WhatsApp), correo, alojamiento web y la agencia que gestiona nuestra comunicación, que los usan únicamente para prestarnos ese servicio.</li>
+        <li><strong>Plataformas de publicidad (Meta y Google),</strong> cuando completás un formulario en sus anuncios o navegás la web con sus herramientas de medición activas.</li>
+        <li><strong>Autoridades,</strong> cuando una ley o una orden judicial lo exija.</li>
+      </ul>
+      <p>Algunos de estos proveedores pueden almacenar datos fuera de Argentina, con medidas de protección adecuadas.</p>
+
+      <h2 id="cookies">5. Cookies y herramientas de medición</h2>
+      <p>Usamos cookies y herramientas de terceros para entender cómo se usa la web y mostrarte anuncios relevantes:</p>
+      <ul>
+        <li><strong>Píxel de Meta:</strong> mide las visitas y acciones en la web para nuestros anuncios en Facebook e Instagram.</li>
+        <li><strong>Etiqueta de Google y Google Analytics:</strong> miden el tráfico y las conversiones de nuestros anuncios en Google.</li>
+      </ul>
+      <p>Podés bloquear o borrar las cookies desde la configuración de tu navegador, y ajustar tus preferencias de anuncios en tu cuenta de Meta y de Google.</p>
+      <!-- PENDIENTE-LEGAL (agregado propuesto, no figura en el PDF base): describe el funcionamiento real del aviso de cookies. Validar con el asesor legal. -->
+      <p>Estas herramientas solo se activan si las aceptás en el aviso que aparece al ingresar a la web. Guardamos tu elección en tu navegador y podés cambiarla cuando quieras desde <a href="#" data-cookie-settings>Configurar cookies</a>, al pie de cada página.</p>
+
+      <h2>6. Conservación y seguridad</h2>
+      <p>Guardamos tus datos mientras haya una consulta o una relación comercial activa, y después el tiempo que exijan las obligaciones legales o contables. Si no avanzás con un proyecto, podés pedirnos que los borremos en cualquier momento.</p>
+      <p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos contra accesos no autorizados, pérdida o alteración.</p>
+
+      <h2>7. Tus derechos</h2>
+      <p>De acuerdo con la Ley 25.326 de Protección de Datos Personales, podés acceder, rectificar, actualizar o pedir que se borren tus datos, y retirar tu consentimiento para recibir comunicaciones. Para hacerlo, escribinos a <a href="mailto:info@prichouse.com">info@prichouse.com</a> y te respondemos dentro de los plazos de la ley.</p>
+      <p>El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a ellos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto, conforme lo establecido en el artículo 14, inciso 3 de la Ley 25.326. La Agencia de Acceso a la Información Pública, en su carácter de Órgano de Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>
+
+      <h2>8. Cambios y contacto</h2>
+      <p>Podemos actualizar esta política para reflejar cambios en la web, en nuestros servicios o en la ley. La versión vigente es siempre la publicada en esta página, con su fecha de actualización.</p>
+      <p><strong>Última actualización:</strong> noviembre de 2026.</p>
+      <p><strong>Consultas:</strong> <a href="mailto:info@prichouse.com">info@prichouse.com</a> · WhatsApp <a href="https://wa.me/5493512142900" target="_blank" rel="noopener">+54 9 351 214-2900</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <nav aria-label="Pie de página">
+        <a href="/">Inicio</a>
+        <a href="/civil/">Civil y Turismo</a>
+        <a href="/empresas/">Emprendimientos y Empresas</a>
+        <a href="/privacidad/" aria-current="page">Política de privacidad</a>
+        <a href="#" data-cookie-settings>Configurar cookies</a>
+      </nav>
+      <small>© PRIC HOUSE · PRIC Construcciones</small>
+    </div>
+  </footer>
+</body>
+</html>

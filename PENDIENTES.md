@@ -35,3 +35,15 @@ Estas configuraciones no se pueden hacer desde el repositorio y no se tocaron:
 2. **Google Search Console**: verificar `prichouse.com` (registro DNS TXT) y enviar `https://prichouse.com/sitemap.xml` después de publicar.
 3. **Ofuscación de emails de Cloudflare** (Scrape Shield): reemplaza `info@prichouse.com` por un script en producción. Funciona, pero agrega un script extra y el email no se ve sin JavaScript. Evaluar desactivarla.
 4. **Precios en los datos estructurados**: los productos de Civil y Empresas publican en Schema.org los mismos precios visibles en las tarjetas. Si los precios cambian, se actualizan solos (se generan desde las tarjetas y desde `PRODUCT_FAMILIES`).
+
+## Analítica, privacidad e imagen para compartir (rama `feature/analitica-privacidad-og`)
+
+| Tema | Estado | Qué hace falta |
+| --- | --- | --- |
+| **Accesos a Google** | No se crearon propiedades ni contenedores | Acceso a Google Analytics y a Tag Manager (o crearlos con la cuenta de PRIC HOUSE); luego, `GTM_ID` en `js/analytics.js` y el ID `G-…` en el contenedor. Ver `ANALITICA.md`. |
+| **Política de privacidad** (`/privacidad/`) | Creada con el texto completo del PDF. Es un **borrador visible con aviso**, marcada `noindex` y fuera del `sitemap.xml` | 1) Razón social, CUIT y domicilio reales (están resaltados como `[RAZÓN SOCIAL]`, `[XX-XXXXXXXX-X]`, `[DOMICILIO]`). 2) Que la revisen el asesor legal o el contador. 3) Quitar el aviso de borrador y el `noindex`, y sumarla al sitemap. Los puntos están marcados en el código con `PENDIENTE-LEGAL`. |
+| **Explicación de cookies** | Se agregó un párrafo que **no está en el PDF** y describe el aviso real (solo se activan si se aceptan; se cambia desde «Configurar cookies») | Validación legal junto con el resto del texto. |
+| **Coincidencia con el funcionamiento real** | Revisada: los formularios solo arman el mensaje de WhatsApp y no guardan datos en un servidor; las cookies de Meta y Google se activan solo con consentimiento | Confirmar con el asesor que la política cubre eso y a los proveedores reales (por ejemplo, la agencia que gestiona la comunicación). |
+| **Datos de contacto** | `info@prichouse.com` y WhatsApp `+54 9 351 214-2900`, los mismos que ya figuran en el sitio | Confirmar que son los definitivos. |
+| **Dominio de la imagen para compartir** | `og:image` usa `https://www.prichouse.com/…` (como se pidió), mientras que el canonical y el sitemap usan `https://prichouse.com/…` | Elegir un único dominio principal y redirigir el otro (ver «SEO — tareas fuera del código»). Hoy ambos sirven la misma página, así que la imagen carga igual. |
+| **Pixel de Meta** | Instalado condicionado al consentimiento; ID `1963379867965591` | Verificar con Pixel Helper y Events Manager una vez publicado (pasos en `ANALITICA.md`). |
