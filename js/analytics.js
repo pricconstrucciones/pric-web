@@ -186,11 +186,11 @@
 
   /* ------------------------------------ interfaz ------------------------------------ */
   var CSS = '' +
-    '#ph-consent{position:fixed;left:16px;bottom:16px;z-index:2147483000;width:min(460px,calc(100vw - 32px));box-sizing:border-box;background:#111315;color:#EFEAE2;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:20px;font:400 14px/1.55 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 16px 40px rgba(0,0,0,.4)}' +
+    '#ph-consent{position:fixed;left:16px;bottom:16px;z-index:2147483000;width:min(460px,calc(100vw - 32px));box-sizing:border-box;background:#111315;color:#EFEAE2;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:16px 18px;font:400 14px/1.5 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 16px 40px rgba(0,0,0,.4)}' +
     '#ph-consent *{box-sizing:border-box}' +
     '#ph-consent [hidden]{display:none!important}' +
-    '#ph-consent h2{margin:0 0 6px;font:600 16px/1.3 "Space Grotesk",Inter,system-ui,sans-serif;color:#fff;letter-spacing:-.01em}' +
-    '#ph-consent p{margin:0 0 14px;color:rgba(239,234,226,.82)}' +
+    '#ph-consent h2{margin:0 0 4px;font:600 15px/1.3 "Space Grotesk",Inter,system-ui,sans-serif;color:#fff;letter-spacing:-.01em}' +
+    '#ph-consent p{margin:0 0 12px;color:rgba(239,234,226,.82);font-size:13px;line-height:1.45}' +
     '#ph-consent a{color:#E39A6E;text-decoration:underline;text-underline-offset:2px}' +
     '#ph-consent .ph-row{display:flex;flex-wrap:wrap;gap:10px}' +
     '#ph-consent button{font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;flex:1 1 auto;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff}' +
@@ -206,7 +206,7 @@
     '#ph-consent input[type=checkbox]{flex:0 0 20px;width:20px;height:20px;margin:2px 0 0;accent-color:#C96B37}' +
     '#ph-consent label b{display:block;color:#fff;font-weight:600}' +
     '#ph-consent label span{color:rgba(239,234,226,.72);font-size:13px}' +
-    '@media (max-width:520px){#ph-consent{left:12px;right:12px;bottom:12px;width:auto;padding:16px}}';
+    '@media (max-width:520px){#ph-consent{left:12px;right:12px;bottom:12px;width:auto;padding:14px 16px}#ph-consent button{min-height:44px}}';
 
   var box = null;
   function buildBanner() {
@@ -219,8 +219,7 @@
     box.setAttribute('aria-labelledby', 'ph-consent-title');
     box.innerHTML =
       '<h2 id="ph-consent-title">Tu privacidad</h2>' +
-      '<p>Usamos cookies de medición y de publicidad para entender cómo se usa la web y mejorar nuestros anuncios. ' +
-      'Podés aceptarlas, rechazarlas o elegir cuáles. Más información en la <a href="/privacidad/">Política de privacidad</a>.</p>' +
+      '<p>Usamos cookies de medición y publicidad para mejorar la web y nuestros anuncios. Más información en la <a href="/privacidad/">Política de privacidad</a>.</p>' +
       '<div class="ph-opts">' +
         '<label><input type="checkbox" id="ph-c-analytics"><div><b>Medición</b><span>Google Analytics: cuántas personas visitan la web y qué secciones usan.</span></div></label>' +
         '<label><input type="checkbox" id="ph-c-marketing"><div><b>Publicidad</b><span>Meta Pixel: medir el resultado de nuestros anuncios en Facebook e Instagram.</span></div></label>' +
